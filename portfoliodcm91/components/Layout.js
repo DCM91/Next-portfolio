@@ -28,11 +28,17 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
         <header className='w-full px-4'>
           <div>
             <Navbar theme={theme}/>
-            <div className='w-full flex items-center justify-end'>
-              <BsFillSunFill className='mx-1 text-lg'/>
-              <input type="checkbox" className="toggle toggle-md" id="luxury" checked={theme === "luxury"} onChange={handleTheme} />
-              <BsFillMoonStarsFill className='mx-1 mr-4' />
-              <Selector />
+            <div className=' w-full inline-flex'>
+              <div className='flex justify-start w-full'> 
+                  <p className='text-xl text-error'>WEB DEVELOPER</p>
+              </div>
+              <div className='inline-flex w-full  items-center  justify-end'>
+                <BsFillSunFill className='mx-1 text-lg'/>
+                <input type="checkbox" className="toggle toggle-md" id="luxury" checked={theme === "luxury"} onChange={handleTheme} />
+                <BsFillMoonStarsFill className='mx-1 mr-4' />
+                <Selector />
+              </div>
+
             </div>
           </div>
         </header>

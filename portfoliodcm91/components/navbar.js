@@ -4,10 +4,10 @@ export const Navbar = ({theme}) => {
   return (
       <div data-theme={theme} className="navbar flex flex-wrap w-full bg-base-100">
         <div className="flex-1 ">
-          <a className="btn btn-ghost normal-case text-xl">DCM91</a>
+          <a className="btn btn-ghost normal-case text-3xl">Daniel Castro Martín</a>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal">
+          <ul className="menu menu-horizontal text-error">
             <li><a>HOME</a></li>
             <li tabIndex={0}>
               <a>
