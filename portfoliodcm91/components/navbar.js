@@ -2,12 +2,12 @@
 export const Navbar = ({theme}) => {
 
   return (
-      <div data-theme={theme} className="navbar bg-base-100">
-        <div className="flex-1">
+      <div data-theme={theme} className="navbar flex flex-wrap w-full bg-base-100">
+        <div className="flex-1 ">
           <a className="btn btn-ghost normal-case text-xl">DCM91</a>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal">
             <li><a>HOME</a></li>
             <li tabIndex={0}>
               <a>

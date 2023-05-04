@@ -2,7 +2,6 @@ import React from 'react'
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import en from "@/languages/en"
 import es from "@/languages/es"
-import fr from "@/languages/fr"
 import { useRouter } from 'next/router';
 
 
