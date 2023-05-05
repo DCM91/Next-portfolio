@@ -17,7 +17,7 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
 
 
   return (
-    <div data-theme={theme} className='h-full grid overflow-hidden'>
+    <div data-theme={theme} className='h-screen w-full grid'>
         <Head>
             <title>{title}</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
@@ -25,7 +25,7 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <header className='w-full px-4'>
+        <header className='w-full px-4 grid-rows-1'>
           <div>
             <Navbar theme={theme}/>
             <div className=' w-full inline-flex'>
@@ -43,9 +43,9 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
           </div>
         </header>
 
-        <main className='border-4 border-orange-700'>{children}</main>
+        <main className='w-full grid-rows-2 mt-5'>{children}</main>
 
-        <footer className=''><Footer theme={theme} /></footer>
+        <footer className='grid-rows-3'><Footer theme={theme} /></footer>
     </div>
   )
 }

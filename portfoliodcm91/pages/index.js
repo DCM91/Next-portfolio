@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import { Layout } from "../components/Layout"
 import en from "@/languages/en"
 import es from "@/languages/es"
-
+import { MdWavingHand } from "react-icons/md";
 
 export default function Home() {
   const router = useRouter()
@@ -16,8 +16,9 @@ export default function Home() {
 
   return (
      <Layout title="Dcm91Portfolio - Home">
-        <div>
-            <h1 className="flex justify-center items-center text-xl h-80">{t.home.title}</h1>
+        <div className="h-80 flex px-3">
+            <h1 className="text-2xl flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
+            
         </div>   
       </Layout>
   )

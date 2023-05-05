@@ -1,6 +1,7 @@
 export default{
     home: {
-        title: "Hola Mundo",
+        title: "Bienvenido a mi portfolio!",
+        description:"",
     },
 
     footer:{
