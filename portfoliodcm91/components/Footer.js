@@ -12,9 +12,7 @@ export const Footer = ({theme}) => {
       t = en
     } else if (router.locale === 'es') {
       t = es
-    } else if (router.locale === 'fr') {
-      t = fr
-    }  
+    } 
   return (
     <div data-theme={theme}>
         <footer  className="footer p-8 py-6 bg-neutral text-neutral-content" >
