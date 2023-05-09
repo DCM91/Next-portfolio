@@ -7,7 +7,7 @@ import { GiCat } from "react-icons/gi";
 export default function About() {
   return (
     <Layout title="Dcm91Portfolio - About">
-      <div className="h-fit px-3">
+      <div className="h-fit  px-10 pb-4">
         <p className='text-base'>
             I am passionate about learning and continuous improvement in the IT sector, and eager to acquire new knowledge and skills in this field.<br />
             For 10 years, I was an independent freelancer in Barcelona where I learned to work in a team and be solution-oriented. But I decided to change my career path and started studying Full Stack software development.<br/>
