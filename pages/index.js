@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
      <Layout title="Dcm91Portfolio - Home">
-        <div className="h-80 w-full flex px-3">
+        <div className="h-80 w-100 flex px-3">
             <h1 className="text-2xl flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
             
         </div>   

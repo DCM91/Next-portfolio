@@ -17,12 +17,12 @@ export const Navbar = ({theme}) => {
         <div className="flex-1 ">
           <Link href={"/"} className="btn btn-ghost normal-case text-3xl">Daniel Castro Martín</Link>
         </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal text-error">
-            <li><Link href={"/about"}>{t.navbar.about}</Link></li>
-            <li><Link href={"/skills"}>{t.navbar.SKILLS}</Link></li>
-            <li><Link href={"/works"}>{t.navbar.works}</Link></li>
-            <li><Link href={"/contact"}>{t.navbar.contact}</Link></li>
+        <div className="flex-2">
+          <ul className="inline-flex text-error">
+            <li className="p-2"><Link href={"/about"}>{t.navbar.about}</Link></li>
+            <li className="p-2"><Link href={"/skills"}>{t.navbar.SKILLS}</Link></li>
+            <li className="p-2"><Link href={"/works"}>{t.navbar.works}</Link></li>
+            <li className="p-2"><Link href={"/contact"}>{t.navbar.contact}</Link></li>
           </ul>
       </div>
     </div>

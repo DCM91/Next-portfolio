@@ -21,21 +21,21 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
         <Head>
             <title>{title}</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <header className='w-full px-4 grid-rows-1'>
+        <header className='w-full '>
           <div>
             <Navbar theme={theme}/>
-            <div className=' w-full inline-flex'>
-              <div className='flex justify-start w-full'> 
-                  <p className='text-xl text-error'>WEB DEVELOPER</p>
+            <div className=' w-100 flex justify-between'>
+              <div className='flex-1'> 
+                  <p className='text-xl text-error pl-4'>WEB DEVELOPER</p>
               </div>
-              <div className='inline-flex w-full  items-center  justify-end'>
+              <div className='flex-2 inline-flex  items-center  justify-end pr-4'>
                 <BsFillSunFill className='mx-1 text-lg'/>
                 <input type="checkbox" className="toggle toggle-md" id="luxury" checked={theme === "luxury"} onChange={handleTheme} />
-                <BsFillMoonStarsFill className='mx-1 mr-4' />
+                <BsFillMoonStarsFill className='mx-1' />
                 <Selector />
               </div>
 
@@ -43,9 +43,9 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
           </div>
         </header>
 
-        <main className='w-full grid-rows-2 mt-5'>{children}</main>
+        <main className=' mt-5'>{children}</main>
 
-        <footer className='grid-rows-3'><Footer theme={theme} /></footer>
+        <footer className=''><Footer theme={theme} /></footer>
     </div>
   )
 }
