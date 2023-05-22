@@ -9,12 +9,22 @@ import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 
 
 export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
-  const [theme, setTheme] = useState("luxury")
-  const handleTheme = () =>{
-    setTheme(theme === "luxury" ? "cupcake" : "luxury")
-  }
-  const typetheme=["luxury", "cupcake"]
+  const [theme, setTheme] = useState('luxury');
 
+  const handleTheme = () => {
+    setTheme(theme === 'luxury' ? 'cupcake' : 'luxury');
+  };
+
+  useEffect(() => {
+    const storedTheme = sessionStorage.getItem('selectedTheme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem('selectedTheme', theme);
+  }, [theme]);
 
   return (
     <div data-theme={theme} className='h-screen w-full grid'>
