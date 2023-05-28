@@ -1,20 +1,25 @@
 import { Layout } from "@/components/Layout"
-import { CgGym } from "react-icons/cg";
-import { SiJordan } from "react-icons/si";
-import { IoGameController } from "react-icons/io5";
-import { GiCat } from "react-icons/gi";
+import { useRouter } from "next/router"
+import en from "@/languages/en"
+import es from "@/languages/es"
+
 
 export default function About() {
+  const router = useRouter()
+  let t
+  if (router.locale === 'en') {
+    t = en
+  } else if (router.locale === 'es') {
+    t = es
+  }
   return (
     <Layout title="Dcm91Portfolio - About">
       <div className="h-fit  px-10 pb-4">
         <p className='text-base'>
-            I am passionate about learning and continuous improvement in the IT sector, and eager to acquire new knowledge and skills in this field.<br />
-            For 10 years, I was an independent freelancer in Barcelona where I learned to work in a team and be solution-oriented. But I decided to change my career path and started studying Full Stack software development.<br/>
+          {t.about.basetext1}
           </p> 
           <p>
-            Currently, I have been in this field for a year and I love discovering new technologies and tools.In my free time, I enjoy hobbies like<br /> NBA<SiJordan/>Calisthenics<span><CgGym /></span>,Gaming<IoGameController /> and spending time with my cats<GiCat/>
-            In my portfolio, you will find a variety of projects that I have developed and I am sure I can bring value to any team I have the opportunity to work with
+          {t.about.basetext2}
         </p>
       </div>   
     </Layout>
