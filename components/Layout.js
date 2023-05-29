@@ -44,7 +44,7 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
           </div>
         </header>
 
-        <main className=' mt-5'>{children}</main>
+        <main className=''>{children}</main>
 
         <footer className=''><Footer theme={theme} /></footer>
     </div>
