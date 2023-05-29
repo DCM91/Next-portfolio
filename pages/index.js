@@ -29,7 +29,7 @@ export default function Home() {
         </Head>
 
         <div className="w-100  p-4">
-            <h1 className="text-2xl  text-primary flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
+            <h1 className="text-2xl flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
         </div>
         <Selector />
         <div className="flex flex-wrap"> 
