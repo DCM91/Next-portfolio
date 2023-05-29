@@ -20,7 +20,7 @@ export default function Home() {
 
 
   return (
-      <div className="grid w-screen h-screen bg-black">
+      <div className="grid w-screen h-screen bg-black" data-theme={"luxury"} >
           <Head>
             <title>Dcm91Portfolio - Home</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
@@ -31,9 +31,9 @@ export default function Home() {
         <div className="w-100  p-4">
             <h1 className="text-2xl  text-primary flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
         </div>
-        <Selector/>
+        <Selector />
         <div className="flex flex-wrap"> 
-          <div className="border-yellow-50 border-4 flex-1 w-2/3  p-3">
+          <div className="border-yellow-50 border-4 flex-1 w-2/3  p-3 m-3">
             <Image src={"/assets/devIAPortfolio.jpg"} width={250} height={250} alt="kakaka" />
           </div>
 
