@@ -16,7 +16,7 @@ export const Footer = ({theme}) => {
   return (
     <div data-theme={theme}>
         <footer  className="footer w-100 p-4 bg-neutral text-neutral-content" >
-            <div style={{position: 'relative', fontSize:"large"}}>
+            <div style={{fontSize:"large"}}>
                 <p><br/>{t.footer.text1}<br/> <br/>{t.footer.text2}</p>
             </div> 
             <div>
