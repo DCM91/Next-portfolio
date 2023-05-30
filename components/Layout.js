@@ -18,7 +18,7 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
 
 
   return (
-    <div data-theme={theme} className='h-screen w-full grid'>
+    <div data-theme={theme} className='h-full w-full grid'>
         <Head>
             <title>{title}</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
