@@ -24,7 +24,6 @@ export default function Home() {
           <Head>
             <title>Dcm91Portfolio - Home</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
-            
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -39,12 +38,13 @@ export default function Home() {
 
 
           <div className="flex-2 w-1/3">
-            <ul className="grid text-error">
-              <li className="p-2"><Link href={"/about"}>{t.navbar.about}</Link></li>
-              <li className="p-2"><Link href={"/skills"}>{t.navbar.SKILLS}</Link></li>
-              <li className="p-2"><Link href={"/works"}>{t.navbar.works}</Link></li>
-              <li className="p-2"><Link href={"/contact"}>{t.navbar.contact}</Link></li>
+            <ul className="grid text-error pt-6">
+              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6 "><Link href={"/about"} >{t.navbar.about}</Link></li>
+              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6"><Link href={"/skills"}>{t.navbar.SKILLS}</Link></li>
+              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6"><Link href={"/works"}>{t.navbar.works}</Link></li>
+              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6"><Link href={"/contact"}>{t.navbar.contact}</Link></li>
             </ul>  
+
         </div>
         </div>
         <Footer />
