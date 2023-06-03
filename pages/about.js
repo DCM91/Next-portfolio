@@ -14,13 +14,14 @@ export default function About() {
   }
   return (
     <Layout title="Dcm91Portfolio - About">
-      <div className="h-fit  px-10 pb-4">
-        <p className='text-base'>
-          {t.about.basetext1}
-          </p> 
-          <p>
-          {t.about.basetext2}
-        </p>
+      <div className="grid h-fit  px-10 py-10">
+        <div className="flex  w-2/3">
+         <p className='text-success text-base flex-1'>{t.about.basetext1}</p> 
+         <video autoPlay loop className="flex-2 w-1/3 pl-5" ><source src="/assets/WIN_20230524_22_03_38_Pro.mp4" /> </video>
+        </div>
+        <div className="pt-4 "> 
+          <p className="text-success text-base ">{t.about.basetext2}</p>
+        </div>
       </div>   
     </Layout>
   )

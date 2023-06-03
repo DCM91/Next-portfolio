@@ -31,9 +31,10 @@ export default function Home() {
             <h1 className="text-2xl flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
         </div>
         <Selector />
-        <div className="flex flex-wrap"> 
-          <div className="border-yellow-50 border-4 flex-1 w-2/3  p-3 m-3">
-            <Image src={"/assets/devIAPortfolio.jpg"} width={250} height={250} alt="kakaka" />
+        <div className="flex flex-wrap w-2/3"> 
+          <div className=" flex-1 flex   p-3 m-3">
+          <Image className="mr-1 w-1/3" src={"/assets/devworking.png"} width={250} height={250} alt="kakaka" />
+          {/* <Image src={"/assets/devIAPortfolio.jpg"} width={250} height={250} alt="kakaka" /> */}
           </div>
 
 
