@@ -1,6 +1,9 @@
 import { useRouter } from "next/router"
 import en from "@/languages/en"
 import es from "@/languages/es"
+import { MdLanguage } from 'react-icons/md'
+
+
 
 export const Selector = () => {
     const router = useRouter()
@@ -15,7 +18,8 @@ export const Selector = () => {
 
       };
       return (
-        <select value={router.locale} onChange={changeLanguage}className="h-8 p-1 bg-transparent">
+        <select value={router.locale} onChange={changeLanguage} className="select text-secondary p-1 bg-transparent">
+          <option disabled selected>Languages Selector</option>
           <option value="en">English</option>
           <option value="es">Español</option>
         </select>

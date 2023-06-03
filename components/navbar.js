@@ -18,7 +18,7 @@ export const Navbar = ({theme}) => {
           <Link href={"/"} className="btn btn-ghost normal-case text-3xl">Daniel Castro Martín</Link>
         </div>
         <div className="flex-2">
-          <ul className="inline-flex text-error">
+          <ul className="inline-flex text-success">
             <li className="p-2"><Link href={"/about"}>{t.navbar.about}</Link></li>
             <li className="p-2"><Link href={"/skills"}>{t.navbar.SKILLS}</Link></li>
             <li className="p-2"><Link href={"/works"}>{t.navbar.works}</Link></li>
