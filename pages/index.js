@@ -12,6 +12,8 @@ import {themeChange} from "theme-change"
 import { useEffect } from "react";
 import { CgColorBucket } from "react-icons/cg";
 import { MdLanguage } from 'react-icons/md'
+import { TypeAnimation } from "react-type-animation";
+
 
 
 
@@ -36,18 +38,35 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <div className="w-100  m-4 mb-0 pt-4 justify-items-center">
-            <h1 className="text-2xl  flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
+        <div className="w-100  m-2 mb-0 pt-4 justify-items-center">
+            <h1 className="text-4xl stat-title my-3 pl-8 flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
+            <p className="text-lg w-full my-2 text-center">
+              Ambitious junior professional in &nbsp; 
+              <TypeAnimation
+              sequence={[
+              'Web Development',
+              2000,
+              'Frontend Development',
+              2000,
+              'Backend Development',
+              2000,
+              ]}
+              speed={30} // Custom Speed from 1-99 - Default Speed: 40
+              style={{ fontSize: '1em', color: '#ff760d'  }}
+              wrapper="span" // Animation will be rendered as a <span>
+              repeat={Infinity} // Repeat this Animation Sequence infinitely
+            />.
+            </p>
         </div>
         <div className="flex flex-wrap w-3/4"> 
-          <div className=" flex-1 grid   p-3 m-3">
+          <div className=" flex-1 grid   px-3 m-3">
             <div className="m-1">
             <div className="inline-flex  items-center">
               <Selector />
               <MdLanguage />
             </div>
             <div className="inline-flex  items-center">             
-              <select  className="text-accent w-32 h-8 p-1 m-3 bg-transparent" data-choose-theme>
+              <select  className="select text-accent w-32 h-8 p-1 m-3 bg-transparent" data-choose-theme>
                 <option disabled selected>Style Selector</option>
                   {themeValues.map((value)=>(
                     <option className="text-accent" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
@@ -60,7 +79,7 @@ export default function Home() {
 
             </div>
 
-          <Image className="mr-1" src={"/assets/mefoto.jpg"} width={250} height={250} alt="kakaka" />
+          <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
           {/* <Image src={"/assets/devIAPortfolio.jpg"} width={250} height={250} alt="kakaka" /> */}
           </div>
 
