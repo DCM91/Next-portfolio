@@ -23,7 +23,7 @@ export default function Home() {
   } else if (router.locale === 'es') {
     t = es
   }
-  const themeValues =["Bumblebee", "Luxury", "Aqua"]
+  const themeValues =["Bumblebee", "Luxury", "Synthwave"]
   useEffect(()=>{themeChange(false)});
 
 
@@ -36,10 +36,10 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <div className="w-100  p-4">
-            <h1 className="text-2xl flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
+        <div className="w-100  m-4 mb-0 pt-4 justify-items-center">
+            <h1 className="text-2xl  flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
         </div>
-        <div className="flex flex-wrap w-2/3"> 
+        <div className="flex flex-wrap w-3/4"> 
           <div className=" flex-1 grid   p-3 m-3">
             <div className="m-1">
             <div className="inline-flex  items-center">
@@ -47,10 +47,10 @@ export default function Home() {
               <MdLanguage />
             </div>
             <div className="inline-flex  items-center">             
-              <select  className="text-primary h-8 p-1 m-3 bg-transparent" data-choose-theme>
+              <select  className="text-accent w-32 h-8 p-1 m-3 bg-transparent" data-choose-theme>
                 <option disabled selected>Style Selector</option>
                   {themeValues.map((value)=>(
-                    <option className="text-primary" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+                    <option className="text-accent" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
                   ))}
               </select>
               <CgColorBucket className='mx-1 text-lg' />
@@ -65,12 +65,12 @@ export default function Home() {
           </div>
 
 
-          <div className="flex-2 w-1/3 border-solid border-l-4 border-sucess mb-8">
-            <ul className="grid pt-6 text-success">
-              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6 "><Link href={"/about"} >{t.navbar.about}</Link></li>
-              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6"><Link href={"/skills"}>{t.navbar.SKILLS}</Link></li>
-              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6"><Link href={"/works"}>{t.navbar.works}</Link></li>
-              <li className="p-2 lg transition-transform duration-200 transform hover:translate-x-6"><Link href={"/contact"}>{t.navbar.contact}</Link></li>
+          <div className="flex-2 w-1/4 border-solid border-l-8 border-sucess mb-8 ml-4">
+            <ul className="grid pt-1 ml-4 text-info w-full h-full ">
+              <li className="text-lg w-full p-2 flex items-center  transition-transform duration-350 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
+              <li className="text-lg w-full p-2 flex items-center transition-transform duration-350 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
+              <li className="text-lg w-full p-2 flex items-center transition-transform duration-350 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/works"}>{t.navbar.works}</Link></li>
+              <li className="text-lg w-full p-2 flex items-center transition-transform duration-350 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/contact"}>{t.navbar.contact}</Link></li>
             </ul>  
 
         </div>

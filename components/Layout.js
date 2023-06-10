@@ -11,7 +11,7 @@ import { MdLanguage } from 'react-icons/md'
 
 
 export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
-  const themeValues =["Bumblebee", "Luxury", "Aqua"]
+  const themeValues =["Bumblebee", "Luxury", "Synthwave"]
   useEffect(()=>{themeChange(false)});
 
 
@@ -33,17 +33,17 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
               </div>
               <div className='flex-2 inline-flex  items-center  justify-end pr-4'>
                 <div className='inline-flex  items-center'>
-                  <select className="select text-primary p-1 bg-transparent" data-choose-theme>
+                  <select className="select text-accent w-32 h-8 p-1 mx-1 bg-transparent" data-choose-theme>
                     <option disabled selected>Style Selector</option>
                     {themeValues.map((value)=>(
-                      <option className="text-primary" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+                      <option className="text-accent" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
                     ))}
                   </select>
                   <CgColorBucket className='mx-1 text-lg' />
                 </div>
                 <div className='inline-flex  items-center'>  
-                 <Selector className="mx-1" />
-                  <MdLanguage className='mx-1 text-lg' />
+                 <Selector className="" />
+                  <MdLanguage className=' text-lg' />
                 </div>
               </div>
             </div>
