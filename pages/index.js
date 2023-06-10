@@ -60,7 +60,7 @@ export default function Home() {
 
             </div>
 
-          <Image className="mr-1" src={"/assets/devworking.png"} width={250} height={250} alt="kakaka" />
+          <Image className="mr-1" src={"/assets/mefoto.jpg"} width={250} height={250} alt="kakaka" />
           {/* <Image src={"/assets/devIAPortfolio.jpg"} width={250} height={250} alt="kakaka" /> */}
           </div>
 
