@@ -94,7 +94,7 @@ export default function Home() {
 
         </div>
         </div>
-        <div className="fixed bottom-0">
+        <div className="bottom-0">
           <Footer  />
         </div>
       </div>   
