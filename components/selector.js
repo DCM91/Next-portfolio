@@ -18,10 +18,10 @@ export const Selector = () => {
 
       };
       return (
-        <select value={router.locale} onChange={changeLanguage} className="select text-accent w-32 h-8 p-1 m-3 bg-transparent">
+        <select value={router.locale} onChange={changeLanguage} className="select text-primary w-32 h-8 p-1 m-3">
           <option disabled selected>Languages Selector</option>
-          <option className="text-accent" value="en">English</option>
-          <option className="text-accent" value="es">Español</option>
+          <option className="text-primary" value="en">English</option>
+          <option className="text-primary" value="es">Español</option>
         </select>
       )
     }

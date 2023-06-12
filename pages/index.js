@@ -25,7 +25,7 @@ export default function Home() {
   } else if (router.locale === 'es') {
     t = es
   }
-  const themeValues =["Bumblebee", "Luxury", "Synthwave"]
+  const themeValues =["Corporate", "Luxury", "Synthwave"]
   useEffect(()=>{themeChange(false)});
 
 
@@ -66,10 +66,10 @@ export default function Home() {
               <MdLanguage />
             </div>
             <div className="inline-flex  items-center">             
-              <select  className="select text-accent w-32 h-8 p-1 m-3 bg-transparent" data-choose-theme>
+              <select  className="select text-primary w-32 h-8 p-1 m-3" data-choose-theme>
                 <option disabled selected>Style Selector</option>
                   {themeValues.map((value)=>(
-                    <option className="text-accent" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+                    <option className="text-primary" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
                   ))}
               </select>
               <CgColorBucket className='mx-1 text-lg' />
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
 
 
-          <div className="flex-2 border-solid border-l-8 border-sucess w-1/4 mb-8 ml-4">
+          <div className="flex-2 border-solid border-l-8 border-primary-focus w-1/4 mb-8 ml-4">
             <ul className="grid pt-1 ml-4 text-info w-full h-full ">
               <li className="text-lg w-full p-2 flex items-center  transition-transform duration-350 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
               <li className="text-lg w-full p-2 flex items-center transition-transform duration-350 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
