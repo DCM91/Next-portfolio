@@ -31,7 +31,7 @@ export default function Home() {
 
 
   return (
-      <div className="grid">
+      <div className="grid gap-y-10">
           <Head>
             <title>Dcm91Portfolio - Home</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
@@ -94,7 +94,7 @@ export default function Home() {
 
         </div>
         </div>
-        <div className="bottom-0">
+        <div className="pt-12">
           <Footer  />
         </div>
       </div>   
