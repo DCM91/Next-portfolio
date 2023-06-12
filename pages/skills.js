@@ -11,7 +11,7 @@ export default function Skills() {
 
         <div className="p-2">
           <h2 className="px-2 text-primary-focus "><b>WEB DEVELOPMENT</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-9 text-error">
+          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -72,7 +72,7 @@ export default function Skills() {
 
         <div className=" mt-3 p-2">
           <h2 className="px-2 text-right text-accent"><b>FRONT-END DEVELOPMENT</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-9 text-error justify-end">
+          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap justify-end">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -124,7 +124,7 @@ export default function Skills() {
 
         <div className="p-2">
           <h2 className="px-2 text-primary-focus "><b>BACK-END DEVELOPMENT</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-9 text-error">
+          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -168,7 +168,7 @@ export default function Skills() {
 
         <div className=" mt-3 p-2">
           <h2 className="px-2 text-right text-accent"><b>TOOLS</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-9 text-error justify-end">
+          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap justify-end">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
