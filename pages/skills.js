@@ -1,17 +1,17 @@
 import { Layout } from "@/components/Layout"
-import { DiReact } from "react-icons/di";
-import { IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud } from "react-icons/io";
-import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss3, SiBootstrap } from "react-icons/si";
+import { DiReact, DiTrello, DiGit, DiScrum, DiVisualstudio } from "react-icons/di";
+import { IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud, IoLogoNodejs } from "react-icons/io";
+import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss3, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens } from "react-icons/si";
 
 
 export default function Skills() {
   return (
     <Layout title="Dcm91Portfolio - Skills">
-      <div className="grid px-10 py-4">
+      <div className="grid px-10 py-4 my-4 gap-4">
 
-        <div className="p-2">
-          <h2 className="px-2 text-primary-focus "><b>WEB DEVELOPMENT</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap">
+        <div className="p-2 border-t-4 border-solid border-l-8 border-warning-focus">
+          <h2 className="px-10 text-warning-focus "><b><ins>WEB DEVELOPMENT</ins></b></h2>
+          <div className="mt-2 p-3 flex gap-6 text-error flex-wrap text-center">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -48,31 +48,32 @@ export default function Skills() {
                 <p>Python</p>
               </div>
             </div>
+
+            
+            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
+              <div className="flex justify-center "> 
+               <SiTypescript/>
+              </div>
+              <div>
+                <p>Typescript</p>
+              </div>
+            </div>
             
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center"> 
                 <IoMdCloud/>
               </div>
               <div>
-                <p>Api</p>
-              </div>
-            </div>
-
-            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
-              <div className="flex justify-center "> 
-               <SiTypescript/>
-              </div>
-              <div>
-                <p>Typescript</p>
+                <p>APIs</p>
               </div>
             </div>
 
           </div>
         </div>
 
-        <div className=" mt-3 p-2">
-          <h2 className="px-2 text-right text-accent"><b>FRONT-END DEVELOPMENT</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap justify-end">
+        <div className="p-2 border-t-4 border-solid border-r-8 border-accent">
+          <h2 className="px-10 text-right text-accent"><b><ins>FRONT-END DEVELOPMENT</ins></b></h2>
+          <div className=" mt-2 p-3 flex gap-6 text-error flex-wrap text-center justify-end">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -122,43 +123,52 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="p-2">
-          <h2 className="px-2 text-primary-focus "><b>BACK-END DEVELOPMENT</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap">
+        <div className="p-2 border-t-4 border-solid border-l-8 border-primary-focus">
+          <h2 className="px-10 text-primary-focus "><b><ins>BACK-END DEVELOPMENT</ins></b></h2>
+          <div className=" mt-2 p-3 flex gap-6 text-error flex-wrap text-center">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
-                <IoLogoJavascript/>
+                <IoLogoNodejs/>
               </div>
               <div>
-                <p>Javascript</p>
+                <p>Node</p>
               </div>
             </div>
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
-                <SiNextdotjs/>
+                <SiExpress/>
               </div>
               <div>
-                <p>NextJS</p>
+                <p>Express</p>
               </div>
             </div>
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
-                <SiSocketdotio/>
+                <SiMysql/>
               </div>
               <div>
-                <p>Socket.io</p>
+                <p>Mysql</p>
               </div>
             </div>
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
-               <SiTypescript/>
+               <SiMongodb/>
               </div>
               <div>
-                <p>Typescript</p>
+                <p>Mongodb</p>
+              </div>
+            </div>
+
+            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
+              <div className="flex justify-center "> 
+               <SiJsonwebtokens/>
+              </div>
+              <div>
+                <p>JWT</p>
               </div>
             </div>
 
@@ -166,52 +176,43 @@ export default function Skills() {
         </div>
 
 
-        <div className=" mt-3 p-2">
-          <h2 className="px-2 text-right text-accent"><b>TOOLS</b></h2>
-          <div className="border-solid border-2 border-primary mt-2 p-3 flex gap-6 text-error flex-wrap justify-end">
+        <div className=" mb-3 p-2 border-t-4 border-solid border-r-8 border-info">
+          <h2 className="px-10 text-right text-info"><b><ins>TOOLS</ins></b></h2>
+          <div className=" mt-2 p-3 flex gap-6 text-error flex-wrap text-center justify-end">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
-                <DiReact/>
+                <DiGit/>
               </div>
               <div>
-                <p>ReactJS</p>
+                <p>GIT</p>
               </div>
             </div>
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
               <div className="flex justify-center"> 
-                <IoLogoHtml5/>
+                <DiScrum/>
               </div>
               <div>
-                <p>HTML</p>
+                <p>Agile</p>
               </div>
             </div>
             
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
               <div className="flex justify-center"> 
-                <SiTailwindcss/>
+                <DiVisualstudio/>
               </div>
               <div>
-                <p>Tailwind</p>
+                <p>Visual studio</p>
               </div>
             </div>
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
               <div className="flex justify-center"> 
-                <SiBootstrap/>
+                <DiTrello/>
               </div>
               <div>
-                <p>Bootstrap</p>
-              </div>
-            </div>
-
-            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
-              <div className="flex justify-center"> 
-                <SiCss3/>
-              </div>
-              <div>
-                <p>CSS</p>
+                <p>Trello</p>
               </div>
             </div>
 

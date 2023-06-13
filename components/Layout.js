@@ -29,7 +29,7 @@ export const Layout = ({ title = "Dcm91Portfolio" , children}) => {
             <Navbar />
             <div className=' w-100 flex justify-between'>
               <div className='flex-1'> 
-                <p className='text-xl text-error pl-4'>WEB DEVELOPER</p>
+                <p className='text-xl text-center text-error pl-4'>WEB DEVELOPER</p>
               </div>
               <div className='flex-2 inline-flex  items-center  justify-end pr-4'>
                 <div className='inline-flex  items-center'>
