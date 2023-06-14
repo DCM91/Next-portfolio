@@ -1,5 +1,7 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser';
+import { RiMailSendLine } from "react-icons/ri";
+
 
 export const Mail = () => {
 
@@ -18,29 +20,24 @@ export const Mail = () => {
 
   return (
     <div>
-        <form ref={refForm} action="" onSubmit={handleSubmit}>
-            <fieldset >
-                <label htmlFor="">from_name</label>
-                <input type="text" name="from_name" />
+        <form ref={refForm} action="" onSubmit={handleSubmit} className='border border-primary m-4 grid p-2 w-100' >
+            <fieldset className='flex w-full p-1 py-2 justify-between ' >
+                <label className='w-20 p-1 text-success'  htmlFor="">Name:</label>
+                <input className="input input-ghost input-bordered input-primary mx-4  w-full max-w-xs"  type="text" name="from_name" />
             </fieldset>
-            <fieldset >
-                <label htmlFor="">message</label>
-                <input type="text" name="message"  />
+            <fieldset className='flex w-full p-1 py-2 justify-between' >
+                <label className='w-20 p-1 text-success'  htmlFor="">Email:</label>
+                <input className="input input-ghost input-bordered input-primary mx-4  w-full max-w-xs"  type="text" name="email_id" />
             </fieldset>
-            <fieldset >
-                <label htmlFor="">email_id</label>
-                <input type="text" name="email_id" />
+            <fieldset className='flex w-full p-1 py-2 justify-between' >
+                <label className='w-20 p-1 text-success'  htmlFor="">Message:</label>
+                <textarea className="textarea textarea-ghost textarea-bordered textarea-primary p-1 m-1 w-full max-w-xs" placeholder="escribe" type="text" name="message"></textarea> 
             </fieldset>
 
-            <button className='btn btn-primary' type="submit" value="Send Email" >Send</button>
+            <div className='flex justify-end'>
+                <button className='btn btn-primary btn-circle m-3' type="submit" value="Send Email" >Send <RiMailSendLine/></button>
+            </div>
         </form>
-
-            {/* <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-            <script type="text/javascript">
-            emailjs.init('eCsDb9Fm4OuTqODpX')
-            </script> */}
     </div>
   )
 }
