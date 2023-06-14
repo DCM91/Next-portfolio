@@ -21,6 +21,9 @@ export const Mail = () => {
   return (
     <div>
         <form ref={refForm} action="" onSubmit={handleSubmit} className='border border-primary m-4 grid p-2 w-100' >
+            <header>
+                <h1 className='text-2xl text-center pb-2' ><b>Mail me!</b></h1>
+            </header>
             <fieldset className='flex w-full p-1 py-2 justify-between ' >
                 <label className='w-20 p-1 text-success'  htmlFor="">Name:</label>
                 <input className="input input-ghost input-bordered input-primary mx-4  w-full max-w-xs"  type="text" name="from_name" />

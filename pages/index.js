@@ -31,15 +31,15 @@ export default function Home() {
 
 
   return (
-      <div className="grid gap-y-10">
+      <div className="grid ">
           <Head>
             <title>Dcm91Portfolio - Home</title>
             <meta name="description" content="Dcm91 profesional Portfolio" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <div className="w-100 m-2 mb-0 pt-4 justify-items-center">
-            <h1 className="text-4xl stat-title m-5 pl-8 flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
+        <div className="w-full m-2 mx-0 mb-0 pt-4 justify-items-center">
+            <h1 className="text-4xl stat-title m-3 pl-8 flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
             <p className="text-lg w-full my-2 text-center">
               Ambitious junior professional in &nbsp; 
               <TypeAnimation
@@ -94,7 +94,8 @@ export default function Home() {
 
         </div>
         </div>
-        <div className="pt-12">
+        <div className=" h-36 bg-secondary"></div>
+        <div className="pt-5">
           <Footer  />
         </div>
       </div>   

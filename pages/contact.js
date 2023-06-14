@@ -10,8 +10,8 @@ export default function Contact() {
 
         <div className="border-solid border-2 border-orange-900 grid justify-between py-5 px-5">
 
-          <div className="border-solid border-2 border-orange-900 ">
-            <Image className="m-2" src={"/assets/clase esade.jpg"} width={300} height={200} alt="kakaka" />
+          <div className="border-solid border-2 border-orange-900 w-80 ">
+            <Image className="m-2" src={"/assets/imagen contacto.jpg"} width={300} height={200} alt="kakaka" />
           </div>
 
            <div className="border-solid border-2 border-orange-900 ">
@@ -20,10 +20,9 @@ export default function Contact() {
 
         </div>
           
-          <div className="border-solid border-2 border-orange-900 ">
+          <div className="border-solid border-2 border-orange-900 w-100">
             <Mail/>
           </div>
-          {/* <video className=" flex w-96 pl-5 justify-items-end" ><source src="/assets/WIN_20230524_22_03_38_Pro.mp4" /> </video> */}
           
       </div>
     </Layout>
