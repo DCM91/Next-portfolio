@@ -6,21 +6,21 @@ export default function Contact() {
   return (
     <Layout title="Dcm91Portfolio - Contact">
 
-      <div className="flex flex-wrap px-10 mt-10 pb-12 w-full justify-center">
+      <div className="flex flex-wrap px-10 mt-8 mb-8 w-full justify-center">
 
-        <div className="border-solid border-2 border-orange-900 grid justify-between py-5 px-5">
+        <div className=" grid justify-between py-5 px-10 pl-20 border-l-4">
 
-          <div className="border-solid border-2 border-orange-900 w-80 ">
-            <Image className="m-2" src={"/assets/imagen contacto.jpg"} width={300} height={200} alt="kakaka" />
+         <div className=" ">
+            <p className="text-info"><b>amigo dele!</b></p>
           </div>
 
-           <div className="border-solid border-2 border-orange-900 ">
-            <p>nananananana</p>
+          <div className=" w-80 ">
+            <Image className="card shadow-xl opacity-90 m-2" src={"/assets/contactame.jpg"} width={300} height={200} alt="kakaka" />
           </div>
 
-        </div>
+       </div>
           
-          <div className="border-solid border-2 border-orange-900 w-100">
+          <div className=" w-100">
             <Mail/>
           </div>
           
