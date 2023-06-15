@@ -8,7 +8,7 @@ export default function Contact() {
 
       <div className="flex flex-wrap px-10 mt-8 mb-8 w-full justify-center">
 
-        <div className=" grid justify-between py-5 px-10 pl-20 border-l-4">
+        <div className=" grid justify-between pl-14 border-l-4">
 
          <div className=" ">
             <p className="text-info"><b>amigo dele!</b></p>
