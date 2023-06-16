@@ -1,7 +1,7 @@
 export default {
     home: {
       title: "Welcome to my portfolio!",
-      description:"",
+      description:"Ambitious junior professional in",
     },
     footer: {
       text1: "The code for this application is available, which means you can copy and manipulate the code freely.",

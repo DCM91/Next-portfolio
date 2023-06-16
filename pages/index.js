@@ -45,15 +45,15 @@ export default function Home() {
         <div className="w-full m-2 mx-0 mb-0 pt-4 justify-items-center">
             <h1 className="text-4xl stat-title m-3 pl-8 flex">{t.home.title} &nbsp; <MdWavingHand/></h1>
             <p className="text-lg w-full my-2 text-center">
-              Ambitious junior professional in &nbsp; 
+              {t.home.description} &nbsp; 
               <TypeAnimation
               sequence={[
               'Web Development',
-              2000,
+              3000,
               'Frontend Development',
-              2000,
+              3000,
               'Backend Development',
-              2000,
+              3000,
               ]}
               speed={30} // Custom Speed from 1-99 - Default Speed: 40
               style={{ fontSize: '1em', color: '#ff760d'  }}
