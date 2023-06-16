@@ -27,15 +27,15 @@ export const Mail = () => {
 
             <fieldset className='flex w-full p-1 py-2 justify-between items-center ' >
                 <label className='w-15 p-1 text-success'  htmlFor=""><b>Name:</b></label>
-                <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp"  type="text" name="from_name" />
+                <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp"  type="text" name="from_name" required />
             </fieldset>
             <fieldset className='flex w-full p-1 py-2 justify-between items-center' >
                 <label className='w-15 p-1 text-success'  htmlFor=""><b>Email:</b></label>
-                <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp@mail.com"  type="text" name="email_id" />
+                <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp@mail.com"  type="email" name="email_id" required />
             </fieldset>
             <fieldset className='flex w-full p-1 py-2  justify-between items-center' >
                 <label className='w-15 p-1 text-success'  htmlFor=""><b>Message:</b></label>
-                <textarea className="textarea textarea-ghost textarea-bordered textarea-primary px-2 ml-3 w-full max-w-xs" placeholder="Your message here..." type="text" name="message"></textarea> 
+                <textarea className="textarea textarea-ghost textarea-bordered textarea-primary px-2 ml-3 w-full max-w-xs" placeholder="Your message here..." type="text" name="message" required></textarea> 
             </fieldset>
 
             <div className='flex justify-end'>

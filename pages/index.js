@@ -98,16 +98,16 @@ export default function Home() {
 
         </div>
         </div>
-        <div className="gap-10 flex justify-center w-100 h-36 bg-secondary my-4">
-          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32 my-2">
+        <div className="gap-10 flex justify-center items-center w-100 h-40 bg-secondary my-4">
+          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
             <BiCodeAlt className="w-full text-center font-bold text-6xl" />
             <p className="text-center border-t border-success"><b>Code &nbsp; Craftsman</b></p>
           </div>
-          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32 my-2">
+          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
             <GiTechnoHeart className="w-full text-center font-bold text-6xl" />
             <p className="text-center border-t border-success"><b>Bridging Technology</b></p>
           </div>
-          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32 my-2">
+          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
             <IoMdConstruct className="w-full text-center font-bold text-6xl" />
             <p className="text-center border-t border-success"><b>Building the Future</b></p>
           </div>
