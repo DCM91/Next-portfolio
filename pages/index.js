@@ -13,6 +13,10 @@ import { useEffect } from "react";
 import { CgColorBucket } from "react-icons/cg";
 import { MdLanguage } from 'react-icons/md'
 import { TypeAnimation } from "react-type-animation";
+import { BiCodeAlt } from "react-icons/bi";
+import { GiTechnoHeart } from "react-icons/gi";
+import { IoMdConstruct } from "react-icons/io";
+
 
 
 
@@ -80,12 +84,12 @@ export default function Home() {
             </div>
 
           <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
-          {/* <Image src={"/assets/devIAPortfolio.jpg"} width={250} height={250} alt="kakaka" /> */}
+          
           </div>
 
 
           <div className="flex-2 border-solid border-l-8 border-primary-focus w-1/4 mb-8 ml-4">
-            <ul className="grid pt-1 ml-4 text-info w-full h-full ">
+            <ul className="grid pt-1 ml-4 text-info w-full h-full font-semibold ">
               <li className="text-lg w-full p-2 flex items-center  transition-transform duration-800 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
               <li className="text-lg w-full p-2 flex items-center transition-transform duration-800 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
               <li className="text-lg w-full p-2 flex items-center transition-transform duration-800 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/works"}>{t.navbar.works}</Link></li>
@@ -94,7 +98,20 @@ export default function Home() {
 
         </div>
         </div>
-        <div className=" h-36 bg-secondary"></div>
+        <div className="gap-10 flex justify-center w-100 h-36 bg-secondary">
+          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32 my-2">
+            <BiCodeAlt className="w-full text-center font-bold text-6xl" />
+            <p className="text-center border-t border-success"><b>Code &nbsp; Craftsman</b></p>
+          </div>
+          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32 my-2">
+            <GiTechnoHeart className="w-full text-center font-bold text-6xl" />
+            <p className="text-center border-t border-success"><b>Bridging Technology</b></p>
+          </div>
+          <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32 my-2">
+            <IoMdConstruct className="w-full text-center font-bold text-6xl" />
+            <p className="text-center border-t border-success"><b>Building the Future</b></p>
+          </div>
+        </div>
         <div className="pt-5">
           <Footer  />
         </div>

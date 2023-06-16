@@ -9,10 +9,10 @@ import { MdDevicesOther } from "react-icons/md";
 export default function Skills() {
   return (
     <Layout title="Dcm91Portfolio - Skills">
-      <div className="grid px-10 py-4 my-4 gap-4">
+      <div className="grid px-10 py-4 my-4 gap-4 font-bold">
 
-        <div className="p-2 border-t-4 border-solid border-l-8 border-warning-focus">
-          <h2 className="px-10 text-2xl text-warning-focus "><b><ins>WEB DEVELOPMENT</ins></b></h2>
+        <div className="p-2 border-t-4 border-solid border-l-8 border-success">
+          <h2 className="px-10 text-2xl text-success "><b><ins>WEB DEVELOPMENT</ins></b></h2>
           <div className="mt-2 p-3 px-8 flex justify-between gap-6 text-2xl text-default flex-wrap text-center">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 

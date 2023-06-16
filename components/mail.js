@@ -25,16 +25,16 @@ export const Mail = () => {
     <div>
         <form ref={refForm} action="" onSubmit={handleSubmit} className='border-4 border-primary m-4 grid py-4 px-6 w-full rounded-lg' >
 
-            <fieldset className='flex w-full p-1 py-2 justify-between ' >
-                <label className='w-15 p-1 text-success'  htmlFor="">Name:</label>
+            <fieldset className='flex w-full p-1 py-2 justify-between items-center ' >
+                <label className='w-15 p-1 text-success'  htmlFor=""><b>Name:</b></label>
                 <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp"  type="text" name="from_name" />
             </fieldset>
-            <fieldset className='flex w-full p-1 py-2 justify-between' >
-                <label className='w-15 p-1 text-success'  htmlFor="">Email:</label>
+            <fieldset className='flex w-full p-1 py-2 justify-between items-center' >
+                <label className='w-15 p-1 text-success'  htmlFor=""><b>Email:</b></label>
                 <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp@mail.com"  type="text" name="email_id" />
             </fieldset>
-            <fieldset className='flex w-full p-1 py-2  justify-between' >
-                <label className='w-15 p-1 text-success'  htmlFor="">Message:</label>
+            <fieldset className='flex w-full p-1 py-2  justify-between items-center' >
+                <label className='w-15 p-1 text-success'  htmlFor=""><b>Message:</b></label>
                 <textarea className="textarea textarea-ghost textarea-bordered textarea-primary px-2 ml-3 w-full max-w-xs" placeholder="Your message here..." type="text" name="message"></textarea> 
             </fieldset>
 
