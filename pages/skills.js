@@ -1,7 +1,9 @@
 import { Layout } from "@/components/Layout"
 import { DiReact, DiTrello, DiGit, DiScrum, DiVisualstudio } from "react-icons/di";
-import { IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud, IoLogoNodejs } from "react-icons/io";
+import { IoLogoAndroid, IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud, IoLogoNodejs } from "react-icons/io";
 import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss3, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
+import { MdDevicesOther } from "react-icons/md";
 
 
 export default function Skills() {
@@ -11,7 +13,7 @@ export default function Skills() {
 
         <div className="p-2 border-t-4 border-solid border-l-8 border-warning-focus">
           <h2 className="px-10 text-2xl text-warning-focus "><b><ins>WEB DEVELOPMENT</ins></b></h2>
-          <div className="mt-2 p-3 flex gap-6 text-2xl text-default flex-wrap text-center">
+          <div className="mt-2 p-3 px-8 flex justify-between gap-6 text-2xl text-default flex-wrap text-center">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -73,7 +75,7 @@ export default function Skills() {
 
         <div className="p-2 border-t-4 border-solid border-r-8 border-accent">
           <h2 className="px-10 text-2xl text-right text-accent"><b><ins>FRONT-END DEVELOPMENT</ins></b></h2>
-          <div className=" mt-2 p-3 flex gap-6 text-2xl text-default flex-wrap text-center justify-end">
+          <div className=" mt-2 p-3 px-8 flex justify-between gap-6 text-2xl text-default flex-wrap text-center ">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -86,10 +88,19 @@ export default function Skills() {
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
               <div className="flex justify-center"> 
+                <MdDevicesOther/>
+              </div>
+              <div>
+                <p>Responsive</p>
+              </div>
+            </div>
+
+            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
+              <div className="flex justify-center"> 
                 <IoLogoHtml5/>
               </div>
               <div>
-                <p>HTML</p>
+                <p>HTML5</p>
               </div>
             </div>
             
@@ -119,13 +130,23 @@ export default function Skills() {
                 <p>CSS</p>
               </div>
             </div>
+            
+
+            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
+              <div className="flex justify-center"> 
+                <TbBrandReactNative/>
+              </div>
+              <div>
+                <p>React Native</p>
+              </div>
+            </div>
 
           </div>
         </div>
 
         <div className="p-2 border-t-4 border-solid border-l-8 border-primary-focus">
           <h2 className="px-10 text-2xl text-primary-focus "><b><ins>BACK-END DEVELOPMENT</ins></b></h2>
-          <div className=" mt-2 p-3 flex gap-6 text-2xl text-default flex-wrap text-center">
+          <div className=" mt-2 p-3 px-8 flex justify-between gap-6 text-2xl text-default flex-wrap text-center">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -178,7 +199,7 @@ export default function Skills() {
 
         <div className=" mb-3 p-2 border-t-4 border-solid border-r-8 border-info">
           <h2 className="px-10 text-2xl text-right text-info"><b><ins>TOOLS</ins></b></h2>
-          <div className=" mt-2 p-3 flex gap-6 text-2xl text-default flex-wrap text-center justify-end">
+          <div className=" mt-2 p-3 px-8 flex justify-between gap-6 text-2xl text-default flex-wrap text-center ">
 
             <div className="grid justify-center transition-transform duration-350 transform hover:scale-125"> 
               <div className="flex justify-center "> 
@@ -204,6 +225,15 @@ export default function Skills() {
               </div>
               <div>
                 <p>Visual studio</p>
+              </div>
+            </div>
+
+            <div className="grid justify-center transition-transform duration-350 transform hover:scale-125">
+              <div className="flex justify-center"> 
+                <IoLogoAndroid/>
+              </div>
+              <div>
+                <p>Android Studio</p>
               </div>
             </div>
 

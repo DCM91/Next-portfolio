@@ -19,4 +19,9 @@ export default{
       basetext2:"Pero decidí cambiar mi trayectoria profesional cuando conocí el sector desarrollo de software Full Stack. Actualmente, llevo dos años en este campo y me encanta descubrir nuevas tecnologías y herramientas.",
       basetext3:"En mi tiempo libre, disfruto de pasatiempos como la NBA, Calistenia, los videojuegos y pasar tiempo con mis gatos. En mi portafolio, encontrarás una variedad de proyectos que he desarrollado y estoy seguro de que puedo aportar valor a cualquier equipo con el que tenga la oportunidad de trabajar."
     },
+    contact:{
+      contact1: "Contáctame",
+      contact2:"¿Listo para dar vida a tus ideas?",
+      contact3:"Envia un mensaje y empezemos a trabajar juntos!"
+    },
 }
