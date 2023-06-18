@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import en from "@/languages/en"
 import es from "@/languages/es"
+import cat from "@/languages/cat"
 import { MdLanguage } from 'react-icons/md'
 
 
@@ -8,11 +9,21 @@ import { MdLanguage } from 'react-icons/md'
 export const Selector = () => {
     const router = useRouter()
     let t
-    if (router.locale === 'en') {
-      t = en
-    } else if (router.locale === 'es') {
-      t = es
-    }     
+
+    switch (router.locale) {
+      case 'en':
+        t = en
+        break
+      case 'es':
+        t = es
+        break
+      case 'cat':
+        t = cat // Añade la traducción al catalán (cat) en la variable cat correspondiente
+        break
+      default:
+        t = en // Establece un idioma predeterminado en caso de que no se encuentre una traducción específica
+        break
+    }
     const changeLanguage = (e) => {
       router.push(router.pathname, router.pathname, { locale: e.target.value })
 
@@ -22,6 +33,8 @@ export const Selector = () => {
           <option disabled selected>Languages Selector</option>
           <option className="text-primary" value="en">English</option>
           <option className="text-primary" value="es">Español</option>
+          <option className="text-primary" value="cat">Català</option>
+
         </select>
       )
     }

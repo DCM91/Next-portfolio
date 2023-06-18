@@ -1,7 +1,7 @@
 export default{
     home: {
         title: "Bienvenido a mi portfolio!",
-        description:"Programador junior especializdo en",
+        description:"Programador junior especializado en...",
     },
 
     footer:{

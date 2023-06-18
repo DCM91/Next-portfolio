@@ -2,17 +2,27 @@ import React from 'react'
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import en from "@/languages/en"
 import es from "@/languages/es"
+import cat from "@/languages/cat"
 import { useRouter } from 'next/router';
 
 
 export const Footer = ({theme}) => {
   const router = useRouter()
     let t
-    if (router.locale === 'en') {
-      t = en
-    } else if (router.locale === 'es') {
-      t = es
-    } 
+    switch (router.locale) {
+      case 'en':
+        t = en
+        break
+      case 'es':
+        t = es
+        break
+      case 'cat':
+        t = cat // Añade la traducción al catalán (cat) en la variable cat correspondiente
+        break
+      default:
+        t = en // Establece un idioma predeterminado en caso de que no se encuentre una traducción específica
+        break
+    }
   return (
     <div data-theme={theme}>
         <footer  className="footer w-100 p-4 bg-neutral text-neutral-content" >
