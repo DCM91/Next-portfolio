@@ -22,6 +22,6 @@ export default{
     contact:{
       contact1: "Contáctame",
       contact2:"¿Listo para dar vida a tus ideas?",
-      contact3:"Envia un mensaje y empezemos a trabajar juntos!"
+      contact3:"Envia un mensaje y empecemos a trabajar juntos!"
     },
 }
