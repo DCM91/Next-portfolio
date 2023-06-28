@@ -6,7 +6,7 @@ export default function Works() {
     <Layout title="Dcm91Portfolio - Works">
       <div className="flex flex-wrap justify-center h-fit px-10 py-10 gap-3">
         
-        <div className="grid border-solid border-2 border-success m-1 p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110">
+        <div className="grid border-solid border-2 border-success m-1 p-4 max-w-xs transition duration-300 ease-in-out hover:scale-110" >
           <Image src={"/projects/payf.png"} width={300} height={300} alt="kakaka" />
           <div className="flex justify-center pt-4"><p>Payf</p></div>
         </div> 
