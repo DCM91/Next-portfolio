@@ -4,76 +4,77 @@ import { BiStar } from "react-icons/bi";
 import { useState } from "react";
 
 export default function Works() {
-  const [classNamePayf, setclassNamePayf] = useState("grid  m-1 p-1");
+  const [classNamePayf, setclassNamePayf] = useState("grid  m-1 p-2");
   const [showDescPayf, setshowDescPayf] = useState(false);
-  const [classNameSkuadlack, setclassNameSkuadlack] = useState("grid  m-1 p-1");
+  const [classNameSkuadlack, setclassNameSkuadlack] = useState("grid  m-1 p-2");
   const [showDescSkuadlack, setshowDescSkuadlack] = useState(false);
-  const [classNameTypedCinema, setclassNameTypedCinema] =
-    useState("grid  m-1 p-1");
+  const [classNameTypedCinema, setclassNameTypedCinema] =useState("grid  m-1 p-2");
   const [showDescTypedCinema, setshowDescTypedCinema] = useState(false);
-  const [classNamePortfolio, setclassNamePortfolio] = useState("grid  m-1 p-1");
+  const [classNamePortfolio, setclassNamePortfolio] = useState("grid  m-1 p-2");
   const [showDescPortfolio, setshowDescPortfolio] = useState(false);
-  const [classNameI18N, setclassNameI18N] = useState("grid  m-1 p-1");
+  const [classNameI18N, setclassNameI18N] = useState("grid  m-1 p-2");
   const [showDescI18N, setshowDescI18N] = useState(false);
-  const [classNameBlockbuster, setclassNameBlockbuster] =
-    useState("grid  m-1 p-1");
+  const [classNameBlockbuster, setclassNameBlockbuster] =useState("grid  m-1 p-2");
   const [showDescBlockbuster, setshowDescBlockbuster] = useState(false);
-  const [classNamePokedex, setclassNamePokedex] = useState("grid  m-1 p-1");
+  const [classNamePokedex, setclassNamePokedex] = useState("grid  m-1 p-2");
   const [showDescPokedex, setshowDescPokedex] = useState(false);
+
+  const cardStyles = "bg-blue-500 hover:bg-blue-700 text-white shadow-lg rounded-lg transition-colors duration-500";
+  const newStyle = 'grid  m-1 p-2 transition-all duration-3000s ease-in-out'
 
   const handlePayf = () => {
     setclassNamePayf((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescPayf(!showDescPayf);
   };
   const handleSkuadlack = () => {
     setclassNameSkuadlack((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescSkuadlack(!showDescSkuadlack);
   };
   const handleTypedCinema = () => {
     setclassNameTypedCinema((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescTypedCinema(!showDescTypedCinema);
   };
   const handlePortfolio = () => {
     setclassNamePortfolio((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescPortfolio(!showDescPortfolio);
   };
   const handleI18N = () => {
     setclassNameI18N((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescI18N(!showDescI18N);
   };
   const handleBlockbuster = () => {
     setclassNameBlockbuster((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescBlockbuster(!showDescBlockbuster);
   };
   const handlePokedex = () => {
     setclassNamePokedex((prevClassName) =>
-      prevClassName === "grid  m-1 p-1"
-        ? "newClassName transition-all duration-3000s ease-in-out"
-        : "grid  m-1 p-1"
+      prevClassName === "grid  m-1 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-1 p-2"
     );
     setshowDescPokedex(!showDescPokedex);
   };
@@ -81,7 +82,8 @@ export default function Works() {
   return (
     <Layout title="Dcm91Portfolio - Works">
       <div className="flex flex-wrap justify-center h-fit px-10 py-10 gap-3">
-        <div onClick={handlePayf} className={classNamePayf}>
+        
+        <div onClick={handlePayf} className={`${classNamePayf} ${cardStyles}`}>
           <Image
             src={"/projects/payf.png"}
             width={300}
@@ -98,7 +100,7 @@ export default function Works() {
           )}
         </div>
 
-        <div onClick={handleSkuadlack} className={classNameSkuadlack}>
+        <div onClick={handleSkuadlack} className={`${classNameSkuadlack} ${cardStyles}`}>
           <Image
             src={"/projects/skuadlack.png"}
             width={300}
@@ -115,7 +117,7 @@ export default function Works() {
           )}
         </div>
 
-        <div onClick={handleTypedCinema} className={classNameTypedCinema}>
+        <div onClick={handleTypedCinema} className={`${classNameTypedCinema} ${cardStyles}` }>
           <Image
             src={"/projects/typed.png"}
             width={300}
@@ -130,7 +132,7 @@ export default function Works() {
           )}
         </div>
 
-        <div onClick={handlePortfolio} className={classNamePortfolio}>
+        <div onClick={handlePortfolio} className={`${classNamePortfolio} ${cardStyles}`}>
           <Image
             src={"/projects/portfolio.png"}
             width={300}
@@ -145,7 +147,7 @@ export default function Works() {
           )}
         </div>
 
-        <div onClick={handleI18N} className={classNameI18N}>
+        <div onClick={handleI18N} className={`${classNameI18N} ${cardStyles}`}>
           <Image
             src={"/projects/internacionalizacion.png"}
             width={300}
@@ -161,7 +163,7 @@ export default function Works() {
           )}
         </div>
 
-        <div onClick={handleBlockbuster} className={classNameBlockbuster}>
+        <div onClick={handleBlockbuster} className={`${classNameBlockbuster} ${cardStyles}`}>
           <Image
             src={"/projects/blockbuster.png"}
             width={300}
@@ -177,7 +179,7 @@ export default function Works() {
           )}
         </div>
 
-        <div onClick={handlePokedex} className={classNamePokedex}>
+        <div onClick={handlePokedex} className={`${classNamePokedex} ${cardStyles}`}>
           <Image
             src={"/projects/pokedex.png"}
             width={300}
