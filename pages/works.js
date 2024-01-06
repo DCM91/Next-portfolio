@@ -19,8 +19,8 @@ export default function Works() {
   const [classNamePokedex, setclassNamePokedex] = useState("grid  m-1 p-2");
   const [showDescPokedex, setshowDescPokedex] = useState(false);
 
-  const cardStyles = "bg-blue-500 hover:bg-blue-700 text-white shadow-lg rounded-lg transition-colors duration-500";
-  const newStyle = 'grid  m-1 p-2 transition-all duration-3000s ease-in-out'
+  const cardStyles = "bg-secondary hover:bg-secondary text-white shadow-lg rounded-lg transition-colors duration-500";
+  const newStyle = 'grid place-items-center  m-1 p-2 transition-all duration-3000s ease-in-out'
 
   const handlePayf = () => {
     setclassNamePayf((prevClassName) =>
@@ -82,8 +82,25 @@ export default function Works() {
   return (
     <Layout title="Dcm91Portfolio - Works">
       <div className="flex flex-wrap justify-center h-fit px-10 py-10 gap-3">
-        
+      <div className="w-full bg-primary h-14"></div>
         <div onClick={handlePayf} className={`${classNamePayf} ${cardStyles}`}>
+            <Image
+              src={"/projects/payf.png"}
+              width={300}
+              height={300}
+              alt="kakaka"
+            />
+            <div className="flex justify-center pt-4">
+              <p>SinIgual</p>
+            </div>
+            {showDescPayf && (
+              <p className="text-center">
+                SinIgual es una aplicacion de pagos biometricos que fue fundada
+              </p>
+            )}
+          </div>
+
+          <div onClick={handlePayf} className={`${classNamePayf} ${cardStyles}`}>
           <Image
             src={"/projects/payf.png"}
             width={300}
@@ -99,6 +116,7 @@ export default function Works() {
             </p>
           )}
         </div>
+      <div className="w-full bg-accent h-14"></div>
 
         <div onClick={handleSkuadlack} className={`${classNameSkuadlack} ${cardStyles}`}>
           <Image
