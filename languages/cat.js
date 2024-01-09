@@ -1,7 +1,7 @@
 export default{
     home: {
         title: "Benvingut al meu portfoli!",
-        description:"Programador junior especialitzat en...",
+        description:"Programador especialitzat en...",
     },
 
     footer:{
