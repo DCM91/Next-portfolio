@@ -82,7 +82,7 @@ export default function Works() {
   return (
     <Layout title="Dcm91Portfolio - Works">
       <div className="flex flex-wrap justify-center h-fit px-10 py-10 gap-3">
-      <div className="w-full bg-primary h-14"></div>
+      <div className="w-full bg-primary h-14 text-center text-black font-bold text-4xl">Experience</div>
         <div onClick={handlePayf} className={`${classNamePayf} ${cardStyles}`}>
             <Image
               src={"/projects/payf.png"}
@@ -116,7 +116,7 @@ export default function Works() {
             </p>
           )}
         </div>
-      <div className="w-full bg-accent h-14"></div>
+      <div className="w-full bg-accent h-14 text-center text-black font-bold text-4xl">Projects</div>
 
         <div onClick={handleSkuadlack} className={`${classNameSkuadlack} ${cardStyles}`}>
           <Image
