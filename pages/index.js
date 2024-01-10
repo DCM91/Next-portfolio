@@ -93,8 +93,11 @@ export default function Home() {
 
             </div>
 
-          <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
-          
+            <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
+            <div>
+              <p>Daniel Castro Martin</p>
+              <p>castromartindaniel91@gmail.com</p>
+            </div>
           </div>
 
 
