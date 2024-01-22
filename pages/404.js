@@ -15,12 +15,11 @@ import {themeChange} from "theme-change"
 export default function Custom404() {
  return (
     <Layout title="Dcm91Portfolio - Not Found">
-
-        <div className="grid py-10 px-10 ">
-            <h1 className="">Página no encontrada</h1>
-            <p>Lo sentimos, pero la página que estás buscando no existe.</p>
-            <Link href={"/"}>
-                <p>Volver a la página principal</p>
+        <div className="grid py-10 place-items-center h-full">
+            <h1 className="py-10">Página no encontrada</h1>
+            <p className="py-10">Lo sentimos, pero la página que estás buscando no existe.</p>
+            <Link href={"/"} className="py-10">
+                <p className="text-blue-600">Volver a la página principal</p>
             </Link>
         </div>
     </Layout>
