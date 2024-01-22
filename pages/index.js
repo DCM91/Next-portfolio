@@ -94,7 +94,7 @@ export default function Home() {
             </div>
 
             <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
-            <div>
+            <div className="m-2 p-2">
               <p>Daniel Castro Martin</p>
               <p>castromartindaniel91@gmail.com</p>
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
 
         </div>
         </div>
-        <div className="gap-10 flex justify-center items-center w-100 h-40 bg-secondary my-4">
+        <div className="gap-10 flex justify-center items-center w-100 h-40 bg-secondary my-4 mt-10">
           <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
             <BiCodeAlt className="w-full text-center font-bold text-6xl" />
             <p className="text-center border-t border-success"><b>Code &nbsp; Craftsman</b></p>
