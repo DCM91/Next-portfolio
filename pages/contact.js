@@ -27,7 +27,7 @@ export default function Contact() {
   return (
     <Layout title="Dcm91Portfolio - Contact">
 
-      <div className="flex flex-wrap px-10 my-8 w-full justify-center">
+      <div className="flex flex-wrap px-10 my-12 gap-6 w-full justify-center">
 
         <div className=" grid justify-between pl-14 border-l-4  py-2 rounded-sm">
 

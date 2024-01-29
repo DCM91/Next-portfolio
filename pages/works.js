@@ -4,96 +4,107 @@ import { BiStar } from "react-icons/bi";
 import { useState } from "react";
 
 export default function Works() {
-  const [classNamePayf, setclassNamePayf] = useState("grid  m-1 p-2");
+  const [classNameSinIgual, setclassNameSinIgual] = useState("grid  m-2 p-2");
+  const [showDescSinIgual, setshowDescSinIgual] = useState(false);
+  const [classNamePayf, setclassNamePayf] = useState("grid  m-2 p-2");
   const [showDescPayf, setshowDescPayf] = useState(false);
-  const [classNameSkuadlack, setclassNameSkuadlack] = useState("grid  m-1 p-2");
+  const [classNameSkuadlack, setclassNameSkuadlack] = useState("grid  m-2 p-2");
   const [showDescSkuadlack, setshowDescSkuadlack] = useState(false);
-  const [classNameTypedCinema, setclassNameTypedCinema] =useState("grid  m-1 p-2");
+  const [classNameTypedCinema, setclassNameTypedCinema] =useState("grid  m-2 p-2");
   const [showDescTypedCinema, setshowDescTypedCinema] = useState(false);
-  const [classNamePortfolio, setclassNamePortfolio] = useState("grid  m-1 p-2");
+  const [classNamePortfolio, setclassNamePortfolio] = useState("grid  m-2 p-2");
   const [showDescPortfolio, setshowDescPortfolio] = useState(false);
-  const [classNameI18N, setclassNameI18N] = useState("grid  m-1 p-2");
+  const [classNameI18N, setclassNameI18N] = useState("grid  m-2 p-2");
   const [showDescI18N, setshowDescI18N] = useState(false);
-  const [classNameBlockbuster, setclassNameBlockbuster] =useState("grid  m-1 p-2");
+  const [classNameBlockbuster, setclassNameBlockbuster] =useState("grid  m-2 p-2");
   const [showDescBlockbuster, setshowDescBlockbuster] = useState(false);
-  const [classNamePokedex, setclassNamePokedex] = useState("grid  m-1 p-2");
+  const [classNamePokedex, setclassNamePokedex] = useState("grid  m-2 p-2");
   const [showDescPokedex, setshowDescPokedex] = useState(false);
 
   const cardStyles = "bg-secondary hover:bg-secondary text-white shadow-lg rounded-lg transition-colors duration-500";
-  const newStyle = 'grid place-items-center  m-1 p-2 transition-all duration-3000s ease-in-out'
+  const newStyle = 'grid place-items-center  m-2 p-2 transition-all duration-3000s ease-in-out'
+
+  const handleSinIgual = () => {
+    setclassNameSinIgual((prevClassName) =>
+      prevClassName === "grid  m-2 p-2"
+        ? `newClassName ${newStyle}`
+        : "grid  m-2 p-2"
+    );
+    setshowDescSinIgual(!showDescSinIgual);
+  };
 
   const handlePayf = () => {
     setclassNamePayf((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescPayf(!showDescPayf);
   };
   const handleSkuadlack = () => {
     setclassNameSkuadlack((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescSkuadlack(!showDescSkuadlack);
   };
   const handleTypedCinema = () => {
     setclassNameTypedCinema((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescTypedCinema(!showDescTypedCinema);
   };
   const handlePortfolio = () => {
     setclassNamePortfolio((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescPortfolio(!showDescPortfolio);
   };
   const handleI18N = () => {
     setclassNameI18N((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescI18N(!showDescI18N);
   };
   const handleBlockbuster = () => {
     setclassNameBlockbuster((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescBlockbuster(!showDescBlockbuster);
   };
   const handlePokedex = () => {
     setclassNamePokedex((prevClassName) =>
-      prevClassName === "grid  m-1 p-2"
+      prevClassName === "grid  m-2 p-2"
         ? `newClassName ${newStyle}`
-        : "grid  m-1 p-2"
+        : "grid  m-2 p-2"
     );
     setshowDescPokedex(!showDescPokedex);
   };
 
   return (
     <Layout title="Dcm91Portfolio - Works">
-      <div className="flex flex-wrap justify-center h-fit px-10 py-10 gap-3">
+      <div className="flex flex-wrap justify-center h-fit px-12 py-10 gap-4">
       <div className="w-full bg-primary h-14 text-center text-black font-bold text-4xl">Experience</div>
-        <div onClick={handlePayf} className={`${classNamePayf} ${cardStyles}`}>
+        <div onClick={handleSinIgual} className={`${classNameSinIgual} ${cardStyles}`}>
             <Image
-              src={"/projects/payf.png"}
+              src={"/projects/sinigual.png"}
               width={300}
               height={300}
-              alt="kakaka"
+              alt="loadingError"
             />
             <div className="flex justify-center pt-4">
               <p>SinIgual</p>
             </div>
-            {showDescPayf && (
+            {showDescSinIgual && (
               <p className="text-center">
                 SinIgual es una aplicacion de pagos biometricos que fue fundada
               </p>
@@ -105,7 +116,7 @@ export default function Works() {
             src={"/projects/payf.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-4">
             <p>Payf</p>
@@ -123,7 +134,7 @@ export default function Works() {
             src={"/projects/skuadlack.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-4">
             <p>Skuadlack</p>
@@ -140,7 +151,7 @@ export default function Works() {
             src={"/projects/typed.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-4">
             <p>TypedCiema</p>
@@ -155,7 +166,7 @@ export default function Works() {
             src={"/projects/portfolio.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-4">
             <p>My first Portfolio</p>
@@ -170,7 +181,7 @@ export default function Works() {
             src={"/projects/internacionalizacion.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-5">
             <p>I18N internationalization</p>
@@ -186,7 +197,7 @@ export default function Works() {
             src={"/projects/blockbuster.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-4">
             <p>Blockbuster</p>
@@ -202,7 +213,7 @@ export default function Works() {
             src={"/projects/pokedex.png"}
             width={300}
             height={300}
-            alt="kakaka"
+            alt="loadingError"
           />
           <div className="flex justify-center pt-4">
             <p>Pokédex</p>
