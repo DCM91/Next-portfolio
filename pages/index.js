@@ -138,6 +138,25 @@ export default function Home() {
               </Link>
             </li>
           </ul>
+          </div>
+            <div>
+              <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
+              <div className="m-2 p-2">
+                <p>Daniel Castro Martin</p>
+                <p>castromartindaniel91@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div className="m-5"></div>        
+
+          <div className="border-solid border-l-8 border-primary-focus w-1/4 mb-8 ml-4">
+            <ul className="grid pt-1 ml-4 text-info w-full h-full font-bold ">
+              <li className="text-lg w-full p-2 flex items-center  transition-transform duration-1000 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
+              <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
+              <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/works"}>{t.navbar.works}</Link></li>
+              <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/contact"}>{t.navbar.contact}</Link></li>
+            </ul>  
+
         </div>
       </div>
       <div className="gap-10 flex justify-center items-center w-100 h-40 bg-secondary my-10">
