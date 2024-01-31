@@ -106,7 +106,7 @@ export default function Works() {
             </div>
             {showDescSinIgual && (
               <p className="text-center">
-                SinIgual es una aplicacion de pagos biometricos que fue fundada
+                SinIgual es un servicio especializado en Software de gestión para talleres y concesionarios.
               </p>
             )}
           </div>
@@ -123,7 +123,7 @@ export default function Works() {
           </div>
           {showDescPayf && (
             <p className="text-center">
-              Payf es una aplicacion de pagos biometricos que fue fundada
+              Payf es una aplicacion de transeferencia de pagos mediante sistemas biometricos.
             </p>
           )}
         </div>
@@ -141,7 +141,7 @@ export default function Works() {
           </div>
           {showDescSkuadlack && (
             <p className="text-center">
-              Skuadlack es una aplicacion entregada como TFM
+              Skuadlack es una aplicacion entregada como TFM, se trata de un clon de Slack totalmente funcional.
             </p>
           )}
         </div>
@@ -157,7 +157,7 @@ export default function Works() {
             <p>TypedCiema</p>
           </div>
           {showDescTypedCinema && (
-            <p className="text-center">TypedCinema es un por de mi trabajo</p>
+            <p className="text-center">TypedCinema es una migracion de mi proyecto BlockBuster a TypeScript y mis primeras pruebas con TailwindCSS</p>
           )}
         </div>
 
@@ -172,7 +172,7 @@ export default function Works() {
             <p>My first Portfolio</p>
           </div>
           {showDescPortfolio && (
-            <p className="text-center">Portfolio es un por de mi trabajo</p>
+            <p className="text-center">Este es mi primer portfolio, en él utilicé diversos frameworks de diseño ademas de servicio de recepción de emails</p>
           )}
         </div>
 
@@ -188,7 +188,7 @@ export default function Works() {
           </div>
 
           {showDescI18N && (
-            <p className="text-center">I18N es un por de mi trabajo</p>
+            <p className="text-center">I18N es un proyecto que consiste en una plantilla con diversas funcionalidades para proyectos futuros, tales como el cambio entre diferentes idiomas y estilos de diseño.</p>
           )}
         </div>
 
@@ -204,7 +204,7 @@ export default function Works() {
           </div>
 
           {showDescBlockbuster && (
-            <p className="text-center">Blockbuster es un por de mi trabajo</p>
+            <p className="text-center">Blockbuster es mi primer proyecto Full Stack; es una biblioteca de películas donde puedes guardar películas o series con descripción y año de lanzamiento.</p>
           )}
         </div>
 
@@ -220,7 +220,7 @@ export default function Works() {
           </div>
 
           {showDescPokedex && (
-            <p className="text-center">Pokedex es un por de mi trabajo</p>
+            <p className="text-center">Pokedex es mi primer proyecto puramente de Front-End que realiza solicitudes a una API (pokeAPI), mostrando mis primeros pasos con un sistema CRUD.</p>
           )}
         </div>
       </div>
