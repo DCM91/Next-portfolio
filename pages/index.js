@@ -50,33 +50,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-full m-2 mx-0 mb-0 pt-4 justify-items-center">
-        <h1 className="text-4xl stat-title m-3 pl-8 flex">
-          {t.home.title} &nbsp; <MdWavingHand />
-        </h1>
-        <p className="text-lg w-full my-2 text-center">
-          {t.home.description} &nbsp;
-          <TypeAnimation
-            sequence={[
-              "Web Development",
-              3000,
-              "Frontend Development",
-              3000,
-              "Backend Development",
-              3000,
-            ]}
-            speed={30} // Custom Speed from 1-99 - Default Speed: 40
-            style={{ fontSize: "1em", color: "#ff760d" }}
-            wrapper="span" // Animation will be rendered as a <span>
-            repeat={Infinity} // Repeat this Animation Sequence infinitely
-          />
-          .
-        </p>
-      </div>
-      <div className="1/10" ></div>
-      <div className="flex flex-wrap w-5/8">
-        <div className=" flex-1 grid h-80  px-3 m-3">
-          <div className="m-1">
+      <div className="w-full m-2 mx-0 mb-0 justify-items-center">
+        <div>
+          <h1 className="text-4xl stat-title m-3 pl-8 flex">
+            {t.home.title} &nbsp; <MdWavingHand />
+          </h1>
+        </div>
+        <div>
+        <div className="m-1">
             <div className="inline-flex  items-center mb-3">
               <Selector />
               <MdLanguage />
@@ -102,17 +83,42 @@ export default function Home() {
               <CgColorBucket className="mx-1 text-lg" />
             </div>
           </div>
-            <div>
-              <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
-              <div className=" p-2 mb-2">
-                <p>Daniel Castro Martin</p>
-                <p>castromartindaniel91@gmail.com</p>
-              </div>
+        <div>
+          <p className="text-lg w-full my-2 text-center">
+            {t.home.description} &nbsp;
+            <TypeAnimation
+              sequence={[
+                "Web Development",
+                3000,
+                "Frontend Development",
+                3000,
+                "Backend Development",
+                3000,
+              ]}
+              speed={30} // Custom Speed from 1-99 - Default Speed: 40
+              style={{ fontSize: "1em", color: "#ff760d" }}
+              wrapper="span" // Animation will be rendered as a <span>
+              repeat={Infinity} // Repeat this Animation Sequence infinitely
+            />
+            .
+          </p>
+        </div>
+        </div>
+      </div>
+      <div className="1/10" ></div>
+      <div className="flex flex-wrap w-5/8">
+        <div className=" flex-1 grid h-80  px-3 m-3">
+          <div className="grid content-center place-items-center" >
+            <Image className="" src={"/assets/mefoto.jpg"} width={350} height={350} alt="kakaka" />
+            <div className="p-2 text-center">
+              <p>Daniel Castro Martin</p>
+              <p>castromartindaniel91@gmail.com</p>
             </div>
           </div>
+        </div>
           <div className="m-5"></div>        
 
-          <div className="border-solid border-l-8 border-primary-focus w-2/6 mt-5 mb-8 ml-4">
+          <div className="border-solid border-l-8 border-primary-focus w-2/6 mt-3 mb-8 ml-4">
             <ul className="grid pt-1 ml-4 text-info w-full h-full font-bold ">
               <li className="text-lg w-full p-2 flex items-center  transition-transform duration-1000 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
               <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
