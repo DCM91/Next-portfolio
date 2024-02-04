@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { Layout } from "../components/Layout";
 import en from "@/languages/en";
 import es from "@/languages/es";
 import cat from "@/languages/cat";
@@ -10,7 +9,7 @@ import { Footer } from "@/components/Footer";
 import Head from "next/head";
 import { Selector } from "@/components/selector";
 import { themeChange } from "theme-change";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CgColorBucket } from "react-icons/cg";
 import { MdLanguage } from "react-icons/md";
 import { TypeAnimation } from "react-type-animation";
@@ -36,6 +35,7 @@ export default function Home() {
       break;
   }
   const themeValues = ["Corporate", "Luxury", "Synthwave"];
+  const [selectedTheme, setSelectedTheme] = useState('Synthwave'); // Set initial theme
 
 
   useEffect(() => {
@@ -66,8 +66,10 @@ export default function Home() {
               <select
                 className="select text-primary w-32 h-8 p-1 m-3"
                 data-choose-theme
+                value={selectedTheme}
+                onChange={e => setSelectedTheme(e.target.value)} 
               >
-                <option disabled selected>
+              <option disabled value={""}>
                   Style Selector
                 </option>
                 {themeValues.map((value) => (
