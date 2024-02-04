@@ -74,7 +74,7 @@ export default function Home() {
         </p>
       </div>
       <div className="1/10" ></div>
-      <div className="flex flex-wrap w-6/10">
+      <div className="flex flex-wrap w-5/8">
         <div className=" flex-1 grid h-80  px-3 m-3">
           <div className="m-1">
             <div className="inline-flex  items-center mb-3">
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
             <div>
               <Image className="mr-1 " src={"/assets/mefoto.jpg"} width={300} height={300} alt="kakaka" />
-              <div className=" p-2">
+              <div className=" p-2 mb-2">
                 <p>Daniel Castro Martin</p>
                 <p>castromartindaniel91@gmail.com</p>
               </div>
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
           <div className="m-5"></div>        
 
-          <div className="border-solid border-l-8 border-primary-focus w-2/6 mb-8 ml-4">
+          <div className="border-solid border-l-8 border-primary-focus w-2/6 mt-5 mb-8 ml-4">
             <ul className="grid pt-1 ml-4 text-info w-full h-full font-bold ">
               <li className="text-lg w-full p-2 flex items-center  transition-transform duration-1000 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
               <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
