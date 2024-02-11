@@ -24,4 +24,7 @@ export default{
       contact2:"¿Listo para dar vida a tus ideas?",
       contact3:"Envia un mensaje y empecemos a trabajar juntos!"
     },
+    works:{
+      Sinigual: "SinIgual es un servicio especializado en Software de gestión para talleres y concesionarios.",
+    }
 }

@@ -24,4 +24,7 @@ export default{
       contact2:"Llest per donar vida a les teves idees?",
       contact3:"Envia un missatge i comencem a treballar junts!"
     },
+    works:{
+      Sinigual: "SinIgual és un servei especialitzat en programari de gestió per a tallers i concessionaris.",
+    },
 }

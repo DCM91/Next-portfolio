@@ -5,7 +5,10 @@ import { useState } from "react";
 import { FiLink } from "react-icons/fi";
 import { DiGithub } from "react-icons/di";
 import { BsGithub } from "react-icons/bs";
-
+import { useRouter } from "next/router"
+import en from "@/languages/en"
+import es from "@/languages/es"
+import cat from "@/languages/cat"
 
 export default function Works() {
   const [classNameSinIgual, setclassNameSinIgual] = useState("grid  m-2 p-2");
@@ -27,6 +30,24 @@ export default function Works() {
 
   const cardStyles = "bg-secondary hover:bg-secondary text-white shadow-lg rounded-lg transition-colors duration-500";
   const newStyle = 'grid place-items-center m-2 p-2 transition-all duration-3000s ease-in-out'
+
+  const router = useRouter()
+  let t
+
+  switch (router.locale) {
+    case 'en':
+      t = en
+      break
+    case 'es':
+      t = es
+      break
+    case 'cat':
+      t = cat // Añade la traducción al catalán (cat) en la variable cat correspondiente
+      break
+    default:
+      t = en // Establece un idioma predeterminado en caso de que no se encuentre una traducción específica
+      break
+  }
 
   const handleSinIgual = () => {
     setclassNameSinIgual((prevClassName) =>
@@ -111,7 +132,7 @@ export default function Works() {
             <div>
               {showDescSinIgual && (
                 <p className="text-center font-semibold font-mono text-warning-content">
-                  SinIgual es un servicio especializado en Software de gestión para talleres y concesionarios.
+                  {t.works.Sinigual}
                 </p>
               )}
             </div>

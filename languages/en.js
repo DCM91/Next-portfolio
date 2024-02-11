@@ -23,5 +23,8 @@ export default {
       contact2: "Ready to bring your projects to life?",
       contact3: "Send a message and let's start working together!"
       },
+      works:{
+        Sinigual: "SinIgual is a specialized service in management software for workshops and dealerships.",
+      }
   }
   
