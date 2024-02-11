@@ -26,5 +26,13 @@ export default{
     },
     works:{
       Sinigual: "SinIgual és un servei especialitzat en programari de gestió per a tallers i concessionaris.",
-    },
+      Payf: "Payf és una aplicació de transferència de pagaments mitjançant sistemes biomètrics.",
+      Skuadlack: "Skuadlack és una aplicació entregada com a TFM, es tracta d'un clon de Slack totalment funcional.",
+      TypedCinema: "TypedCinema és una migració del meu projecte BlockBuster a TypeScript i les meves primeres proves amb TailwindCSS.",
+      Portfolio: "Aquest és el meu primer portafoli, en el qual vaig utilitzar diversos frameworks de disseny a més d'un servei de recepció de correus electrònics.",
+      I18N: "I18N és un projecte que consisteix en una plantilla amb diverses funcionalitats per a projectes futurs, com el canvi entre diferents idiomes i estils de disseny.",
+      Blockbuster: "Blockbuster és el meu primer projecte Full Stack; és una biblioteca de pel·lícules on pots desar pel·lícules o sèries amb descripció i any de llançament.",
+      Pokedex: "Pokedex és el meu primer projecte purament de Front-End que realitza sol·licituds a una API (pokeAPI), mostrant els meus primers passos amb un sistema CRUD.",
+    }
+    
 }

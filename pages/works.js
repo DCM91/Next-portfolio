@@ -137,7 +137,7 @@ export default function Works() {
               )}
             </div>
             <div className="flex justify-center pt-4">
-              <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://www.sinigual.com">Website</a> <FiLink className="ml-2" /> </div>
+              <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://www.sinigual.com">Website</a> <FiLink className="ml-2" /> </div>
             </div>
           </div>
 
@@ -155,13 +155,13 @@ export default function Works() {
           <div>
             {showDescPayf && (
               <p className="text-center font-semibold font-mono text-warning-content" >
-                Payf es una aplicacion de transeferencia de pagos mediante sistemas biometricos.
+                {t.works.Payf}
               </p>
             )}
           </div>
 
           <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Website</a> <FiLink className="ml-2" /> </div>
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://payf.es">Website</a> <FiLink className="ml-2" /> </div>
           </div>
         </div>
       <div className="w-full bg-accent h-14 text-center text-black font-bold text-4xl font-serif"><p className="mt-1">Projects</p></div>
@@ -179,12 +179,12 @@ export default function Works() {
           <div>
           {showDescSkuadlack && (
             <p className="text-center font-semibold font-mono text-warning-content" >
-              Skuadlack es una aplicacion entregada como TFM, se trata de un clon de Slack totalmente funcional.
+              {t.works.Skuadlack}
             </p>
           )}
           </div>
           <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://github.com/nds-fsd/slack">Github</a> <BsGithub className="ml-2" /> </div>
           </div>
         </div>
 
@@ -199,10 +199,15 @@ export default function Works() {
             <p className="text-lg font-semibold font-serif">TypedCiema</p>
           </div>
           {showDescTypedCinema && (
-            <p className="text-center font-semibold font-mono text-warning-content" >TypedCinema es una migracion de mi proyecto BlockBuster a TypeScript y mis primeras pruebas con TailwindCSS</p>
+            <p className="text-center font-semibold font-mono text-warning-content" >
+              {t.works.TypedCinema}
+            </p>
           )}
           <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://github.com/DCM91/next.tsx-cinema">Github</a> <BsGithub className="ml-2" /> </div>
+          </div>
+          <div className="flex justify-center pt-4">
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://next-tsx-cinema.vercel.app">Website</a> <FiLink className="ml-2" /> </div>
           </div>
         </div>
 
@@ -217,10 +222,15 @@ export default function Works() {
             <p className="text-lg font-semibold font-serif">My first Portfolio</p>
           </div>
           {showDescPortfolio && (
-            <p className="text-center font-semibold font-mono text-warning-content" >Este es mi primer portfolio, en él utilicé diversos frameworks de diseño ademas de servicio de recepción de emails</p>
+            <p className="text-center font-semibold font-mono text-warning-content" >
+              {t.works.Portfolio}
+            </p>
           )}
-        <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+          <div className="flex justify-center pt-4">
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+          </div>
+          <div className="flex justify-center pt-4">
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://payf.es">Website</a> <FiLink className="ml-2" /> </div>
           </div>
         </div>
 
@@ -236,10 +246,12 @@ export default function Works() {
           </div>
 
           {showDescI18N && (
-            <p className="text-center font-semibold font-mono text-warning-content" >I18N es un proyecto que consiste en una plantilla con diversas funcionalidades para proyectos futuros, tales como el cambio entre diferentes idiomas y estilos de diseño.</p>
+            <p className="text-center font-semibold font-mono text-warning-content" >
+              {t.works.I18N}
+            </p>
           )}
           <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
           </div>
         </div>
 
@@ -255,10 +267,12 @@ export default function Works() {
           </div>
 
           {showDescBlockbuster && (
-            <p className="text-center font-semibold font-mono text-warning-content" >Blockbuster es mi primer proyecto Full Stack; es una biblioteca de películas donde puedes guardar películas o series con descripción y año de lanzamiento.</p>
+            <p className="text-center font-semibold font-mono text-warning-content" >
+              {t.works.Blockbuster}
+            </p>
           )}
           <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
           </div>
         </div>
 
@@ -274,10 +288,12 @@ export default function Works() {
           </div>
 
           {showDescPokedex && (
-            <p className="text-center font-semibold font-mono text-warning-content" >Pokedex es mi primer proyecto puramente de Front-End que realiza solicitudes a una API (pokeAPI), mostrando mis primeros pasos con un sistema CRUD.</p>
+            <p className="text-center font-semibold font-mono text-warning-content">
+              {t.works.Pokedex}
+            </p>
           )}
           <div className="flex justify-center pt-4">
-            <div className="badge badge-outline p-2 text-lg font-bold "><a href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
+            <div className="badge badge-outline p-2 text-lg font-bold "><a target="_blank" rel="noopener noreferrer" href="https://payf.es">Github</a> <BsGithub className="ml-2" /> </div>
           </div>
         </div>
       </div>

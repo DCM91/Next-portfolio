@@ -26,5 +26,12 @@ export default{
     },
     works:{
       Sinigual: "SinIgual es un servicio especializado en Software de gestión para talleres y concesionarios.",
+      Payf: "Payf es una aplicacion de transeferencia de pagos mediante sistemas biometricos.",
+      Skuadlack: "Skuadlack es una aplicacion entregada como TFM, se trata de un clon de Slack totalmente funcional.",
+      TypedCinema: "TypedCinema es una migracion de mi proyecto BlockBuster a TypeScript y mis primeras pruebas con TailwindCSS.",
+      Portfolio: "Este es mi primer portfolio, en él utilicé diversos frameworks de diseño ademas de servicio de recepción de emails.",
+      I18N: "I18N es un proyecto que consiste en una plantilla con diversas funcionalidades para proyectos futuros, tales como el cambio entre diferentes idiomas y estilos de diseño.",
+      Blockbuster: "Blockbuster es mi primer proyecto Full Stack; es una biblioteca de películas donde puedes guardar películas o series con descripción y año de lanzamiento.",
+      Pokedex: "Pokedex es mi primer proyecto puramente de Front-End que realiza solicitudes a una API (pokeAPI), mostrando mis primeros pasos con un sistema CRUD.",
     }
 }
