@@ -2,6 +2,9 @@ export default{
     home: {
         title: "Benvingut al meu portfoli!",
         description:"Programador especialitzat en...",
+        codeDesc: "Construint solucions web netes, mantenibles i eficients amb frameworks moderns i millors pràctiques.",
+        dataDesc: "Dissenyant arquitectures de dades escalables que connecten experiències frontend, serveis backend i sistemes de bases de dades.",
+        aiDesc: "Aprofitant LLMs, agents intel·ligents i automatització per construir aplicacions més intel·ligents.",
     },
 
     footer:{
@@ -25,6 +28,8 @@ export default{
       contact3:"Envia un missatge i comencem a treballar junts!"
     },
     works:{
+      experience: "Experiència",
+      projects: "Projectes",
       Sinigual: "SinIgual és un servei especialitzat en programari de gestió per a tallers i concessionaris.",
       Payf: "Payf és una aplicació de transferència de pagaments mitjançant sistemes biomètrics.",
       Skuadlack: "Skuadlack és una aplicació entregada com a TFM, es tracta d'un clon de Slack totalment funcional.",
@@ -32,7 +37,17 @@ export default{
       Portfolio: "Aquest és el meu primer portafoli, en el qual vaig utilitzar diversos frameworks de disseny a més d'un servei de recepció de correus electrònics.",
       I18N: "I18N és un projecte que consisteix en una plantilla amb diverses funcionalitats per a projectes futurs, com el canvi entre diferents idiomes i estils de disseny.",
       Blockbuster: "Blockbuster és el meu primer projecte Full Stack; és una biblioteca de pel·lícules on pots desar pel·lícules o sèries amb descripció i any de llançament.",
-      Pokedex: "Pokedex és el meu primer projecte purament de Front-End que realitza sol·licituds a una API (pokeAPI), mostrant els meus primers passos amb un sistema CRUD.",
+      Pokedex: "Pokedex és el meu primer projecte purament de Front-End que realitza solicituds a una API (pokeAPI), mostrant els meus primers passos amb un sistema CRUD.",
+    },
+    skills: {
+      web: "DESENVOLUPAMENT WEB",
+      frontend: "DESENVOLUPAMENT FRONT-END",
+      backend: "DESENVOLUPAMENT BACK-END",
+      tools: "EINES",
+    },
+    notFound: {
+      title: "Pàgina no trobada",
+      message: "Ho sentim, però la pàgina que estàs buscant no existeix.",
+      back: "Tornar a la pàgina principal",
     }
-    
-}
+  }

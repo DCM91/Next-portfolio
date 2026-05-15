@@ -1,28 +1,36 @@
-import { useRouter } from "next/router"
-import { Layout } from "../components/Layout"
-import en from "@/languages/en"
-import es from "@/languages/es"
-import cat from "@/languages/cat"
-import { MdWavingHand } from "react-icons/md";
-import Link from "next/link";
-import Image from "next/image";
-import { Footer } from "@/components/Footer";
-import Head from "next/head";
-import { Selector } from "@/components/selector";
-import {themeChange} from "theme-change"
-
+import Head from "next/head"
+import Link from "next/link"
+import { MdArrowBack } from "react-icons/md"
+import { useTranslation } from "@/hooks/useTranslation"
 
 export default function Custom404() {
- return (
-    <Layout title="Dcm91Portfolio - Not Found">
-        <div className="grid py-10 place-items-center h-full">
-            <h1 className="py-10">Página no encontrada</h1>
-            <p className="py-10">Lo sentimos, pero la página que estás buscando no existe.</p>
-            <Link href={"/"} className="py-10">
-                <p className="text-blue-600">Volver a la página principal</p>
-            </Link>
-        </div>
-    </Layout>
-    
- );
+  const t = useTranslation()
+
+  return (
+    <>
+      <Head>
+        <title>DCM91 | {t.notFound.title}</title>
+        <meta name="description" content={t.notFound.message} />
+      </Head>
+
+      <section className="max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+        <span className="font-heading text-8xl md:text-9xl font-extrabold text-accent/20">
+          404
+        </span>
+        <h1 className="mt-0 font-heading text-3xl md:text-4xl font-extrabold">
+          {t.notFound.title}
+        </h1>
+        <p className="mt-4 text-lg text-text-secondary max-w-md">
+          {t.notFound.message}
+        </p>
+        <Link
+          href="/"
+          className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
+        >
+          <MdArrowBack size={18} />
+          {t.notFound.back}
+        </Link>
+      </section>
+    </>
+  )
 }

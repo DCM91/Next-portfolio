@@ -1,42 +1,52 @@
-import React from 'react'
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import en from "@/languages/en"
-import es from "@/languages/es"
-import cat from "@/languages/cat"
-import { useRouter } from 'next/router';
+import { BsGithub, BsLinkedin } from "react-icons/bs"
+import { useTranslation } from "@/hooks/useTranslation"
 
+export const Footer = () => {
+  const t = useTranslation()
 
-export const Footer = ({theme}) => {
-  const router = useRouter()
-    let t
-    switch (router.locale) {
-      case 'en':
-        t = en
-        break
-      case 'es':
-        t = es
-        break
-      case 'cat':
-        t = cat // Añade la traducción al catalán (cat) en la variable cat correspondiente
-        break
-      default:
-        t = en // Establece un idioma predeterminado en caso de que no se encuentre una traducción específica
-        break
-    }
   return (
-    <div data-theme={theme}>
-        <footer  className="footer w-100 p-4 bg-neutral text-neutral-content" >
-            <div style={{fontSize:"large"}}>
-                <p><br/>{t.footer.text1}<br/> <br/>{t.footer.text2}</p>
-            </div> 
-            <div>
-                <span className="footer-title" style={{fontSize:"large"}}>Social &nbsp; /DCM91</span> 
-                <div className="grid grid-flow-col gap-4">
-                <a href='https://www.linkedin.com/in/dcm91'><svg style={{width:"4rem", height:"4rem"}}  viewBox="0 0 24 24" className="fill-current"><BsLinkedin /></svg></a>
-                <a href='https://github.com/DCM91'><svg style={{width:"4rem", height:"4rem"}}  viewBox="0 0 24 24" className="fill-current"><BsGithub /></svg></a>
-                </div>
+    <footer className="border-t border-border mt-24">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <span className="font-heading text-lg font-bold">
+              DCM<span className="text-accent">91</span>
+            </span>
+            <p className="mt-3 text-sm text-text-secondary leading-relaxed max-w-md">
+              {t.footer.text1}
+            </p>
+            <p className="mt-2 text-sm text-text-muted italic">
+              {t.footer.text2}
+            </p>
+          </div>
+          <div className="md:text-right">
+            <p className="text-sm font-medium text-text-muted mb-3">Social</p>
+            <div className="flex gap-3 md:justify-end">
+              <a
+                href="https://www.linkedin.com/in/dcm91"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
+                aria-label="LinkedIn"
+              >
+                <BsLinkedin size={20} />
+              </a>
+              <a
+                href="https://github.com/DCM91"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
+                aria-label="GitHub"
+              >
+                <BsGithub size={20} />
+              </a>
             </div>
-        </footer>
-    </div>
+          </div>
+        </div>
+        <div className="mt-10 pt-6 border-t border-border text-center text-xs text-text-muted">
+          &copy; {new Date().getFullYear()} Daniel Castro Martín
+        </div>
+      </div>
+    </footer>
   )
 }

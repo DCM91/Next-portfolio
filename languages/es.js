@@ -2,6 +2,9 @@ export default{
     home: {
         title: "Bienvenido a mi portfolio!",
         description:"Programador especializado en...",
+        codeDesc: "Creando soluciones web limpias, mantenibles y eficientes con frameworks modernos y mejores prácticas.",
+        dataDesc: "Diseñando arquitecturas de datos escalables que conectan experiencias frontend, servicios backend y bases de datos.",
+        aiDesc: "Aprovechando LLMs, agentes inteligentes y automatización para construir aplicaciones más inteligentes.",
     },
 
     footer:{
@@ -25,6 +28,8 @@ export default{
       contact3:"Envia un mensaje y empecemos a trabajar juntos!"
     },
     works:{
+      experience: "Experiencia",
+      projects: "Proyectos",
       Sinigual: "SinIgual es un servicio especializado en Software de gestión para talleres y concesionarios.",
       Payf: "Payf es una aplicacion de transeferencia de pagos mediante sistemas biometricos.",
       Skuadlack: "Skuadlack es una aplicacion entregada como TFM, se trata de un clon de Slack totalmente funcional.",
@@ -33,5 +38,16 @@ export default{
       I18N: "I18N es un proyecto que consiste en una plantilla con diversas funcionalidades para proyectos futuros, tales como el cambio entre diferentes idiomas y estilos de diseño.",
       Blockbuster: "Blockbuster es mi primer proyecto Full Stack; es una biblioteca de películas donde puedes guardar películas o series con descripción y año de lanzamiento.",
       Pokedex: "Pokedex es mi primer proyecto puramente de Front-End que realiza solicitudes a una API (pokeAPI), mostrando mis primeros pasos con un sistema CRUD.",
+    },
+    skills: {
+      web: "DESARROLLO WEB",
+      frontend: "DESARROLLO FRONT-END",
+      backend: "DESARROLLO BACK-END",
+      tools: "HERRAMIENTAS",
+    },
+    notFound: {
+      title: "Página no encontrada",
+      message: "Lo sentimos, pero la página que estás buscando no existe.",
+      back: "Volver a la página principal",
     }
 }

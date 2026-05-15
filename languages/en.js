@@ -2,6 +2,9 @@ export default {
     home: {
       title: "Welcome to my portfolio!",
       description:"Ambitious professional in...",
+      codeDesc: "Building clean, maintainable, and performant web solutions with modern frameworks and best practices.",
+      dataDesc: "Designing scalable data architectures that connect frontend experiences, backend services, and database systems.",
+      aiDesc: "Leveraging LLMs, intelligent agents, and automation to build smarter, AI-driven applications.",
     },
     footer: {
       text1: "The code for this application is available, which means you can copy and manipulate the code freely.",
@@ -23,7 +26,9 @@ export default {
       contact2: "Ready to bring your projects to life?",
       contact3: "Send a message and let's start working together!"
       },
-      works:{
+      works: {
+        experience: "Experience",
+        projects: "Projects",
         Sinigual: "SinIgual is a specialized service in management software for workshops and dealerships.",
         Payf: "Payf is a payment transfer application using biometric systems.",
         Skuadlack: "Skuadlack is an application delivered as a TFM, it is a fully functional clone of Slack.",
@@ -32,7 +37,17 @@ export default {
         I18N: "I18N is a project that consists of a template with various functionalities for future projects, such as language switching and design styles.",
         Blockbuster: "Blockbuster is my first Full Stack project; it's a movie library where you can save movies or series with descriptions and release years.",
         Pokedex: "Pokedex is my first purely Front-End project that makes requests to an API (pokeAPI), showcasing my initial steps with a CRUD system.",
-      }
-      
+      },
+    skills: {
+      web: "WEB DEVELOPMENT",
+      frontend: "FRONT-END DEVELOPMENT",
+      backend: "BACK-END DEVELOPMENT",
+      tools: "TOOLS",
+    },
+    notFound: {
+      title: "Page not found",
+      message: "Sorry, the page you are looking for does not exist.",
+      back: "Back to home",
+    }
   }
   

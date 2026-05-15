@@ -1,47 +1,73 @@
-import React, { useRef } from 'react'
-import emailjs from '@emailjs/browser';
-import { RiMailSendLine } from "react-icons/ri";
+import { useRef } from "react"
+import emailjs from "@emailjs/browser"
+import { RiMailSendLine } from "react-icons/ri"
 
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+const API_KEY = process.env.NEXT_PUBLIC_EMAILJS_API_KEY
 
 export const Mail = () => {
+  const refForm = useRef()
 
-    const refForm = useRef();
-    const handleSubmit = (event) =>{
-        event.preventDefault()
-        const serviceID = 'default_service';
-        const templateID = 'template_cu4gsdd';
-        const apikey = "eCsDb9Fm4OuTqODpX"
-        emailjs.sendForm(serviceID, templateID,refForm.current, apikey)
-        .then((result) => {
-            console.log(result.text);
-            alert("Message Send!!")
-        })
-        .catch(error => console.error(error))
-    }
-
-
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, refForm.current, API_KEY)
+      .then(() => alert("Message Sent!"))
+      .catch((error) => console.error(error))
+  }
 
   return (
-    <div>
-        <form ref={refForm} action="" onSubmit={handleSubmit} className='border-4 border-primary m-4 grid py-4 px-6 w-full rounded-lg' >
+    <form ref={refForm} onSubmit={handleSubmit} className="space-y-5" aria-label="Contact form">
+      <div>
+        <label htmlFor="from_name" className="block text-sm font-medium mb-1.5">
+          Name
+        </label>
+        <input
+          id="from_name"
+          name="from_name"
+          type="text"
+          required
+          placeholder="Your name"
+          className="w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
+        />
+      </div>
 
-            <fieldset className='flex w-full p-1 py-2 justify-between items-center ' >
-                <label className='w-15 p-1 text-success'  htmlFor=""><b>Name:</b></label>
-                <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp"  type="text" name="from_name" required />
-            </fieldset>
-            <fieldset className='flex w-full p-1 py-2 justify-between items-center' >
-                <label className='w-15 p-1 text-success'  htmlFor=""><b>Email:</b></label>
-                <input className="input input-ghost input-bordered input-primary px-2  text-base w-100 max-w-xs" placeholder="CapsuleCorp@mail.com"  type="email" name="email_id" required />
-            </fieldset>
-            <fieldset className='flex w-full p-1 py-2  justify-between items-center' >
-                <label className='w-15 p-1 text-success'  htmlFor=""><b>Message:</b></label>
-                <textarea className="textarea textarea-ghost textarea-bordered textarea-primary px-2 ml-3 w-full max-w-xs" placeholder="Your message here..." type="text" name="message" required></textarea> 
-            </fieldset>
+      <div>
+        <label htmlFor="email_id" className="block text-sm font-medium mb-1.5">
+          Email
+        </label>
+        <input
+          id="email_id"
+          name="email_id"
+          type="email"
+          required
+          placeholder="you@example.com"
+          className="w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
+        />
+      </div>
 
-            <div className='flex justify-end'>
-                <button className='btn btn-primary btn-circle p-3 m-3' type="submit" value="Send Email" ><b>Send </b><RiMailSendLine/></button>
-            </div>
-        </form>
-    </div>
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium mb-1.5">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={4}
+          placeholder="Your message..."
+          className="w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all resize-none"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
+      >
+        Send Message
+        <RiMailSendLine size={18} />
+      </button>
+    </form>
   )
 }

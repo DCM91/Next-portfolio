@@ -1,158 +1,161 @@
-import { useRouter } from "next/router";
-import en from "@/languages/en";
-import es from "@/languages/es";
-import cat from "@/languages/cat";
-import { MdWavingHand } from "react-icons/md";
-import Link from "next/link";
-import Image from "next/image";
-import { Footer } from "@/components/Footer";
-import Head from "next/head";
-import { Selector } from "@/components/selector";
-import { themeChange } from "theme-change";
-import { useEffect, useState } from "react";
-import { CgColorBucket } from "react-icons/cg";
-import { MdLanguage } from "react-icons/md";
-import { TypeAnimation } from "react-type-animation";
-import { BiCodeAlt } from "react-icons/bi";
-import { GiTechnoHeart } from "react-icons/gi";
-import { IoMdConstruct } from "react-icons/io";
+import Head from "next/head"
+import Link from "next/link"
+import Image from "next/image"
+import { TypeAnimation } from "react-type-animation"
+import { MdArrowForward } from "react-icons/md"
+import { BiCodeAlt } from "react-icons/bi"
+import { DiDatabase } from "react-icons/di"
+import { MdSmartToy } from "react-icons/md"
+import { useTranslation } from "@/hooks/useTranslation"
+import { NAV_LINKS } from "@/constants"
+
+const skills = [
+  {
+    key: "codeDesc",
+    title: "Code Craftsman",
+    icon: <BiCodeAlt size={22} />,
+  },
+  {
+    key: "dataDesc",
+    title: "Data Architect",
+    icon: <DiDatabase size={22} />,
+  },
+  {
+    key: "aiDesc",
+    title: "AI Integration",
+    icon: <MdSmartToy size={22} />,
+  },
+]
 
 export default function Home() {
-  const router = useRouter();
-  let t;
-  switch (router.locale) {
-    case "en":
-      t = en;
-      break;
-    case "es":
-      t = es;
-      break;
-    case "cat":
-      t = cat; // Añade la traducción al catalán (cat) en la variable cat correspondiente
-      break;
-    default:
-      t = en; // Establece un idioma predeterminado en caso de que no se encuentre una traducción específica
-      break;
-  }
-  const themeValues = ["Corporate", "Luxury", "Synthwave"];
-  const [selectedTheme, setSelectedTheme] = useState('Synthwave'); // Set initial theme
-
-
-  useEffect(() => {
-    themeChange(false);
-  });
+  const t = useTranslation()
 
   return (
-    <div className="grid ">
+    <>
       <Head>
-        <title>Dcm91Portfolio - Home</title>
-        <meta name="description" content="Dcm91 profesional Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>DCM91 | Full Stack Developer</title>
+        <meta name="description" content={t.home.description} />
       </Head>
 
-      <div className="w-full m-2 mx-0 mb-0 justify-items-center">
-        <div>
-          <h1 className="text-4xl stat-title m-3 pl-8 flex">
-            {t.home.title} &nbsp; <MdWavingHand />
-          </h1>
-        </div>
-        <div>
-        <div className="m-1">
-            <div className="inline-flex  items-center mb-3">
-              <Selector />
-              <MdLanguage />
-            </div>
-            <div className="inline-flex  items-center">
-              <select
-                className="select text-primary w-32 h-8 p-1 m-3"
-                data-choose-theme
-                value={selectedTheme}
-                onChange={e => setSelectedTheme(e.target.value)} 
-              >
-              <option disabled value={""}>
-                  Style Selector
-                </option>
-                {themeValues.map((value) => (
-                  <option
-                    className="text-primary"
-                    key={value.toLowerCase()}
-                    value={value.toLowerCase()}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-subtle via-transparent to-transparent dark:from-accent-subtle/5" />
+        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+            <div className="order-2 lg:order-1">
+              <div className="animate-fade-in">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-surface-alt text-sm text-text-secondary mb-8">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  {t.home.title}
+                </div>
+
+                <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                  Daniel Castro Martín
+                </h1>
+
+                <p className="mt-6 text-lg md:text-xl font-medium text-text-primary">
+                  Programador especializado en desarrollo web
+                </p>
+
+                <div className="mt-4 text-xl md:text-2xl text-text-secondary flex items-center gap-2">
+                  <span className="text-accent font-semibold">
+                    <TypeAnimation
+                      sequence={[
+                        "Web Development", 3000,
+                        "Frontend Development", 3000,
+                        "Backend Development", 3000,
+                      ]}
+                      speed={30}
+                      wrapper="span"
+                      repeat={Infinity}
+                    />
+                  </span>
+                  <span className="w-1.5 h-6 bg-accent rounded-full animate-pulse" />
+                </div>
+
+                <p className="mt-6 text-lg text-text-secondary max-w-2xl leading-relaxed">
+                </p>
+              </div>
+
+              <div className="mt-12 flex flex-wrap items-center gap-4 animate-slide-up animate-delay-200">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-alt border border-border text-sm font-medium text-text-secondary hover:text-accent hover:border-accent/30 hover:bg-accent-subtle transition-all"
                   >
-                    {value}
-                  </option>
+                    {t.navbar[link.labelKey.split(".")[1]]}
+                    <MdArrowForward
+                      size={14}
+                      className="group-hover:translate-x-0.5 transition-transform"
+                    />
+                  </Link>
                 ))}
-              </select>
-              <CgColorBucket className="mx-1 text-lg" />
+              </div>
             </div>
-          </div>
-        <div>
-          <p className="text-lg w-full my-2 text-center">
-            {t.home.description} &nbsp;
-            <TypeAnimation
-              sequence={[
-                "Web Development",
-                3000,
-                "Frontend Development",
-                3000,
-                "Backend Development",
-                3000,
-              ]}
-              speed={30} // Custom Speed from 1-99 - Default Speed: 40
-              style={{ fontSize: "1em", color: "#ff760d" }}
-              wrapper="span" // Animation will be rendered as a <span>
-              repeat={Infinity} // Repeat this Animation Sequence infinitely
-            />
-            .
-          </p>
-        </div>
-        </div>
-      </div>
-      <div className="1/10" ></div>
-      <div className="flex flex-wrap w-5/8">
-        <div className=" flex-1 grid h-80  px-3 m-3">
-          <div className="grid content-center place-items-center" >
-            <Image className="" src={"/assets/mefoto.jpg"} width={350} height={350} alt="kakaka" />
-            <div className="p-2 text-center">
-              <p>Daniel Castro Martin</p>
-              <p>castromartindaniel91@gmail.com</p>
+
+            <div className="order-1 lg:order-2 h-full flex items-center justify-center lg:justify-end animate-fade-in animate-delay-100">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent via-accent/50 to-pink-500 opacity-30 blur-2xl" />
+                <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden rounded-full border-4 border-surface-alt shadow-2xl">
+                  <Image
+                    src="/assets/foto_blanconegro.jpeg"
+                    alt="Daniel Castro Martín"
+                    fill
+                    className="object-cover hover:scale-110 transition-transform duration-700"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-          <div className="m-5"></div>        
+      </section>
 
-          <div className="border-solid border-l-8 border-primary-focus w-2/6 mt-3 mb-8 ml-4">
-            <ul className="grid pt-1 ml-4 text-info w-full h-full font-bold ">
-              <li className="text-lg w-full p-2 flex items-center  transition-transform duration-1000 transform hover:translate-x-14 "><Link className="pl-4 w-50" href={"/about"} >{t.navbar.about}</Link></li>
-              <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/skills"}>{t.navbar.SKILLS}</Link></li>
-              <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/works"}>{t.navbar.works}</Link></li>
-              <li className="text-lg w-full p-2 flex items-center transition-transform duration-1000 transform hover:translate-x-14"><Link className="pl-4 w-50" href={"/contact"}>{t.navbar.contact}</Link></li>
-            </ul>  
-        </div>
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start" >
+          <div className="shrink-0 mx-auto md:mx-0">
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent to-pink-500 opacity-20 blur-xl" />
+              <Image
+                src="/assets/mefoto.jpg"
+                width={280}
+                height={280}
+                alt="Daniel Castro Martín"
+                className="relative rounded-2xl move-down-5rem"
+                priority
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <p className="font-medium">Daniel Castro Martin</p>
+              <p className="text-sm text-text-muted">
+                castromartindaniel91@gmail.com
+              </p>
+            </div>
+          </div>
 
-      </div>
-      <div className="gap-10 flex justify-center items-center w-100 h-40 bg-secondary my-10">
-        <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
-          <BiCodeAlt className="w-full text-center font-bold text-6xl" />
-          <p className="text-center border-t border-success">
-            <b>Code &nbsp; Craftsman</b>
-          </p>
+          <div className="flex-1 space-y-2 w-full">
+            {skills.map((skill, i) => (
+              <div
+                key={skill.key}
+                className="group flex items-start gap-5 p-5 rounded-2xl transition-all hover:bg-surface-alt hover:translate-x-1 cursor-default"
+                style={{ animationDelay: `${i * 120}ms` }}
+              >
+                <div className="mt-1 w-10 h-10 rounded-xl bg-accent-subtle text-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  {skill.icon}
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-heading font-bold text-lg">
+                    {skill.title}
+                  </h3>
+                  <p className="mt-1.5 text-text-secondary leading-relaxed">
+                    {t.home[skill.key]}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
-          <GiTechnoHeart className="w-full text-center font-bold text-6xl" />
-          <p className="text-center border-t border-success">
-            <b>Bridging Technology</b>
-          </p>
-        </div>
-        <div className="grid bg-secondary-focus border-2 border-success items-center w-32 h-32">
-          <IoMdConstruct className="w-full text-center font-bold text-6xl" />
-          <p className="text-center border-t border-success">
-            <b>Building the Future</b>
-          </p>
-        </div>
-      </div>
-      <div className="pt-5">
-        <Footer />
-      </div>
-    </div>
-  );
+      </section>
+    </>
+  )
 }
