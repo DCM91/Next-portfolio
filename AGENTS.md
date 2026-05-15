@@ -3,6 +3,7 @@
 ## Stack
 - **Next.js 15.5** Pages Router (`pages/`, NOT `app/`)
 - **React 19**, **Tailwind CSS 3.4** (NO DaisyUI)
+- **Node.js**: 24.x (specified in `package.json` `engines`)
 - **Fonts**: DM Sans (body), Plus Jakarta Sans (headings), JetBrains Mono (mono) via Google Fonts in `_document.js`
 - **Design system**: 11 CSS custom properties on `:root` / `.dark` controlling surface, border, text, and accent colors. Dark mode toggled via `darkMode: "class"` with localStorage persistence.
 - **i18n**: Built-in Next.js `i18n` config in `next.config.js` (`en`/`es`/`cat`). Custom `useTranslation` hook — NOT `i18next`.
@@ -25,7 +26,7 @@ constants/    # index.js — NAV_LINKS, LANGUAGES
 languages/    # en.js, es.js, cat.js — plain JS objects
 hooks/        # useTranslation.js
 styles/       # globals.css — Tailwind directives + CSS variables for light/dark
-public/       # Static assets
+public/       # Static assets (projects images, favicon)
 ```
 
 ## Key components & patterns
@@ -53,7 +54,8 @@ public/       # Static assets
 - Sticky, `backdrop-blur-xl`, border-bottom
 - Logo "DCM91" with accent span
 - Nav links from `NAV_LINKS` constant, active state via `pathname`
-- Hidden on mobile (`.hidden.md:flex`)
+- Responsive: hamburger menu on mobile (`md:hidden`), full links on desktop (`.hidden.md:flex`)
+- Uses `react-icons/hi` (HiMenu, HiX) for toggle button
 
 ### ProjectCard (`components/ProjectCard.js`)
 - Expandable card: click toggles description visibility
