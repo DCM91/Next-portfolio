@@ -110,52 +110,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start" >
-          <div className="shrink-0 mx-auto md:mx-0">
-            <div className="relative">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent to-pink-500 opacity-20 blur-xl" />
-              <Image
-                src="/assets/mefoto.jpg"
-                width={280}
-                height={280}
-                alt="Daniel Castro Martín"
-                className="relative rounded-2xl move-down-5rem"
-                priority
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <p className="font-medium">Daniel Castro Martin</p>
-              <p className="text-sm text-text-muted">
-                castromartindaniel91@gmail.com
-              </p>
-            </div>
-          </div>
-
-          <div className="flex-1 space-y-2 w-full">
-            {skills.map((skill, i) => (
-              <div
-                key={skill.key}
-                className="group flex items-start gap-5 p-5 rounded-2xl transition-all hover:bg-surface-alt hover:translate-x-1 cursor-default"
-                style={{ animationDelay: `${i * 120}ms` }}
-              >
-                <div className="mt-1 w-10 h-10 rounded-xl bg-accent-subtle text-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                  {skill.icon}
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-heading font-bold text-lg">
-                    {skill.title}
-                  </h3>
-                  <p className="mt-1.5 text-text-secondary leading-relaxed">
-                    {t.home[skill.key]}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   )
 }

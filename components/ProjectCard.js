@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { MdExpandMore } from "react-icons/md"
+import { SKILL_ICONS } from "@/constants/skills"
 
-export function ProjectCard({ project, isExpanded, onToggle, desc }) {
+export function ProjectCard({ project, isExpanded, onToggle, desc, skillKeys }) {
   return (
     <div
       onClick={onToggle}
@@ -34,6 +35,24 @@ export function ProjectCard({ project, isExpanded, onToggle, desc }) {
             size={20}
           />
         </div>
+
+        {skillKeys && skillKeys.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {skillKeys.map((key) => {
+              const skill = SKILL_ICONS[key]
+              if (!skill) return null
+              return (
+                <span
+                  key={key}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-accent/10 text-accent"
+                >
+                  <span className="text-sm">{skill.icon}</span>
+                  {skill.label}
+                </span>
+              )
+            })}
+          </div>
+        )}
 
         <div
           className={`overflow-hidden transition-all duration-300 ${

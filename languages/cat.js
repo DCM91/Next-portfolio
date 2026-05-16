@@ -13,14 +13,15 @@ export default{
     },
     navbar:{
       about:"Sobre Mi",
-      SKILLS: "Habilitats",
       works:"Projectes",
       contact:"Contacta'm"
     },
     about:{
-      basetext1: "Sóc apassionat per l'aprenentatge i la millora contínua en el sector del desenvolupament,estic en cerca d'adquirir nous coneixements i habilitats en aquest camp. Durant 10 anys, vaig ser un autònom independent a Barcelona, on vaig aprendre a treballar en equip així com a ser orientat a solucions.",
-      basetext2:"Però vaig decidir canviar la meva trajectòria professional quan vaig conèixer el sector desenvolupament Full Stack. Actualment, porto dos anys en aquest camp i m'encanta descobrir noves tecnologies i eines.",
-      basetext3:"En el meu temps lliure, gaudeixo de passatemps com la NBA, la Cal·listènia, els videojocs i passar temps amb els meus gats. En el meu portfoli, trobaràs una varietat de projectes que he desenvolupat i estic segur que puc aportar valor a qualsevol equip amb el qual tingui l'oportunitat de treballar."
+      intro: "Full Stack Developer especialitzat en construir solucions web completes. El meu enfoc combina precisió tècnica amb comunicació clara per crear productes que connecten persones i tecnologia.",
+      trajectory: "La meva trajectòria",
+      education: "Formació",
+      languages: "Idiomes",
+      hobbies: "NBA, cal·listènia, videojocs i temps de qualitat amb els meus gats."
     },
     contact:{
       contact1: "Contacta'm",

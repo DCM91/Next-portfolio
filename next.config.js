@@ -6,6 +6,15 @@ const nextConfig = {
     locales: ["en", "es", "cat"],
     defaultLocale: "en",
   },
+  async redirects() {
+    return [
+      {
+        source: "/skills",
+        destination: "/works",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

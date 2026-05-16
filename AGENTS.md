@@ -12,7 +12,7 @@
 
 ## Commands
 ```sh
-npm run dev    # dev server on localhost:3000
+npm run dev    # dev server on localhost:3000 (with --turbo)
 npm run build  # production build + lint
 npm run start  # start production server
 npm run lint   # uses deprecated `next lint`
@@ -26,8 +26,52 @@ constants/    # index.js — NAV_LINKS, LANGUAGES
 languages/    # en.js, es.js, cat.js — plain JS objects
 hooks/        # useTranslation.js
 styles/       # globals.css — Tailwind directives + CSS variables for light/dark
-public/       # Static assets (projects images, favicon)
+public/
+  assets/     # networking.jpg, clase esade.jpg, mefoto.jpg, foto_blanconegro.jpeg, contactame.jpg
+  projects/   # Project screenshots
+  favicon.ico
 ```
+
+## About page (`pages/about.js`)
+
+### Structure (3 sections, no images on mobile except hero)
+1. **Hero** — Image background (`networking.jpg`) with `bg-gradient-to-r from-surface via-surface/95 to-surface/60` overlay. Short intro text (`t.about.intro`).
+2. **Timeline (Mi trayectoria)** — Vertical timeline with dots + gradient connecting line. On `md+`: 2-column grid with timeline on left, `clase esade.jpg` card on right (sticky, hover glow, scale effect).
+3. **Education + Languages** — 2-column grid. Education cards with conditional year rendering. Language rows with name + level.
+
+### Data pattern
+```js
+// Hardcoded in component (same for all locales — company names & roles in English)
+const milestones = [
+  { year, company, role, current?: boolean }
+]
+
+const education = [
+  { title, school, year }  // year: "" hides the year badge
+]
+
+const languagesList = [
+  { name, level }
+]
+```
+
+### Spacing
+- Sections use `py-12 md:py-16`
+- Timeline items use `pb-6`
+- Grid gap: `gap-8` (edu/lang), `gap-10 md:gap-16` (timeline section)
+
+### Animations
+- Hero: `animate-fade-in`
+- Timeline: `animate-slide-up`
+- Image card: `animate-scale-in animate-delay-200`
+- Edu/Lang: `animate-slide-up animate-delay-100`
+
+### i18n keys (`languages/*.js` → `about:`)
+- `intro` — Hero paragraph (short, present-focused, no years of experience)
+- `trajectory` — Timeline section title
+- `education` — Education section title
+- `languages` — Languages section title
+- `hobbies` — Hobbies text (not rendered in about.js, kept for potential future use)
 
 ## Key components & patterns
 
@@ -64,8 +108,8 @@ public/       # Static assets (projects images, favicon)
 - Used in `pages/works.js` for experience + projects
 
 ### SkillIcon (`components/SkillIcon.js`)
-- Small chip: icon + label in a bordered card
-- Hover: accent color + border glow
+- Small chip: icon + label in a bordered card (`min-w-[80px]`)
+- Hover: accent color + border glow + scale icon
 
 ### Selector (`components/selector.js`)
 - Language switcher via `router.push` with `locale`
@@ -101,3 +145,5 @@ public/       # Static assets (projects images, favicon)
 - EmailJS env vars: `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_API_KEY`.
 - Google Fonts are loaded via `<link>` in `_document.js` (not `next/font`).
 - Dark mode state is persisted in localStorage under key `"theme"`.
+- Dev server runs with `--turbo` flag for faster HMR.
+- About page data (milestones, education, languages) is hardcoded in the component, not in i18n files. Company names and role titles are in English across all locales.
