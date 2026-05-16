@@ -23,17 +23,17 @@ const projects = [
   },
   {
     id: "aroaweb",
-    title: "Aroa Web",
+    title: "Aroa Photography",
     category: "experience",
     image: "/projects/aroaweb.png",
-    links: [{ label: "Website", url: "https://aroaweb.es", icon: <FiLink /> }],
+    links: [{ label: "Website", url: "https://byphnix.vercel.app", icon: <FiLink /> }],
   },
   {
     id: "endabsa",
-    title: "Endabsa",
+    title: "Endansa",
     category: "experience",
     image: "/projects/endabsa.png",
-    links: [{ label: "Website", url: "https://endabsa.com", icon: <FiLink /> }],
+    links: [{ label: "Website", url: "https://endansa.com", icon: <FiLink /> }],
   },
   {
     id: "payf",
@@ -41,20 +41,6 @@ const projects = [
     category: "experience",
     image: "/projects/payf.png",
     links: [{ label: "Website", url: "https://payf.es", icon: <FiLink /> }],
-  },
-  {
-    id: "aroacarmona",
-    title: "Aroa Carmona",
-    category: "experience",
-    image: "/projects/aroacarmona.png",
-    links: [{ label: "Website", url: "https://aroacarmona.com", icon: <FiLink /> }],
-  },
-  {
-    id: "endansa",
-    title: "Endansa",
-    category: "experience",
-    image: "/projects/endansa.png",
-    links: [{ label: "Website", url: "https://endansa.com", icon: <FiLink /> }],
   },
   {
     id: "skuadlack",
