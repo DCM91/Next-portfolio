@@ -1,4 +1,5 @@
 import { BsGithub, BsLinkedin } from "react-icons/bs"
+import { HiMail } from "react-icons/hi"
 import { useTranslation } from "@/hooks/useTranslation"
 
 export const Footer = () => {
@@ -39,6 +40,13 @@ export const Footer = () => {
                 aria-label="GitHub"
               >
                 <BsGithub size={20} />
+              </a>
+              <a
+                href="mailto:castromartindaniel91@gmail.com"
+                className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
+                aria-label="Email"
+              >
+                <HiMail size={20} />
               </a>
             </div>
           </div>

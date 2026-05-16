@@ -95,13 +95,10 @@ export default function Home() {
                   href="/assets/CV Daniel Castro.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-alt border border-border text-sm font-medium text-text-secondary hover:text-accent hover:border-accent/30 hover:bg-accent-subtle transition-all"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 transition-all"
                 >
-                  {t.home.downloadCV || "Download CV"}
-                  <FiDownload
-                    size={14}
-                    className="group-hover:translate-y-0.5 transition-transform"
-                  />
+                  <FiDownload size={16} />
+                  <span>CV</span>
                 </a>
               </div>
             </div>
