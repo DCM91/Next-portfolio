@@ -78,24 +78,6 @@ const projects = [
       { label: "Github", url: "https://github.com/DCM91/i18n-template", icon: <BsGithub /> },
     ],
   },
-  {
-    id: "blockbuster",
-    title: "Blockbuster",
-    category: "projects",
-    image: "/projects/blockbuster.png",
-    links: [
-      { label: "Github", url: "https://github.com/DCM91/BlockBuster", icon: <BsGithub /> },
-    ],
-  },
-  {
-    id: "pokedex",
-    title: "Pokédex",
-    category: "projects",
-    image: "/projects/pokedex.png",
-    links: [
-      { label: "Github", url: "https://github.com/DCM91/Pokedex", icon: <BsGithub /> },
-    ],
-  },
 ]
 
 const getDescKey = (id) => id.charAt(0).toUpperCase() + id.slice(1)

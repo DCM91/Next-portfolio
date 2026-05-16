@@ -1,6 +1,6 @@
 import { DiReact, DiTrello, DiGit, DiScrum, DiVisualstudio } from "react-icons/di"
 import { IoLogoAndroid, IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud, IoLogoNodejs } from "react-icons/io"
-import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens, SiAngular } from "react-icons/si"
+import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens, SiAngular, SiLaravel, SiPhp, SiJira, SiNotion, SiClaude, SiGoogle } from "react-icons/si"
 import { TbBrandReactNative } from "react-icons/tb"
 import { MdDevicesOther } from "react-icons/md"
 
@@ -29,12 +29,20 @@ export const SKILL_ICONS = {
   "visual-studio": { icon: <DiVisualstudio />, label: "Visual Studio" },
   "android-studio": { icon: <IoLogoAndroid />, label: "Android Studio" },
   trello: { icon: <DiTrello />, label: "Trello" },
+  laravel: { icon: <SiLaravel />, label: "Laravel" },
+  php: { icon: <SiPhp />, label: "PHP" },
+  jira: { icon: <SiJira />, label: "Jira" },
+  notion: { icon: <SiNotion />, label: "Notion" },
+  "claude-code": { icon: <SiClaude />, label: "Claude Code" },
+  opencode: { icon: <SiGoogle />, label: "OpenCode" },
+  antigravity: { icon: <SiGoogle />, label: "Antigravity" },
+  seo: { icon: <IoMdCloud />, label: "SEO" },
 }
 
 export const SKILL_CATEGORIES = [
   {
     key: "web",
-    skills: ["javascript", "nextjs", "socket.io", "python", "typescript", "apis"],
+    skills: ["javascript", "nextjs", "socket.io", "python", "typescript", "apis", "php", "laravel"],
   },
   {
     key: "frontend",
@@ -46,20 +54,20 @@ export const SKILL_CATEGORIES = [
   },
   {
     key: "tools",
-    skills: ["git", "agile", "visual-studio", "android-studio", "trello"],
+    skills: ["git", "agile", "visual-studio", "android-studio", "trello", "jira", "notion", "claude-code", "opencode", "antigravity", "seo"],
   },
 ]
 
 export const PROJECT_SKILLS = {
-  sinigual: ["react", "angular", "nextjs", "tailwind", "typescript", "apis", "node", "mysql", "jwt"],
-  payf: ["react-native", "node", "apis", "jwt", "mongodb"],
-  skuadlack: ["react", "socket.io", "node", "express", "mongodb", "jwt"],
-  typedcinema: ["react", "typescript", "nextjs", "tailwind", "css", "apis"],
-  portfolio: ["react", "angular", "nextjs", "tailwind", "css"],
-  i18n: ["react", "nextjs", "tailwind", "css"],
-  blockbuster: ["react", "node", "express", "mysql", "css", "bootstrap"],
-  pokedex: ["html5", "css", "javascript", "apis"],
-  jbctools: ["angular", "tailwind", "typescript", "apis", "node", "express", "mysql"],
-  aroacarmona: ["react", "nextjs", "tailwind", "typescript", "css", "responsive"],
-  endansa: ["react", "nextjs", "tailwind", "typescript", "css", "apis", "javascript"],
+  sinigual: ["react", "angular", "nextjs", "tailwind", "typescript", "apis", "node", "mysql", "jwt", "php", "laravel", "jira", "git"],
+  payf: ["react-native", "node", "apis", "jwt", "mongodb", "git"],
+  skuadlack: ["react", "socket.io", "node", "express", "mongodb", "jwt", "git"],
+  typedcinema: ["react", "typescript", "nextjs", "tailwind", "css", "apis", "git"],
+  portfolio: ["react", "angular", "nextjs", "tailwind", "css", "git"],
+  i18n: ["react", "nextjs", "tailwind", "css", "git"],
+  blockbuster: ["react", "node", "express", "mysql", "css", "bootstrap", "git"],
+  pokedex: ["html5", "css", "javascript", "apis", "git"],
+  jbctools: ["angular", "tailwind", "typescript", "apis", "node", "express", "mysql", "php", "laravel", "notion", "git", "seo"],
+  aroacarmona: ["react", "nextjs", "tailwind", "typescript", "css", "responsive", "git"],
+  endansa: ["react", "nextjs", "tailwind", "typescript", "css", "apis", "javascript", "git"],
 }
