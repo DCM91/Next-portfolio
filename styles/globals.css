@@ -77,6 +77,24 @@ body {
   .animate-delay-500 {
     animation-delay: 500ms;
   }
+
+  .gradient-mesh {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(236, 72, 153, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 30% at 60% 80%, rgba(79, 70, 229, 0.05) 0%, transparent 50%);
+  }
+
+  .dark .gradient-mesh {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(129, 140, 248, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 30% at 60% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 50%);
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-surface;
+  }
 }
 
 @media (min-width: 770px) {

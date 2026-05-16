@@ -29,6 +29,7 @@ export default{
       contact3:"Envia un missatge i comencem a treballar junts!"
     },
     works:{
+      description: "Cada projecte explica una història — aquí estan els meus, construïts amb eines modernes i codi net.",
       experience: "Experiència",
       projects: "Projectes",
       Sinigual: "SinIgual és un servei especialitzat en programari de gestió per a tallers i concessionaris.",
@@ -39,6 +40,9 @@ export default{
       I18N: "I18N és un projecte que consisteix en una plantilla amb diverses funcionalitats per a projectes futurs, com el canvi entre diferents idiomes i estils de disseny.",
       Blockbuster: "Blockbuster és el meu primer projecte Full Stack; és una biblioteca de pel·lícules on pots desar pel·lícules o sèries amb descripció i any de llançament.",
       Pokedex: "Pokedex és el meu primer projecte purament de Front-End que realitza solicituds a una API (pokeAPI), mostrant els meus primers passos amb un sistema CRUD.",
+      Jbctools: "JBC Tools és una plataforma especialitzada en gestió d'eines i solucions de subministrament industrial.",
+      Aroacarmona: "Portfolio professional de fotografia per a Aroa Carmona, mostrant el seu treball i visió artística.",
+      Endansa: "Endansa és un lloc web corporatiu construït amb tecnologies web modernes.",
     },
     skills: {
       web: "DESENVOLUPAMENT WEB",

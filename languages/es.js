@@ -29,6 +29,7 @@ export default{
       contact3:"Envia un mensaje y empecemos a trabajar juntos!"
     },
     works:{
+      description: "Cada proyecto cuenta una historia — aquí están los míos, construidos con herramientas modernas y código limpio.",
       experience: "Experiencia",
       projects: "Proyectos",
       Sinigual: "SinIgual es un servicio especializado en Software de gestión para talleres y concesionarios.",
@@ -39,6 +40,9 @@ export default{
       I18N: "I18N es un proyecto que consiste en una plantilla con diversas funcionalidades para proyectos futuros, tales como el cambio entre diferentes idiomas y estilos de diseño.",
       Blockbuster: "Blockbuster es mi primer proyecto Full Stack; es una biblioteca de películas donde puedes guardar películas o series con descripción y año de lanzamiento.",
       Pokedex: "Pokedex es mi primer proyecto puramente de Front-End que realiza solicitudes a una API (pokeAPI), mostrando mis primeros pasos con un sistema CRUD.",
+      Jbctools: "JBC Tools es una plataforma especializada en gestión de herramientas y soluciones de suministro industrial.",
+      Aroacarmona: "Portfolio profesional de fotografía para Aroa Carmona, mostrando su trabajo y visión artística.",
+      Endansa: "Endansa es un sitio web corporativo construido con tecnologías web modernas.",
     },
     skills: {
       web: "DESARROLLO WEB",

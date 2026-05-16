@@ -8,6 +8,13 @@ import { SKILL_CATEGORIES, PROJECT_SKILLS, SKILL_ICONS } from "@/constants/skill
 
 const projects = [
   {
+    id: "jbctools",
+    title: "JBC Tools",
+    category: "experience",
+    image: "/projects/jbctools.png",
+    links: [{ label: "Website", url: "https://jbctools.com", icon: <FiLink /> }],
+  },
+  {
     id: "sinigual",
     title: "SinIgual",
     category: "experience",
@@ -15,11 +22,39 @@ const projects = [
     links: [{ label: "Website", url: "https://www.sinigual.com", icon: <FiLink /> }],
   },
   {
+    id: "aroaweb",
+    title: "Aroa Web",
+    category: "experience",
+    image: "/projects/aroaweb.png",
+    links: [{ label: "Website", url: "https://aroaweb.es", icon: <FiLink /> }],
+  },
+  {
+    id: "endabsa",
+    title: "Endabsa",
+    category: "experience",
+    image: "/projects/endabsa.png",
+    links: [{ label: "Website", url: "https://endabsa.com", icon: <FiLink /> }],
+  },
+  {
     id: "payf",
     title: "Payf",
     category: "experience",
     image: "/projects/payf.png",
     links: [{ label: "Website", url: "https://payf.es", icon: <FiLink /> }],
+  },
+  {
+    id: "aroacarmona",
+    title: "Aroa Carmona",
+    category: "experience",
+    image: "/projects/aroacarmona.png",
+    links: [{ label: "Website", url: "https://aroacarmona.com", icon: <FiLink /> }],
+  },
+  {
+    id: "endansa",
+    title: "Endansa",
+    category: "experience",
+    image: "/projects/endansa.png",
+    links: [{ label: "Website", url: "https://endansa.com", icon: <FiLink /> }],
   },
   {
     id: "skuadlack",
@@ -82,17 +117,25 @@ const getDescKey = (id) => id.charAt(0).toUpperCase() + id.slice(1)
 export default function Works() {
   const t = useTranslation()
   const [expandedId, setExpandedId] = useState(null)
-  const [activeFilter, setActiveFilter] = useState(null)
+  const [activeTech, setActiveTech] = useState(null)
+
+  const allTechKeys = useMemo(() => {
+    const techSet = new Set()
+    Object.values(PROJECT_SKILLS).forEach((skills) => skills.forEach((s) => techSet.add(s)))
+    return [...techSet].sort((a, b) => {
+      const countA = Object.values(PROJECT_SKILLS).filter((s) => s.includes(a)).length
+      const countB = Object.values(PROJECT_SKILLS).filter((s) => s.includes(b)).length
+      return countB - countA
+    })
+  }, [])
 
   const filteredProjects = useMemo(() => {
-    if (!activeFilter) return projects
-    const category = SKILL_CATEGORIES.find((c) => c.key === activeFilter)
-    if (!category) return projects
+    if (!activeTech) return projects
     return projects.filter((p) => {
       const pSkills = PROJECT_SKILLS[p.id] || []
-      return pSkills.some((s) => category.skills.includes(s))
+      return pSkills.includes(activeTech)
     })
-  }, [activeFilter])
+  }, [activeTech])
 
   const experienceProjects = filteredProjects.filter((p) => p.category === "experience")
   const projectProjects = filteredProjects.filter((p) => p.category === "projects")
@@ -153,28 +196,33 @@ export default function Works() {
 
         <div className="mt-12 flex flex-wrap items-center gap-2">
           <button
-            onClick={() => setActiveFilter(null)}
+            onClick={() => setActiveTech(null)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              !activeFilter
+              !activeTech
                 ? "bg-accent text-white shadow-lg shadow-accent/20"
                 : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
             }`}
           >
             All
           </button>
-          {SKILL_CATEGORIES.map((cat) => (
-            <button
-              key={cat.key}
-              onClick={() => setActiveFilter(activeFilter === cat.key ? null : cat.key)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                activeFilter === cat.key
-                  ? "bg-accent text-white shadow-lg shadow-accent/20"
-                  : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
-              }`}
-            >
-              {t.skills[cat.key]}
-            </button>
-          ))}
+          {allTechKeys.map((techKey) => {
+            const skill = SKILL_ICONS[techKey]
+            if (!skill) return null
+            return (
+              <button
+                key={techKey}
+                onClick={() => setActiveTech(activeTech === techKey ? null : techKey)}
+                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  activeTech === techKey
+                    ? "bg-accent text-white shadow-lg shadow-accent/20"
+                    : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
+                }`}
+              >
+                <span className="text-sm">{skill.icon}</span>
+                {skill.label}
+              </button>
+            )
+          })}
         </div>
 
         {experienceProjects.length > 0 && (
@@ -223,7 +271,7 @@ export default function Works() {
           <div className="mt-16 text-center py-16">
             <p className="text-text-muted text-lg">No projects match this filter.</p>
             <button
-              onClick={() => setActiveFilter(null)}
+              onClick={() => setActiveTech(null)}
               className="mt-4 text-accent hover:text-accent-hover underline text-sm"
             >
               Clear filter

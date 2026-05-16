@@ -1,6 +1,6 @@
-import { useRef } from "react"
+import { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
-import { RiMailSendLine } from "react-icons/ri"
+import { RiMailSendLine, RiCheckLine, RiLoader4Line } from "react-icons/ri"
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
@@ -8,65 +8,109 @@ const API_KEY = process.env.NEXT_PUBLIC_EMAILJS_API_KEY
 
 export const Mail = () => {
   const refForm = useRef()
+  const [status, setStatus] = useState("idle")
+  const [error, setError] = useState(null)
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    setStatus("loading")
+    setError(null)
+
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, refForm.current, API_KEY)
-      .then(() => alert("Message Sent!"))
-      .catch((error) => console.error(error))
+      .then(() => {
+        setStatus("success")
+        refForm.current.reset()
+        setTimeout(() => setStatus("idle"), 5000)
+      })
+      .catch((err) => {
+        setError("Something went wrong. Please try again.")
+        setStatus("idle")
+      })
   }
 
   return (
-    <form ref={refForm} onSubmit={handleSubmit} className="space-y-5" aria-label="Contact form">
-      <div>
-        <label htmlFor="from_name" className="block text-sm font-medium mb-1.5">
-          Name
-        </label>
+    <form ref={refForm} onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
+      <div className="relative">
         <input
           id="from_name"
           name="from_name"
           type="text"
           required
-          placeholder="Your name"
-          className="w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
+          placeholder=" "
+          className="peer w-full px-4 pt-6 pb-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder-transparent focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
         />
+        <label
+          htmlFor="from_name"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
+        >
+          Your name
+        </label>
       </div>
 
-      <div>
-        <label htmlFor="email_id" className="block text-sm font-medium mb-1.5">
-          Email
-        </label>
+      <div className="relative">
         <input
           id="email_id"
           name="email_id"
           type="email"
           required
-          placeholder="you@example.com"
-          className="w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all"
+          placeholder=" "
+          className="peer w-full px-4 pt-6 pb-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder-transparent focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
         />
+        <label
+          htmlFor="email_id"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
+        >
+          Email address
+        </label>
       </div>
 
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1.5">
-          Message
-        </label>
+      <div className="relative">
         <textarea
           id="message"
           name="message"
           required
           rows={4}
-          placeholder="Your message..."
-          className="w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all resize-none"
+          placeholder=" "
+          className="peer w-full px-4 pt-6 pb-2.5 rounded-xl border border-border bg-surface-alt text-text-primary placeholder-transparent focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-none"
         />
+        <label
+          htmlFor="message"
+          className="absolute left-4 top-4 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
+        >
+          Your message
+        </label>
       </div>
+
+      {status === "success" && (
+        <div className="flex items-center gap-2 p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 animate-fade-in">
+          <RiCheckLine size={18} />
+          <span className="text-sm font-medium">Message sent successfully!</span>
+        </div>
+      )}
+
+      {error && (
+        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-sm">
+          {error}
+        </div>
+      )}
 
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
+        disabled={status === "loading"}
+        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-hover text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none group"
       >
-        Send Message
-        <RiMailSendLine size={18} />
+        {status === "loading" ? (
+          <>
+            <RiLoader4Line size={18} className="animate-spin" />
+            <span>Sending...</span>
+          </>
+        ) : (
+          <>
+            <span>Send Message</span>
+            <RiMailSendLine size={18} className="transition-transform group-hover:translate-x-1" />
+          </>
+        )}
       </button>
     </form>
   )

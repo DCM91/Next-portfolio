@@ -1,6 +1,6 @@
 import { DiReact, DiTrello, DiGit, DiScrum, DiVisualstudio } from "react-icons/di"
 import { IoLogoAndroid, IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud, IoLogoNodejs } from "react-icons/io"
-import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens } from "react-icons/si"
+import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens, SiAngular } from "react-icons/si"
 import { TbBrandReactNative } from "react-icons/tb"
 import { MdDevicesOther } from "react-icons/md"
 
@@ -23,6 +23,7 @@ export const SKILL_ICONS = {
   mysql: { icon: <SiMysql />, label: "MySQL" },
   mongodb: { icon: <SiMongodb />, label: "MongoDB" },
   jwt: { icon: <SiJsonwebtokens />, label: "JWT" },
+  angular: { icon: <SiAngular />, label: "Angular" },
   git: { icon: <DiGit />, label: "Git" },
   agile: { icon: <DiScrum />, label: "Agile" },
   "visual-studio": { icon: <DiVisualstudio />, label: "Visual Studio" },
@@ -50,12 +51,15 @@ export const SKILL_CATEGORIES = [
 ]
 
 export const PROJECT_SKILLS = {
-  sinigual: ["react", "nextjs", "tailwind", "typescript", "apis", "node", "mysql", "jwt"],
+  sinigual: ["react", "angular", "nextjs", "tailwind", "typescript", "apis", "node", "mysql", "jwt"],
   payf: ["react-native", "node", "apis", "jwt", "mongodb"],
   skuadlack: ["react", "socket.io", "node", "express", "mongodb", "jwt"],
   typedcinema: ["react", "typescript", "nextjs", "tailwind", "css", "apis"],
-  portfolio: ["react", "nextjs", "tailwind", "css"],
+  portfolio: ["react", "angular", "nextjs", "tailwind", "css"],
   i18n: ["react", "nextjs", "tailwind", "css"],
   blockbuster: ["react", "node", "express", "mysql", "css", "bootstrap"],
   pokedex: ["html5", "css", "javascript", "apis"],
+  jbctools: ["angular", "tailwind", "typescript", "apis", "node", "express", "mysql"],
+  aroacarmona: ["react", "nextjs", "tailwind", "typescript", "css", "responsive"],
+  endansa: ["react", "nextjs", "tailwind", "typescript", "css", "apis", "javascript"],
 }

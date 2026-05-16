@@ -115,15 +115,48 @@ const languagesList = [
 - Language switcher via `router.push` with `locale`
 - Icon + minimal select
 
-### mail.js
+### mail.js (`components/mail.js`)
 - Contact form using EmailJS (env vars: `NEXT_PUBLIC_EMAILJS_*`)
-- Custom Tailwind styles (no DaisyUI), focus rings, clean layout
+- Floating label pattern: labels animate on focus, transition from placeholder
+- Focus states: accent border + ring effect
+- Submit button: gradient background, hover glow, icon animation
+- Inline feedback: success (green) and error (red) messages
+- Loading state with spinner icon
+- States: `idle`, `loading`, `success`, `error`
 
-### Custom animations (in `tailwind.config.js`)
+### Contact page (`pages/contact.js`)
+
+#### Structure (2 sections, matches about page pattern)
+1. **Hero** — Image background (`contactame.jpg`) with `bg-gradient-to-r from-surface via-surface/95 to-surface/60` overlay. Heading + subtitle text (`t.contact.contact2`).
+2. **Content** — Asymmetric 2-column grid. Left: contact info pills. Right: form card.
+
+#### Layout
+- Left column (2/5): Contact pills with icon + label + value
+- Right column (3/5): Elevated form card with hover glow effect
+- Background: `gradient-mesh` utility for atmospheric depth
+
+#### Contact Pills
+- Email: clickable `mailto:` link, hover scale on icon
+- Location: Barcelona, Spain
+- Response time: "Usually within 24 hours"
+
+#### Form Container
+- Relative wrapper with gradient blur on hover (`group-hover:opacity-100`)
+- Border styling matches design system
+- Title + description above form fields
+
+#### Animations
+- Hero: `animate-fade-in`
+- Left column: `animate-slide-up`
+- Right column: `animate-slide-up animate-delay-200`
+
+### Custom animations (in `tailwind.config.js` + `globals.css`)
 - `animate-fade-in` — opacity 0→1 in 0.6s
 - `animate-slide-up` — translateY(24px)→0 + fade in 0.6s
 - `animate-scale-in` — scale(0.95)→1 + fade in 0.4s
 - Delay classes: `.animate-delay-100` through `.animate-delay-500` (in `globals.css`)
+- `gradient-mesh` — atmospheric background with radial gradients (in `globals.css`)
+- `focus-ring` — enhanced focus state with ring offset (in `globals.css`)
 
 ## Available skills (`.agents/skills/`)
 - `react-best-practices` — React/Next.js performance optimization
