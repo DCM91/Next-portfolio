@@ -54,16 +54,16 @@ export default function Home() {
                 </h1>
 
                 <p className="mt-6 text-lg md:text-xl font-medium text-text-primary">
-                  Programador especializado en desarrollo web
+                  {t.home.role}
                 </p>
 
                 <div className="mt-4 text-xl md:text-2xl text-text-secondary flex items-center gap-2">
                   <span className="text-accent font-semibold">
                     <TypeAnimation
                       sequence={[
-                        "Web Development", 3000,
-                        "Frontend Development", 3000,
-                        "Backend Development", 3000,
+                        t.home.webDev, 3000,
+                        t.home.frontendDev, 3000,
+                        t.home.backendDev, 3000,
                       ]}
                       speed={30}
                       wrapper="span"

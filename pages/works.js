@@ -118,10 +118,10 @@ export default function Works() {
       <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <div className="max-w-2xl animate-fade-in">
           <span className="text-xs font-mono text-accent tracking-widest uppercase font-medium">
-            Portfolio
+            {t.works.portfolio}
           </span>
           <h1 className="mt-3 font-heading text-3xl md:text-5xl font-extrabold tracking-tight">
-            Things I&apos;ve <span className="text-accent">built</span>
+            {t.works.thingsIveBuilt.split(" ")[0]} <span className="text-accent">{t.works.thingsIveBuilt.split(" ").slice(1).join(" ")}</span>
           </h1>
           <p className="mt-4 text-text-secondary text-base leading-relaxed">
             {t.works.description || "Every project tells a story — here are mine, built with modern tools and clean code."}
@@ -131,7 +131,7 @@ export default function Works() {
         <div className="mt-16 animate-slide-up">
           <h2 className="font-heading text-2xl font-bold mb-8 flex items-center gap-3">
             <span className="w-8 h-0.5 bg-accent" />
-            Tech Stack
+            {t.works.techStack}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {SKILL_CATEGORIES.map((cat) => (
@@ -171,7 +171,7 @@ export default function Works() {
                 : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
             }`}
           >
-            All
+            {t.works.all}
           </button>
           {allTechKeys.map((techKey) => {
             const skill = SKILL_ICONS[techKey]
@@ -237,12 +237,12 @@ export default function Works() {
 
         {filteredProjects.length === 0 && (
           <div className="mt-16 text-center py-16">
-            <p className="text-text-muted text-lg">No projects match this filter.</p>
+            <p className="text-text-muted text-lg">{t.works.noProjects}</p>
             <button
               onClick={() => setActiveTech(null)}
               className="mt-4 text-accent hover:text-accent-hover underline text-sm"
             >
-              Clear filter
+              {t.works.clearFilter}
             </button>
           </div>
         )}

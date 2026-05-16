@@ -6,6 +6,7 @@ import cat from "@/languages/cat"
 const translations = { en, es, cat }
 
 export function useTranslation() {
-  const { locale = "en" } = useRouter()
+  const router = useRouter()
+  const locale = router?.locale || "en"
   return translations[locale] || en
 }

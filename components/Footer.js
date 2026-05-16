@@ -21,7 +21,7 @@ export const Footer = () => {
             </p>
           </div>
           <div className="md:text-right">
-            <p className="text-sm font-medium text-text-muted mb-3">Social</p>
+            <p className="text-sm font-medium text-text-muted mb-3">{t.footer.social}</p>
             <div className="flex gap-3 md:justify-end">
               <a
                 href="https://www.linkedin.com/in/dcm91"

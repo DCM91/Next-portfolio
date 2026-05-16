@@ -5,10 +5,15 @@ export default {
       codeDesc: "Building clean, maintainable, and performant web solutions with modern frameworks and best practices.",
       dataDesc: "Designing scalable data architectures that connect frontend experiences, backend services, and database systems.",
       aiDesc: "Leveraging LLMs, intelligent agents, and automation to build smarter, AI-driven applications.",
+      role: "Specialized programmer in web development",
+      webDev: "Web Development",
+      frontendDev: "Frontend Development",
+      backendDev: "Backend Development",
     },
     footer: {
       text1: "The code for this application is available, which means you can copy and manipulate the code freely.",
       text2: "I would appreciate a mention if you use this code.",
+      social: "Social",
     },
     navbar:{
       about:"About Me",
@@ -20,17 +25,34 @@ export default {
       trajectory: "My path",
       education: "Education",
       languages: "Languages",
-      hobbies: "NBA, calisthenics, video games, and quality time with my cats."
+      hobbies: "NBA, calisthenics, video games and quality time with my cats.",
+      sectionTitle: "About"
     },
     contact:{
       contact1: "Contact me",
       contact2: "Ready to bring your projects to life?",
-      contact3: "Send a message and let's start working together!"
+      contact3: "Send a message and let's start working together!",
+      sectionTitle: "Contact",
+      letsWorkTogether: "Let's work together",
+      getInTouch: "Get in touch",
+      email: "Email",
+      location: "Location",
+      responseTime: "Response time",
+      barcelona: "Barcelona, Spain",
+      within24Hours: "Usually within 24 hours",
+      sendMessage: "Send me a message",
+      fillForm: "Fill out the form below and I'll get back to you soon."
       },
       works: {
         description: "Every project tells a story — here are mine, built with modern tools and clean code.",
         experience: "Experience",
         projects: "Projects",
+        portfolio: "Portfolio",
+        thingsIveBuilt: "Things I've built",
+        techStack: "Tech Stack",
+        all: "All",
+        noProjects: "No projects match this filter.",
+        clearFilter: "Clear filter",
         Sinigual: "SinIgual is a specialized service in management software for workshops and dealerships.",
         Payf: "Payf is a payment transfer application using biometric systems.",
         Skuadlack: "Skuadlack is an application delivered as a TFM, it is a fully functional clone of Slack.",

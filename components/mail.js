@@ -1,12 +1,16 @@
+"use client"
+
 import { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
 import { RiMailSendLine, RiCheckLine, RiLoader4Line } from "react-icons/ri"
+import { useTranslation } from "@/hooks/useTranslation"
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
 const API_KEY = process.env.NEXT_PUBLIC_EMAILJS_API_KEY
 
 export const Mail = () => {
+  const t = useTranslation()
   const refForm = useRef()
   const [status, setStatus] = useState("idle")
   const [error, setError] = useState(null)
@@ -24,7 +28,7 @@ export const Mail = () => {
         setTimeout(() => setStatus("idle"), 5000)
       })
       .catch((err) => {
-        setError("Something went wrong. Please try again.")
+        setError(t.mail.error)
         setStatus("idle")
       })
   }
@@ -44,7 +48,7 @@ export const Mail = () => {
           htmlFor="from_name"
           className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
         >
-          Your name
+          {t.mail.yourName}
         </label>
       </div>
 
@@ -61,7 +65,7 @@ export const Mail = () => {
           htmlFor="email_id"
           className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
         >
-          Email address
+          {t.mail.emailAddress}
         </label>
       </div>
 
@@ -78,14 +82,14 @@ export const Mail = () => {
           htmlFor="message"
           className="absolute left-4 top-4 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
         >
-          Your message
+          {t.mail.yourMessage}
         </label>
       </div>
 
       {status === "success" && (
         <div className="flex items-center gap-2 p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 animate-fade-in">
           <RiCheckLine size={18} />
-          <span className="text-sm font-medium">Message sent successfully!</span>
+          <span className="text-sm font-medium">{t.mail.success}</span>
         </div>
       )}
 
@@ -103,11 +107,11 @@ export const Mail = () => {
         {status === "loading" ? (
           <>
             <RiLoader4Line size={18} className="animate-spin" />
-            <span>Sending...</span>
+            <span>{t.mail.sending}</span>
           </>
         ) : (
           <>
-            <span>Send Message</span>
+            <span>{t.mail.sendMessage}</span>
             <RiMailSendLine size={18} className="transition-transform group-hover:translate-x-1" />
           </>
         )}

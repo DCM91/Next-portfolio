@@ -49,7 +49,7 @@ export default function About() {
           <div className="animate-fade-in">
             <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              About
+              {t.about.sectionTitle}
             </span>
             <div className="mt-6 max-w-xl">
               <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
