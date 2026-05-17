@@ -1,13 +1,8 @@
 "use client"
 
 import { useState, useRef } from "react"
-import emailjs from "@emailjs/browser"
 import { RiMailSendLine, RiCheckLine, RiLoader4Line } from "react-icons/ri"
 import { useTranslation } from "@/hooks/useTranslation"
-
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-const API_KEY = process.env.NEXT_PUBLIC_EMAILJS_API_KEY
 
 export const Mail = () => {
   const t = useTranslation()
@@ -20,14 +15,30 @@ export const Mail = () => {
     setStatus("loading")
     setError(null)
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, refForm.current, API_KEY)
-      .then(() => {
-        setStatus("success")
-        refForm.current.reset()
-        setTimeout(() => setStatus("idle"), 5000)
+    const form = refForm.current
+    const data = {
+      from_name: form.from_name.value,
+      email_id: form.email_id.value,
+      message: form.message.value,
+    }
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          setStatus("success")
+          refForm.current.reset()
+          setTimeout(() => setStatus("idle"), 5000)
+        } else {
+          setError(t.mail.error)
+          setStatus("idle")
+        }
       })
-      .catch((err) => {
+      .catch(() => {
         setError(t.mail.error)
         setStatus("idle")
       })

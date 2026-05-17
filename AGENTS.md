@@ -7,7 +7,7 @@
 - **Fonts**: DM Sans (body), Plus Jakarta Sans (headings), JetBrains Mono (mono) via Google Fonts in `_document.js`
 - **Design system**: 11 CSS custom properties on `:root` / `.dark` controlling surface, border, text, and accent colors. Dark mode toggled via `darkMode: "class"` with localStorage persistence.
 - **i18n**: Built-in Next.js `i18n` config in `next.config.js` (`en`/`es`/`cat`). Custom `useTranslation` hook — NOT `i18next`.
-- **Contact form**: EmailJS via `@emailjs/browser` (credentials via `NEXT_PUBLIC_EMAILJS_*` env vars in `.env.local`)
+- **Contact form**: EmailJS via server-side API route (`pages/api/contact.js`). Credentials in env vars (no `NEXT_PUBLIC_` prefix).
 - **No TypeScript** (only `jsconfig.json` for path aliases)
 
 ## Commands
@@ -163,7 +163,7 @@ All pages follow a consistent spacing scale for visual harmony:
 - Icon + minimal select
 
 ### mail.js (`components/mail.js`)
-- Contact form using EmailJS (env vars: `NEXT_PUBLIC_EMAILJS_*`)
+- Contact form via `fetch` → `/api/contact` (server-side EmailJS proxy, no keys exposed to client)
 - Floating label pattern: labels animate on focus, transition from placeholder
 - Focus states: accent border + ring effect
 - Submit button: gradient background, hover glow, icon animation
@@ -260,7 +260,7 @@ All 3 files export a plain JS object with the same shape. `useTranslation()` ret
 - `next lint` is deprecated in Next.js 15. If a clean lint run is needed, install `eslint` + `@next/eslint-plugin-next`.
 - No test framework set up.
 - `outputFileTracingRoot: __dirname` is set in `next.config.js` to suppress workspace lockfile warnings.
-- EmailJS env vars: `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_API_KEY`.
+- EmailJS env vars: `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, `EMAILJS_PRIVATE_KEY` (server-side only, no `NEXT_PUBLIC_` prefix).
 - Google Fonts are loaded via `<link>` in `_document.js` (not `next/font`).
 - Dark mode state is persisted in localStorage under key `"theme"`.
 - Dev server runs with `--turbo` flag for faster HMR.
