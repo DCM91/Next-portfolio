@@ -71,6 +71,15 @@ export default {
       backend: "BACK-END DEVELOPMENT",
       tools: "TOOLS",
     },
+    mail: {
+      error: "Something went wrong. Please try again.",
+      yourName: "Your name",
+      emailAddress: "Email address",
+      yourMessage: "Your message",
+      success: "Message sent successfully!",
+      sending: "Sending...",
+      sendMessage: "Send message"
+    },
     notFound: {
       title: "Page not found",
       message: "Sorry, the page you are looking for does not exist.",

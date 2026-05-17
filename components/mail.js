@@ -46,7 +46,9 @@ export const Mail = () => {
         />
         <label
           htmlFor="from_name"
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
+          className="absolute left-4 z-10 px-1 pointer-events-none transition-all bg-surface-alt
+            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-text-muted peer-placeholder-shown:bg-transparent
+            top-0 -translate-y-1/2 text-xs peer-focus:text-accent"
         >
           {t.mail.yourName}
         </label>
@@ -63,7 +65,9 @@ export const Mail = () => {
         />
         <label
           htmlFor="email_id"
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
+          className="absolute left-4 z-10 px-1 pointer-events-none transition-all bg-surface-alt
+            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-text-muted peer-placeholder-shown:bg-transparent
+            top-0 -translate-y-1/2 text-xs peer-focus:text-accent"
         >
           {t.mail.emailAddress}
         </label>
@@ -80,7 +84,9 @@ export const Mail = () => {
         />
         <label
           htmlFor="message"
-          className="absolute left-4 top-4 text-sm text-text-muted pointer-events-none transition-all peer-placeholder-shown:text-base peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent peer-focus:-translate-y-full"
+          className="absolute left-4 z-10 px-1 pointer-events-none transition-all bg-surface-alt
+            peer-placeholder-shown:top-4 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-text-muted peer-placeholder-shown:bg-transparent
+            top-0 -translate-y-1/2 text-xs peer-focus:text-accent"
         >
           {t.mail.yourMessage}
         </label>

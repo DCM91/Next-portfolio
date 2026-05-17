@@ -14,7 +14,7 @@ export function ProjectCard({ project, isExpanded, onToggle, desc, skillKeys }) 
       }}
       role="button"
       tabIndex={0}
-      className="group rounded-2xl border border-border bg-surface-alt overflow-hidden transition-all hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5"
+      className="group rounded-2xl border border-border bg-surface-alt overflow-hidden transition-all duration-300 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:scale-[1.01]"
     >
       <div className="relative overflow-hidden">
         <Image

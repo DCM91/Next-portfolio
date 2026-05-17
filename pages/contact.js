@@ -25,7 +25,7 @@ export default function Contact() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/95 to-surface/60" />
         </div>
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16 relative">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 relative">
           <div className="animate-fade-in">
             <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -43,7 +43,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 gradient-mesh">
+      <section className="relative max-w-6xl mx-auto px-6 py-12 md:py-20 gradient-mesh">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-2 space-y-8 animate-slide-up">
             <div className="space-y-4">

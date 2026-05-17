@@ -45,7 +45,7 @@ export default function About() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/95 to-surface/60" />
         </div>
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16 relative">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 relative">
           <div className="animate-fade-in">
             <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -66,7 +66,7 @@ export default function About() {
             {t.about.trajectory}
           </h2>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               {milestones.map((m, i) => (
                 <div key={i} className="flex gap-5 group">
@@ -115,7 +115,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-slide-up animate-delay-100">
           <div>
             <h3 className="font-heading text-xl font-bold tracking-tight mb-6">{t.about.education}</h3>

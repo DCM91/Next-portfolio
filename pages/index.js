@@ -40,8 +40,8 @@ export default function Home() {
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent-subtle via-transparent to-transparent dark:from-accent-subtle/5" />
-        <div className="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-12 md:pt-20 md:pb-16 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
             <div className="order-2 lg:order-1">
               <div className="animate-fade-in">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-surface-alt text-sm text-text-secondary mb-8">

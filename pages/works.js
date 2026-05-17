@@ -4,7 +4,7 @@ import { FiLink } from "react-icons/fi"
 import { BsGithub } from "react-icons/bs"
 import { useTranslation } from "@/hooks/useTranslation"
 import { ProjectCard } from "@/components/ProjectCard"
-import { SKILL_CATEGORIES, PROJECT_SKILLS, SKILL_ICONS } from "@/constants/skills"
+import { SKILL_CATEGORIES, PROJECT_SKILLS, SKILL_ICONS, FILTERABLE_SKILLS } from "@/constants/skills"
 
 const projects = [
   {
@@ -22,14 +22,14 @@ const projects = [
     links: [{ label: "Website", url: "https://www.sinigual.com", icon: <FiLink /> }],
   },
   {
-    id: "aroaweb",
+    id: "aroacarmona",
     title: "Aroa Photography",
     category: "experience",
     image: "/projects/aroaweb.png",
     links: [{ label: "Website", url: "https://byphnix.vercel.app", icon: <FiLink /> }],
   },
   {
-    id: "endabsa",
+    id: "endansa",
     title: "Endansa",
     category: "experience",
     image: "/projects/endabsa.png",
@@ -89,7 +89,9 @@ export default function Works() {
 
   const allTechKeys = useMemo(() => {
     const techSet = new Set()
-    Object.values(PROJECT_SKILLS).forEach((skills) => skills.forEach((s) => techSet.add(s)))
+    Object.values(PROJECT_SKILLS).forEach((skills) => skills.forEach((s) => {
+      if (FILTERABLE_SKILLS.includes(s)) techSet.add(s)
+    }))
     return [...techSet].sort((a, b) => {
       const countA = Object.values(PROJECT_SKILLS).filter((s) => s.includes(a)).length
       const countB = Object.values(PROJECT_SKILLS).filter((s) => s.includes(b)).length
@@ -115,7 +117,7 @@ export default function Works() {
         <meta name="description" content={t.works.experience} />
       </Head>
 
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-20">
         <div className="max-w-2xl animate-fade-in">
           <span className="text-xs font-mono text-accent tracking-widest uppercase font-medium">
             {t.works.portfolio}
@@ -128,8 +130,8 @@ export default function Works() {
           </p>
         </div>
 
-        <div className="mt-16 animate-slide-up">
-          <h2 className="font-heading text-2xl font-bold mb-8 flex items-center gap-3">
+        <div className="mt-12 animate-slide-up">
+          <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
             <span className="w-8 h-0.5 bg-accent" />
             {t.works.techStack}
           </h2>
@@ -194,12 +196,12 @@ export default function Works() {
         </div>
 
         {experienceProjects.length > 0 && (
-          <div className="mt-16 animate-slide-up animate-delay-100">
-            <h2 className="font-heading text-2xl font-bold mb-8 flex items-center gap-3">
+          <div className="mt-12 animate-slide-up animate-delay-100">
+            <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
               <span className="w-8 h-0.5 bg-accent" />
               {t.works.experience}
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+<div className="grid md:grid-cols-2 gap-5">
               {experienceProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
@@ -215,12 +217,12 @@ export default function Works() {
         )}
 
         {projectProjects.length > 0 && (
-          <div className="mt-20 animate-slide-up animate-delay-200">
-            <h2 className="font-heading text-2xl font-bold mb-8 flex items-center gap-3">
+          <div className="mt-12 animate-slide-up animate-delay-200">
+            <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
               <span className="w-8 h-0.5 bg-accent" />
               {t.works.projects}
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {projectProjects.map((project) => (
                 <ProjectCard
                   key={project.id}

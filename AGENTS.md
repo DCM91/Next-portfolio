@@ -22,7 +22,7 @@ npm run lint   # uses deprecated `next lint`
 ```
 pages/        # index, about, skills, works, contact, 404, _app.js, _document.js
 components/   # Layout, Navbar, Footer, ProjectCard, SkillIcon, mail.js, selector.js
-constants/    # index.js — NAV_LINKS, LANGUAGES
+constants/    # index.js (NAV_LINKS, LANGUAGES), skills.js (SKILL_ICONS, SKILL_CATEGORIES, PROJECT_SKILLS, FILTERABLE_SKILLS)
 languages/    # en.js, es.js, cat.js — plain JS objects
 hooks/        # useTranslation.js
 styles/       # globals.css — Tailwind directives + CSS variables for light/dark
@@ -55,11 +55,6 @@ const languagesList = [
 ]
 ```
 
-### Spacing
-- Sections use `py-12 md:py-16`
-- Timeline items use `pb-6`
-- Grid gap: `gap-8` (edu/lang), `gap-10 md:gap-16` (timeline section)
-
 ### Animations
 - Hero: `animate-fade-in`
 - Timeline: `animate-slide-up`
@@ -73,6 +68,48 @@ const languagesList = [
 - `languages` — Languages section title
 - `hobbies` — Hobbies text (not rendered in about.js, kept for potential future use)
 
+## Works page & Project system (`pages/works.js`)
+
+### Project data pipeline (critical for i18n + skills)
+Project entries use `id` which links **three things** via a single pipeline:
+
+```
+project.id → getDescKey(id) → t.works[DescKey]       (translation description)
+project.id → PROJECT_SKILLS[id]                       (skill tags per project)
+project.id → (internal state for expandable cards)    (UI state)
+```
+
+`getDescKey` simply capitalizes the first letter: `"jbctools"` → `"Jbctools"`.
+
+**Important**: Project `id` MUST match:
+1. A key in `PROJECT_SKILLS` (`constants/skills.js`)
+2. A key in all 3 language files under `works:` (e.g. `works.Jbctools`, `works.Sinigual`, etc.)
+
+If an id doesn't match, the project gets **no description** and **no skill tags** in all locales.
+
+### Project categories
+- `"experience"` — displayed under `t.works.experience` heading (2-col grid)
+- `"projects"` — displayed under `t.works.projects` heading (2-3 col grid)
+
+### Tech Stack display vs Filter pills
+Two separate constants control what appears in the Works page:
+
+| Constant | Purpose | Content |
+|----------|---------|---------|
+| `SKILL_CATEGORIES` | **Tech Stack** section (all 4 category cards) | All 35 skills across all projects, grouped in `web`/`frontend`/`backend`/`tools` |
+| `FILTERABLE_SKILLS` | **Filter pills** (interactive toggles) | 17 hand-picked skills |
+
+**How filtering works:**
+- `allTechKeys` computes the intersection of `FILTERABLE_SKILLS` with skills actually present across `PROJECT_SKILLS`, sorted by usage count
+- Only skills present in both lists appear as filter pills
+- Clicking a tech pill filters the project grid (only projects that include that skill)
+- Active filter is cleared via "Clear filter" link or re-clicking the tech pill
+
+### Skill icons (`SKILL_ICONS`)
+- Maps skill key → `{ icon: JSX, label: string }`. 38 entries including icons for all tools plus extras like `python`, `claude-code`.
+- Used by `SkillIcon` component, `ProjectCard` skill tags, and filter pills
+- If a skill is in `PROJECT_SKILLS` but NOT in `SKILL_ICONS`, it won't render anywhere
+
 ## Key components & patterns
 
 ### Colors (CSS variables in `globals.css`)
@@ -81,6 +118,13 @@ const languagesList = [
 - `--color-text-primary`, `--color-text-secondary`, `--color-text-muted`
 - `--color-accent`, `--color-accent-hover`, `--color-accent-subtle`, `--color-accent-glow`
 - Use Tailwind classes: `bg-surface`, `text-text-secondary`, `border-border`, `text-accent`, `bg-accent-subtle`, `hover:bg-surface-hover`
+
+### Spacing System (Sistema Medio: 80/48/32px base)
+All pages follow a consistent spacing scale for visual harmony:
+- Page sections: `py-12 md:py-20` (hero), `py-12 md:py-20` (content sections)
+- Grid gaps: `gap-5` (cards), `gap-8` (two-column), `gap-10 lg:gap-12` (large grids)
+- Internal component spacing: `gap-4` to `gap-6`
+- Cards grid: `gap-5` for projects, `gap-5` for experience
 
 ### Dark mode
 - Classes: add `.dark` to `<html>` to activate dark variables
@@ -98,13 +142,16 @@ const languagesList = [
 - Sticky, `backdrop-blur-xl`, border-bottom
 - Logo "DCM91" with accent span
 - Nav links from `NAV_LINKS` constant, active state via `pathname`
+- Animated underline on hover (center-out expand)
 - Responsive: hamburger menu on mobile (`md:hidden`), full links on desktop (`.hidden.md:flex`)
 - Uses `react-icons/hi` (HiMenu, HiX) for toggle button
+- Accessibility: `aria-expanded`, `aria-controls`, `focus-ring` on interactive elements
 
 ### ProjectCard (`components/ProjectCard.js`)
 - Expandable card: click toggles description visibility
-- Image with hover scale, gradient overlay, `role="button"` + keyboard support
+- Image with hover scale (`scale-105`), gradient overlay, `role="button"` + keyboard support
 - Link pills with `e.stopPropagation()` to prevent card toggle
+- Hover effects: border glow, shadow, scale-[1.01], duration-300
 - Used in `pages/works.js` for experience + projects
 
 ### SkillIcon (`components/SkillIcon.js`)
@@ -156,7 +203,45 @@ const languagesList = [
 - `animate-scale-in` — scale(0.95)→1 + fade in 0.4s
 - Delay classes: `.animate-delay-100` through `.animate-delay-500` (in `globals.css`)
 - `gradient-mesh` — atmospheric background with radial gradients (in `globals.css`)
-- `focus-ring` — enhanced focus state with ring offset (in `globals.css`)
+- `focus-ring` — enhanced focus state with ring offset (opacity 50)
+- `focus-ring-subtle` — lighter focus variant for less prominent elements
+- Custom scrollbar — webkit styling with accent thumb
+
+## i18n Translation Keys (`languages/en.js`, `es.js`, `cat.js`)
+
+All 3 files export a plain JS object with the same shape. `useTranslation()` returns the object matching `router.locale`.
+
+### Key reference (51 used, 18 orphaned)
+
+| Section | Key | Status |
+|---------|-----|--------|
+| **home** | `title` | Used (`index.js`) |
+| | `description` | Used (meta) |
+| | `role` | Used |
+| | `webDev`, `frontendDev`, `backendDev` | Used (TypeAnimation) |
+| | `codeDesc`, `dataDesc`, `aiDesc` | **Orphaned** |
+| **navbar** | `about`, `works`, `contact` | Used (`navbar.js`, via `NAV_LINKS`) |
+| **footer** | `text1`, `text2`, `social` | Used (`Footer.js`) |
+| **about** | `intro` | Used (hero + meta) |
+| | `sectionTitle` | Used (badge) |
+| | `trajectory` | Used (timeline heading) |
+| | `education` | Used (sub-heading) |
+| | `languages` | Used (sub-heading) |
+| | `hobbies` | **Orphaned** |
+| **contact** | `contact2` | Used (hero subtitle) |
+| | `contact3` | Used (description) |
+| | `contact1`, `sectionTitle`, `letsWorkTogether`, `getInTouch`, `email`, `location`, `responseTime`, `barcelona`, `within24Hours`, `sendMessage`, `fillForm` | **Orphaned** (hardcoded in `contact.js`) |
+| **mail** | `error`, `yourName`, `emailAddress`, `yourMessage`, `success`, `sending`, `sendMessage` | Used (`mail.js`) |
+| **works** | `description`, `experience`, `projects`, `portfolio`, `thingsIveBuilt`, `techStack`, `all`, `noProjects`, `clearFilter` | Used |
+| | `Sinigual`, `Payf`, `Skuadlack`, `TypedCinema`, `Portfolio`, `I18N`, `Jbctools`, `Aroacarmona`, `Endansa` | Used (dynamic via `getDescKey`) |
+| | `Blockbuster`, `Pokedex` | **Orphaned** |
+| **skills** | `web`, `frontend`, `backend`, `tools` | Used (`works.js` skill categories) |
+| **notFound** | `title`, `message`, `back` | Used (`404.js`) |
+
+### Rules for adding new keys
+- Add the key to **all 3 files** (`en.js`, `es.js`, `cat.js`) with the same shape
+- For new projects: the project `id` (lowercase) must match `PROJECT_SKILLS[id]` and `t.works[CapitalizedId]`
+- The `mail` section is required in all locales (contact form labels)
 
 ## Available skills (`.agents/skills/`)
 - `react-best-practices` — React/Next.js performance optimization
@@ -180,3 +265,4 @@ const languagesList = [
 - Dark mode state is persisted in localStorage under key `"theme"`.
 - Dev server runs with `--turbo` flag for faster HMR.
 - About page data (milestones, education, languages) is hardcoded in the component, not in i18n files. Company names and role titles are in English across all locales.
+- **Filter pills**: Only skills listed in `FILTERABLE_SKILLS` appear as filter pills in the works page, regardless of what's in `PROJECT_SKILLS`. To add/remove filters, edit the `FILTERABLE_SKILLS` array in `constants/skills.js`. `SKILL_CATEGORIES` contains the full set for the Tech Stack display.
