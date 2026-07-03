@@ -90,6 +90,7 @@ export default function Home() {
                     sizes="(max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
                     className="object-cover hover:scale-110 transition-transform duration-700"
                     priority
+                    fetchPriority="high"
                   />
                 </div>
               </div>
