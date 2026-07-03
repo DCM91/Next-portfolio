@@ -35,7 +35,7 @@ export const SKILL_ICONS = {
   notion: { icon: <SiNotion />, label: "Notion" },
   "claude-code": { icon: <SiClaude />, label: "Claude Code" },
   opencode: { icon: <SiGoogle />, label: "OpenCode" },
-  antigravity: { icon: <SiGoogle />, label: "Antigravity" },
+  anthropic: { icon: <SiGoogle />, label: "Anthropic" },
   seo: { icon: <IoMdCloud />, label: "SEO" },
   wordpress: { icon: <SiWordpress />, label: "WordPress" },
   g4a: { icon: <SiGoogle />, label: "G4A" },
@@ -65,7 +65,7 @@ export const FILTERABLE_SKILLS = [
   "laravel",
   "php",
   "opencode",
-  "antigravity",
+  "anthropic",
   "seo",
   "vue",
   "ionic",
@@ -89,14 +89,14 @@ export const SKILL_CATEGORIES = [
   },
   {
     key: "tools",
-    skills: ["git", "agile", "visual-studio", "android-studio", "trello", "jira", "notion", "opencode", "antigravity", "seo", "expo", "linear", "g4a", "railway"],
+    skills: ["git", "agile", "visual-studio", "android-studio", "trello", "jira", "notion", "opencode", "anthropic", "seo", "expo", "linear", "g4a", "railway"],
   },
 ]
 
 export const PROJECT_SKILLS = {
-  jbctools: ["javascript", "apis", "php", "laravel", "wordpress", "responsive", "html5", "tailwind", "bootstrap", "css", "mysql", "jwt", "antigravity", "seo", "notion", "g4a", "react", "node"],
+  jbctools: ["javascript", "apis", "php", "laravel", "wordpress", "responsive", "html5", "tailwind", "bootstrap", "css", "mysql", "jwt", "anthropic", "seo", "notion", "g4a", "react", "node"],
   sinigual: ["angular", "visual-studio", "material-ui", "git", "agile", "jira", "mysql", "laravel", "php", "javascript", "apis", "css", "responsive", "jwt", "typescript", "html5", "socket.io", "node", "microservicios"],
-  aroacarmona: ["react", "nextjs", "html5", "tailwind", "css", "responsive", "javascript", "seo", "antigravity", "git", "node"],
+  aroacarmona: ["react", "nextjs", "html5", "tailwind", "css", "responsive", "javascript", "seo", "anthropic", "git", "node"],
   endansa: ["react", "nextjs", "html5", "tailwind", "css", "responsive", "javascript", "seo", "opencode", "git", "node", "supabase"],
   payf: ["expo", "android-studio", "responsive", "javascript", "html5", "css", "mongodb", "jwt", "trello", "git", "react-native", "node", "express", "agile"],
   skuadlack: ["react", "node", "express", "linear", "html5", "css", "responsive", "javascript", "agile", "jwt", "socket.io", "mongodb"],

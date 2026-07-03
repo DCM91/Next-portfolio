@@ -90,7 +90,6 @@ export default function Works() {
   const t = useTranslation()
   const [expandedId, setExpandedId] = useState(null)
   const [activeTech, setActiveTech] = useState(null)
-  const [activeSkillCat, setActiveSkillCat] = useState("web")
 
   const allTechKeys = useMemo(() => {
     const techSet = new Set()
@@ -115,10 +114,6 @@ export default function Works() {
   const experienceProjects = filteredProjects.filter((p) => p.category === "experience")
   const projectProjects = filteredProjects.filter((p) => p.category === "projects")
 
-  const activeCategory = useMemo(() => {
-    return SKILL_CATEGORIES.find((c) => c.key === activeSkillCat) || SKILL_CATEGORIES[0]
-  }, [activeSkillCat])
-
   return (
     <>
       <Head>
@@ -139,35 +134,50 @@ export default function Works() {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center gap-2">
-          <button
-            onClick={() => setActiveTech(null)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              !activeTech
-                ? "bg-accent text-white shadow-lg shadow-accent/20"
-                : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
-            }`}
+        <div className="mt-12">
+          <select
+            value={activeTech || ""}
+            onChange={(e) => setActiveTech(e.target.value || null)}
+            className="md:hidden w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent/20"
           >
-            {t.works.all}
-          </button>
-          {allTechKeys.map((techKey) => {
-            const skill = SKILL_ICONS[techKey]
-            if (!skill) return null
-            return (
-              <button
-                key={techKey}
-                onClick={() => setActiveTech(activeTech === techKey ? null : techKey)}
-                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  activeTech === techKey
-                    ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
-                }`}
-              >
-                <span className="text-sm">{skill.icon}</span>
-                {skill.label}
-              </button>
-            )
-          })}
+            <option value="">{t.works.all}</option>
+            {allTechKeys.map((techKey) => {
+              const skill = SKILL_ICONS[techKey]
+              if (!skill) return null
+              return <option key={techKey} value={techKey}>{skill.label}</option>
+            })}
+          </select>
+
+          <div className="hidden md:flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setActiveTech(null)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                !activeTech
+                  ? "bg-accent text-white shadow-lg shadow-accent/20"
+                  : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
+              }`}
+            >
+              {t.works.all}
+            </button>
+            {allTechKeys.map((techKey) => {
+              const skill = SKILL_ICONS[techKey]
+              if (!skill) return null
+              return (
+                <button
+                  key={techKey}
+                  onClick={() => setActiveTech(activeTech === techKey ? null : techKey)}
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    activeTech === techKey
+                      ? "bg-accent text-white shadow-lg shadow-accent/20"
+                      : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
+                  }`}
+                >
+                  <span className="text-sm">{skill.icon}</span>
+                  {skill.label}
+                </button>
+              )
+            })}
+          </div>
         </div>
 
         {experienceProjects.length > 0 && (
@@ -217,43 +227,7 @@ export default function Works() {
             <span className="w-8 h-0.5 bg-accent" />
             {t.works.techStack}
           </h2>
-
-          <div className="md:hidden">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {SKILL_CATEGORIES.map((cat) => (
-                <button
-                  key={cat.key}
-                  onClick={() => setActiveSkillCat(cat.key)}
-                  className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${
-                    activeSkillCat === cat.key
-                      ? "bg-accent text-white shadow-lg shadow-accent/20"
-                      : "bg-surface-alt border border-border text-text-secondary hover:text-accent"
-                  }`}
-                >
-                  {t.skills[cat.key]}
-                </button>
-              ))}
-            </div>
-            <div className="p-5 rounded-2xl border border-border bg-surface-alt">
-              <div className="flex flex-wrap gap-2">
-                {activeCategory.skills.map((skillKey) => {
-                  const skill = SKILL_ICONS[skillKey]
-                  if (!skill) return null
-                  return (
-                    <span
-                      key={skillKey}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-surface border border-border text-text-secondary"
-                    >
-                      <span className="text-sm">{skill.icon}</span>
-                      {skill.label}
-                    </span>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-
-          <div className="hidden md:grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {SKILL_CATEGORIES.map((cat) => (
               <div
                 key={cat.key}
