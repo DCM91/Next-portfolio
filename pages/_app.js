@@ -1,5 +1,6 @@
 import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google"
 import { Layout } from "@/components/Layout"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import "@/styles/globals.css"
 
 const dmSans = DM_Sans({
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout className={fontVariables}>
       <Component {...pageProps} />
+      <SpeedInsights />
     </Layout>
   )
 }
