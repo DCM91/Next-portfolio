@@ -117,7 +117,7 @@ export default function Works() {
         <meta name="description" content={t.works.experience} />
       </Head>
 
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-20">
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
         <div className="max-w-2xl animate-fade-in">
           <span className="text-xs font-mono text-accent tracking-widest uppercase font-medium">
             {t.works.portfolio}

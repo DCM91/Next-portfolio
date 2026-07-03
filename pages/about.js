@@ -34,33 +34,33 @@ export default function About() {
         <meta name="description" content={t.about.intro} />
       </Head>
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/assets/networking.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/95 to-surface/60" />
-        </div>
-        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 relative">
-          <div className="animate-fade-in">
-            <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              {t.about.sectionTitle}
-            </span>
-            <div className="mt-6 max-w-xl">
-              <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
-                {t.about.intro}
-              </p>
-            </div>
-          </div>
+      <section className="relative h-48 md:h-64 overflow-hidden">
+        <Image
+          src="/assets/networking.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/95 to-surface/60" />
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 pt-12 md:pt-16 pb-4 md:pb-6">
+        <div className="max-w-3xl animate-fade-in">
+          <h1 className="font-heading text-3xl md:text-5xl font-extrabold tracking-tight">
+            Daniel Castro<span className="text-accent"> Martín</span>
+          </h1>
+          <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium mt-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+            {t.about.sectionTitle}
+          </span>
+          <p className="mt-4 text-text-secondary text-base leading-relaxed">
+            {t.about.intro}
+          </p>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-6xl mx-auto px-6 pt-0 pb-12 md:pb-16">
         <div className="animate-slide-up">
           <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight">
             {t.about.trajectory}
@@ -115,7 +115,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-6 pt-0 pb-12 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-slide-up animate-delay-100">
           <div>
             <h3 className="font-heading text-xl font-bold tracking-tight mb-6">{t.about.education}</h3>

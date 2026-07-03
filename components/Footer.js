@@ -42,7 +42,7 @@ export const Footer = () => {
                 <BsGithub size={20} />
               </a>
               <a
-                href="mailto:castromartindaniel91@gmail.com"
+                href={`mailto:${["castromartindaniel91","gmail.com"].join("@")}`}
                 className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
                 aria-label="Email"
               >

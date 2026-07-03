@@ -2,6 +2,7 @@ export default {
     home: {
       title: "Welcome to my portfolio!",
       description:"Ambitious professional in...",
+      subtitle: "Full Stack Developer",
       codeDesc: "Building clean, maintainable, and performant web solutions with modern frameworks and best practices.",
       dataDesc: "Designing scalable data architectures that connect frontend experiences, backend services, and database systems.",
       aiDesc: "Leveraging LLMs, intelligent agents, and automation to build smarter, AI-driven applications.",
@@ -59,8 +60,7 @@ export default {
         TypedCinema: "TypedCinema is a migration of my BlockBuster project to TypeScript and my initial experiments with TailwindCSS.",
         Portfolio: "This is my first portfolio, where I used various design frameworks and an email reception service.",
         I18N: "I18N is a project that consists of a template with various functionalities for future projects, such as language switching and design styles.",
-        Blockbuster: "Blockbuster is my first Full Stack project; it's a movie library where you can save movies or series with descriptions and release years.",
-        Pokedex: "Pokedex is my first purely Front-End project that makes requests to an API (pokeAPI), showcasing my initial steps with a CRUD system.",
+        I18N: "I18N is a project that consists of a template with various functionalities for future projects, such as language switching and design styles.",
         Jbctools: "JBC Tools is a specialized platform for tool management and industrial supply solutions.",
         Aroacarmona: "Professional photography portfolio for Aroa Carmona, showcasing her work and artistic vision.",
         Endansa: "Endansa is a corporate website built with modern web technologies.",

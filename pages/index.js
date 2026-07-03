@@ -3,30 +3,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { TypeAnimation } from "react-type-animation"
 import { MdArrowForward } from "react-icons/md"
-import { BiCodeAlt } from "react-icons/bi"
-import { DiDatabase } from "react-icons/di"
-import { MdSmartToy } from "react-icons/md"
 import { FiDownload } from "react-icons/fi"
 import { useTranslation } from "@/hooks/useTranslation"
 import { NAV_LINKS } from "@/constants"
-
-const skills = [
-  {
-    key: "codeDesc",
-    title: "Code Craftsman",
-    icon: <BiCodeAlt size={22} />,
-  },
-  {
-    key: "dataDesc",
-    title: "Data Architect",
-    icon: <DiDatabase size={22} />,
-  },
-  {
-    key: "aiDesc",
-    title: "AI Integration",
-    icon: <MdSmartToy size={22} />,
-  },
-]
 
 export default function Home() {
   const t = useTranslation()
@@ -40,20 +19,15 @@ export default function Home() {
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent-subtle via-transparent to-transparent dark:from-accent-subtle/5" />
-        <div className="max-w-6xl mx-auto px-6 pt-16 pb-12 md:pt-20 md:pb-16 relative">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
             <div className="order-2 lg:order-1">
               <div className="animate-fade-in">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-surface-alt text-sm text-text-secondary mb-8">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  {t.home.title}
-                </div>
-
                 <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
                   Daniel Castro Martín
                 </h1>
 
-                <p className="mt-6 text-lg md:text-xl font-medium text-text-primary">
+                <p className="mt-4 text-lg md:text-xl font-medium text-text-primary">
                   {t.home.role}
                 </p>
 
@@ -72,9 +46,6 @@ export default function Home() {
                   </span>
                   <span className="w-1.5 h-6 bg-accent rounded-full animate-pulse" />
                 </div>
-
-                <p className="mt-6 text-lg text-text-secondary max-w-2xl leading-relaxed">
-                </p>
               </div>
 
               <div className="mt-12 flex flex-wrap items-center gap-4 animate-slide-up animate-delay-200">

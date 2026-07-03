@@ -32,6 +32,7 @@ export const Navbar = () => {
                     ? "text-accent bg-accent-subtle"
                     : "text-text-secondary hover:text-text-primary hover:bg-surface-hover"
                 }`}
+                aria-current={isActive ? "page" : undefined}
               >
                 <span className="relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full">
                   {t.navbar[link.labelKey.split(".")[1]]}
@@ -67,6 +68,7 @@ export const Navbar = () => {
                       ? "text-accent bg-accent-subtle"
                       : "text-text-secondary hover:text-text-primary hover:bg-surface-hover"
                   }`}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   {t.navbar[link.labelKey.split(".")[1]]}
                 </Link>

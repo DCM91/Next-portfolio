@@ -4,9 +4,11 @@ import { Navbar } from "./navbar"
 import { Footer } from "./Footer"
 import { MdDarkMode, MdLightMode } from "react-icons/md"
 import { Selector } from "./selector"
+import { useTranslation } from "@/hooks/useTranslation"
 
 export const Layout = ({ children }) => {
   const [dark, setDark] = useState(false)
+  const t = useTranslation()
 
   useEffect(() => {
     const stored = localStorage.getItem("theme")
@@ -33,12 +35,19 @@ export const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-accent focus:text-white focus:outline-none focus:shadow-lg"
+      >
+        Skip to content
+      </a>
+
       <Navbar />
 
       <div className="sticky top-0 z-40 border-b border-border bg-surface/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between">
           <p className="text-xs font-mono text-text-muted tracking-widest uppercase">
-            Full Stack Developer
+            {t.home.subtitle}
           </p>
           <div className="flex items-center gap-3">
             <Selector />
@@ -53,7 +62,7 @@ export const Layout = ({ children }) => {
         </div>
       </div>
 
-      <main className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1">{children}</main>
 
       <Footer />
     </div>
