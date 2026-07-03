@@ -43,6 +43,13 @@ const projects = [
     links: [{ label: "Website", url: "https://payf.es", icon: <FiLink /> }],
   },
   {
+    id: "framematch",
+    title: "FrameMatch",
+    category: "experience",
+    image: "/projects/FrameMatch.png",
+    links: [{ label: "Website", url: "https://framematch.vercel.app", icon: <FiLink /> }],
+  },
+  {
     id: "skuadlack",
     title: "Skuadlack",
     category: "projects",
@@ -60,16 +67,6 @@ const projects = [
     ],
   },
   {
-    id: "portfolio",
-    title: "My first Portfolio",
-    category: "projects",
-    image: "/projects/portfolio.png",
-    links: [
-      { label: "Github", url: "https://github.com/DCM91/next-portfolio", icon: <BsGithub /> },
-      { label: "Website", url: "https://next-portfolio-dcm91.vercel.app", icon: <FiLink /> },
-    ],
-  },
-  {
     id: "i18n",
     title: "I18N internationalization",
     category: "projects",
@@ -77,6 +74,13 @@ const projects = [
     links: [
       { label: "Github", url: "https://github.com/DCM91/i18n-template", icon: <BsGithub /> },
     ],
+  },
+  {
+    id: "tiendaonline",
+    title: "App de tienda online",
+    category: "projects",
+    image: "/projects/TiendaOnline.jpeg",
+    links: [{ label: "Github", url: "https://github.com/DCM91/MerchanProyect", icon: <BsGithub /> }],
   },
 ]
 

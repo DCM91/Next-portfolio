@@ -12,7 +12,7 @@ const milestones = [
 ]
 
 const education = [
-  { title: "Master in AI Development", school: "BIG School", year: "2025 — Present" },
+  { title: "Master in AI Development", school: "BIG School", year: "2025" },
   { title: "Full Stack Master", school: "Nuclio Digital School", year: "2022" },
   { title: "Minor UI/UX", school: "Nuclio Digital School", year: "2023" },
   { title: "Grado Superior en Sistemas de Telecomunicaciones e Informática", school: "IES Anna Gironella Mundet", year: "" },
@@ -21,7 +21,7 @@ const education = [
 const languagesList = [
   { name: "Spanish", level: "Native" },
   { name: "Catalan", level: "Native" },
-  { name: "English", level: "B2" },
+  { name: "English", level: "C1" },
 ]
 
 export default function About() {

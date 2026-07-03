@@ -1,8 +1,8 @@
 import { DiReact, DiTrello, DiGit, DiScrum, DiVisualstudio } from "react-icons/di"
 import { IoLogoAndroid, IoLogoJavascript, IoLogoHtml5, IoLogoPython, IoMdCloud, IoLogoNodejs } from "react-icons/io"
-import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens, SiAngular, SiLaravel, SiPhp, SiJira, SiNotion, SiClaude, SiGoogle, SiWordpress, SiMui, SiLinear, SiExpo } from "react-icons/si"
-import { TbBrandReactNative } from "react-icons/tb"
-import { MdDevicesOther } from "react-icons/md"
+import { SiNextdotjs, SiTypescript, SiSocketdotio, SiTailwindcss, SiCss, SiBootstrap, SiExpress, SiMysql, SiMongodb, SiJsonwebtokens, SiAngular, SiLaravel, SiPhp, SiJira, SiNotion, SiClaude, SiGoogle, SiWordpress, SiMui, SiLinear, SiExpo, SiVuedotjs, SiIonic, SiSupabase } from "react-icons/si"
+import { TbBrandReactNative, TbArrowsSplit } from "react-icons/tb"
+import { MdDevicesOther, MdOutlineTrain } from "react-icons/md"
 
 export const SKILL_ICONS = {
   javascript: { icon: <IoLogoJavascript />, label: "JavaScript" },
@@ -42,6 +42,11 @@ export const SKILL_ICONS = {
   "material-ui": { icon: <SiMui />, label: "Material UI" },
   expo: { icon: <SiExpo />, label: "Expo" },
   linear: { icon: <SiLinear />, label: "Linear" },
+  vue: { icon: <SiVuedotjs />, label: "Vue.js" },
+  ionic: { icon: <SiIonic />, label: "IONIC" },
+  supabase: { icon: <SiSupabase />, label: "Supabase" },
+  railway: { icon: <MdOutlineTrain />, label: "Railway" },
+  microservicios: { icon: <TbArrowsSplit />, label: "Microservices" },
 }
 
 export const FILTERABLE_SKILLS = [
@@ -62,6 +67,11 @@ export const FILTERABLE_SKILLS = [
   "opencode",
   "antigravity",
   "seo",
+  "vue",
+  "ionic",
+  "microservicios",
+  "supabase",
+  "railway",
 ]
 
 export const SKILL_CATEGORIES = [
@@ -71,26 +81,27 @@ export const SKILL_CATEGORIES = [
   },
   {
     key: "frontend",
-    skills: ["react", "responsive", "html5", "tailwind", "bootstrap", "css", "react-native", "angular", "material-ui"],
+    skills: ["react", "responsive", "html5", "tailwind", "bootstrap", "css", "react-native", "angular", "material-ui", "vue", "ionic"],
   },
   {
     key: "backend",
-    skills: ["node", "express", "mysql", "mongodb", "jwt"],
+    skills: ["node", "express", "mysql", "mongodb", "jwt", "microservicios", "supabase"],
   },
   {
     key: "tools",
-    skills: ["git", "agile", "visual-studio", "android-studio", "trello", "jira", "notion", "opencode", "antigravity", "seo", "expo", "linear", "g4a"],
+    skills: ["git", "agile", "visual-studio", "android-studio", "trello", "jira", "notion", "opencode", "antigravity", "seo", "expo", "linear", "g4a", "railway"],
   },
 ]
 
 export const PROJECT_SKILLS = {
   jbctools: ["javascript", "apis", "php", "laravel", "wordpress", "responsive", "html5", "tailwind", "bootstrap", "css", "mysql", "jwt", "antigravity", "seo", "notion", "g4a", "react", "node"],
-  sinigual: ["angular", "visual-studio", "material-ui", "git", "agile", "jira", "mysql", "laravel", "php", "javascript", "apis", "css", "responsive", "jwt", "typescript", "html5", "socket.io", "node"],
+  sinigual: ["angular", "visual-studio", "material-ui", "git", "agile", "jira", "mysql", "laravel", "php", "javascript", "apis", "css", "responsive", "jwt", "typescript", "html5", "socket.io", "node", "microservicios"],
   aroacarmona: ["react", "nextjs", "html5", "tailwind", "css", "responsive", "javascript", "seo", "antigravity", "git", "node"],
-  endansa: ["react", "nextjs", "html5", "tailwind", "css", "responsive", "javascript", "seo", "opencode", "git", "node"],
+  endansa: ["react", "nextjs", "html5", "tailwind", "css", "responsive", "javascript", "seo", "opencode", "git", "node", "supabase"],
   payf: ["expo", "android-studio", "responsive", "javascript", "html5", "css", "mongodb", "jwt", "trello", "git", "react-native", "node", "express", "agile"],
   skuadlack: ["react", "node", "express", "linear", "html5", "css", "responsive", "javascript", "agile", "jwt", "socket.io", "mongodb"],
   typedcinema: ["react", "nextjs", "typescript", "node", "express", "html5", "tailwind", "css", "responsive", "javascript"],
-  portfolio: ["angular", "html5", "bootstrap", "css", "responsive", "javascript"],
   i18n: ["react", "html5", "tailwind", "css", "responsive", "javascript"],
+  framematch: ["angular", "laravel", "jwt", "socket.io", "railway", "microservicios", "typescript", "javascript", "apis", "html5", "css", "responsive", "git", "node"],
+  tiendaonline: ["ionic", "mongodb", "vue", "typescript", "javascript", "apis", "html5", "css", "responsive", "git", "node"],
 }
