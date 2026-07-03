@@ -1,11 +1,16 @@
 import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
-import { TypeAnimation } from "react-type-animation"
+import dynamic from "next/dynamic"
 import { MdArrowForward } from "react-icons/md"
 import { FiDownload } from "react-icons/fi"
 import { useTranslation } from "@/hooks/useTranslation"
 import { NAV_LINKS } from "@/constants"
+
+const TypeAnimation = dynamic(
+  () => import("react-type-animation").then((mod) => mod.TypeAnimation),
+  { ssr: false, loading: () => <span className="text-accent font-semibold">&nbsp;</span> }
+)
 
 export default function Home() {
   const t = useTranslation()
@@ -41,7 +46,7 @@ export default function Home() {
                       ]}
                       speed={30}
                       wrapper="span"
-                      repeat={Infinity}
+                      repeat={3}
                     />
                   </span>
                   <span className="w-1.5 h-6 bg-accent rounded-full animate-pulse" />
@@ -63,7 +68,7 @@ export default function Home() {
                   </Link>
                 ))}
                 <a
-                  href="/assets/CV Daniel Castro.pdf"
+                  href="/assets/cv-daniel-castro.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 transition-all"
@@ -82,6 +87,7 @@ export default function Home() {
                     src="/assets/foto_blanconegro.jpeg"
                     alt="Daniel Castro Martín"
                     fill
+                    sizes="(max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
                     className="object-cover hover:scale-110 transition-transform duration-700"
                     priority
                   />

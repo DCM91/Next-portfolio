@@ -6,7 +6,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md"
 import { Selector } from "./selector"
 import { useTranslation } from "@/hooks/useTranslation"
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, className = "" }) => {
   const [dark, setDark] = useState(false)
   const t = useTranslation()
 
@@ -28,7 +28,7 @@ export const Layout = ({ children }) => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen flex flex-col ${className}`}>
       <Head>
         <title>DCM91 Portfolio</title>
         <meta name="description" content="Full Stack Developer Portfolio" />

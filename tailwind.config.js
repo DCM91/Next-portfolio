@@ -11,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
-        heading: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
-        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+        sans: ["var(--font-dm-sans)", ...defaultTheme.fontFamily.sans],
+        heading: ["var(--font-plus-jakarta-sans)", ...defaultTheme.fontFamily.sans],
+        mono: ["var(--font-jetbrains-mono)", ...defaultTheme.fontFamily.mono],
       },
       colors: {
         surface: {

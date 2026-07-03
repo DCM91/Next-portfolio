@@ -59,7 +59,6 @@ export default {
         Skuadlack: "Skuadlack is an application delivered as a TFM, it is a fully functional clone of Slack.",
         TypedCinema: "TypedCinema is a migration of my BlockBuster project to TypeScript and my initial experiments with TailwindCSS.",
         I18N: "I18N is a project that consists of a template with various functionalities for future projects, such as language switching and design styles.",
-        I18N: "I18N is a project that consists of a template with various functionalities for future projects, such as language switching and design styles.",
         Jbctools: "JBC Tools is a specialized platform for tool management and industrial supply solutions.",
         Aroacarmona: "Professional photography portfolio for Aroa Carmona, showcasing her work and artistic vision.",
         Endansa: "Endansa is a corporate website built with modern web technologies.",

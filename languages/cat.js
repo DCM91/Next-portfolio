@@ -60,7 +60,6 @@ contact:{
       Skuadlack: "Skuadlack és una aplicació entregada com a TFM, es tracta d'un clon de Slack totalment funcional.",
       TypedCinema: "TypedCinema és una migració del meu projecte BlockBuster a TypeScript i les meves primeres proves amb TailwindCSS.",
       I18N: "I18N és un projecte que consisteix en una plantilla amb diverses funcionalitats per a projectes futurs, com el canvi entre diferents idiomes i estils de disseny.",
-      I18N: "I18N és un projecte que consisteix en una plantilla amb diverses funcionalitats per a projectes futurs, com el canvi entre diferents idiomes i estils de disseny.",
       Jbctools: "JBC Tools és una plataforma especialitzada en gestió d'eines i solucions de subministrament industrial.",
       Aroacarmona: "Portfolio professional de fotografia per a Aroa Carmona, mostrant el seu treball i visió artística.",
       Endansa: "Endansa és un lloc web corporatiu construït amb tecnologies web modernes.",
