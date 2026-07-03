@@ -90,6 +90,7 @@ export default function Works() {
   const t = useTranslation()
   const [expandedId, setExpandedId] = useState(null)
   const [activeTech, setActiveTech] = useState(null)
+  const [activeSkillCat, setActiveSkillCat] = useState("web")
 
   const allTechKeys = useMemo(() => {
     const techSet = new Set()
@@ -114,6 +115,10 @@ export default function Works() {
   const experienceProjects = filteredProjects.filter((p) => p.category === "experience")
   const projectProjects = filteredProjects.filter((p) => p.category === "projects")
 
+  const activeCategory = useMemo(() => {
+    return SKILL_CATEGORIES.find((c) => c.key === activeSkillCat) || SKILL_CATEGORIES[0]
+  }, [activeSkillCat])
+
   return (
     <>
       <Head>
@@ -132,40 +137,6 @@ export default function Works() {
           <p className="mt-4 text-text-secondary text-base leading-relaxed">
             {t.works.description || "Every project tells a story — here are mine, built with modern tools and clean code."}
           </p>
-        </div>
-
-        <div className="mt-12 animate-slide-up">
-          <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-0.5 bg-accent" />
-            {t.works.techStack}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {SKILL_CATEGORIES.map((cat) => (
-              <div
-                key={cat.key}
-                className="p-6 rounded-2xl border border-border bg-surface-alt"
-              >
-                <h3 className="font-heading text-xs font-bold mb-4 text-accent uppercase tracking-widest">
-                  {t.skills[cat.key]}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skillKey) => {
-                    const skill = SKILL_ICONS[skillKey]
-                    if (!skill) return null
-                    return (
-                      <span
-                        key={skillKey}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-surface border border-border text-text-secondary"
-                      >
-                        <span className="text-sm">{skill.icon}</span>
-                        {skill.label}
-                      </span>
-                    )
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-2">
@@ -240,6 +211,76 @@ export default function Works() {
             </div>
           </div>
         )}
+
+        <div className="mt-12 animate-slide-up animate-delay-300">
+          <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-3">
+            <span className="w-8 h-0.5 bg-accent" />
+            {t.works.techStack}
+          </h2>
+
+          <div className="md:hidden">
+            <div className="flex flex-wrap gap-2 mb-4">
+              {SKILL_CATEGORIES.map((cat) => (
+                <button
+                  key={cat.key}
+                  onClick={() => setActiveSkillCat(cat.key)}
+                  className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${
+                    activeSkillCat === cat.key
+                      ? "bg-accent text-white shadow-lg shadow-accent/20"
+                      : "bg-surface-alt border border-border text-text-secondary hover:text-accent"
+                  }`}
+                >
+                  {t.skills[cat.key]}
+                </button>
+              ))}
+            </div>
+            <div className="p-5 rounded-2xl border border-border bg-surface-alt">
+              <div className="flex flex-wrap gap-2">
+                {activeCategory.skills.map((skillKey) => {
+                  const skill = SKILL_ICONS[skillKey]
+                  if (!skill) return null
+                  return (
+                    <span
+                      key={skillKey}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-surface border border-border text-text-secondary"
+                    >
+                      <span className="text-sm">{skill.icon}</span>
+                      {skill.label}
+                    </span>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-2 gap-6">
+            {SKILL_CATEGORIES.map((cat) => (
+              <div
+                key={cat.key}
+                className="p-6 rounded-2xl border border-border bg-surface-alt"
+              >
+                <h3 className="font-heading text-xs font-bold mb-4 text-accent uppercase tracking-widest">
+                  {t.skills[cat.key]}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map((skillKey) => {
+                    const skill = SKILL_ICONS[skillKey]
+                    if (!skill) return null
+                    return (
+                      <span
+                        key={skillKey}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-surface border border-border text-text-secondary"
+                      >
+                        <span className="text-sm">{skill.icon}</span>
+                        {skill.label}
+                      </span>
+                    )
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {filteredProjects.length === 0 && (
           <div className="mt-16 text-center py-16">
