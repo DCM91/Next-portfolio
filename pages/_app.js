@@ -1,5 +1,6 @@
 import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Layout } from "@/components/Layout"
 import "@/styles/globals.css"
 
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }) {
     <Layout className={fontVariables}>
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights />
     </Layout>
   )
 }
