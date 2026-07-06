@@ -138,6 +138,7 @@ export default function Works() {
           <select
             value={activeTech || ""}
             onChange={(e) => setActiveTech(e.target.value || null)}
+            aria-label="Filter by technology"
             className="md:hidden w-full px-4 py-2.5 rounded-xl border border-border bg-surface-alt text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent/20"
           >
             <option value="">{t.works.all}</option>
