@@ -49,7 +49,7 @@ export const Navbar = () => {
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
-          {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          {isOpen ? <HiX size={24} aria-hidden="true" /> : <HiMenu size={24} aria-hidden="true" />}
         </button>
       </div>
 

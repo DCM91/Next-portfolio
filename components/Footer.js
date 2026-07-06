@@ -30,7 +30,7 @@ export const Footer = () => {
                 className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
                 aria-label="LinkedIn"
               >
-                <BsLinkedin size={20} />
+                <BsLinkedin size={20} aria-hidden="true" />
               </a>
               <a
                 href="https://github.com/DCM91"
@@ -39,14 +39,14 @@ export const Footer = () => {
                 className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
                 aria-label="GitHub"
               >
-                <BsGithub size={20} />
+                <BsGithub size={20} aria-hidden="true" />
               </a>
               <a
                 href={`mailto:${["castromartindaniel91","gmail.com"].join("@")}`}
                 className="p-3 rounded-lg bg-surface-hover text-text-secondary hover:text-accent hover:bg-accent-subtle transition-all"
                 aria-label="Email"
               >
-                <HiMail size={20} />
+                <HiMail size={20} aria-hidden="true" />
               </a>
             </div>
           </div>

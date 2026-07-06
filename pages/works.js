@@ -172,7 +172,7 @@ export default function Works() {
                       : "bg-surface-alt border border-border text-text-secondary hover:border-accent/30 hover:text-accent"
                   }`}
                 >
-                  <span className="text-sm">{skill.icon}</span>
+                        <span className="text-sm" aria-hidden="true">{skill.icon}</span>
                   {skill.label}
                 </button>
               )
@@ -245,7 +245,7 @@ export default function Works() {
                         key={skillKey}
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-surface border border-border text-text-secondary"
                       >
-                        <span className="text-sm">{skill.icon}</span>
+                  <span className="text-sm" aria-hidden="true">{skill.icon}</span>
                         {skill.label}
                       </span>
                     )

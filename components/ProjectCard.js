@@ -46,7 +46,7 @@ export function ProjectCard({ project, isExpanded, onToggle, desc, skillKeys }) 
                   key={key}
                   className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-accent/10 text-accent"
                 >
-                  <span className="text-sm">{skill.icon}</span>
+                  <span className="text-sm" aria-hidden="true">{skill.icon}</span>
                   {skill.label}
                 </span>
               )
@@ -72,7 +72,7 @@ export function ProjectCard({ project, isExpanded, onToggle, desc, skillKeys }) 
               onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-surface-alt border border-border text-text-secondary hover:text-accent hover:border-accent/30 transition-colors"
             >
-              {link.icon}
+              <span aria-hidden="true">{link.icon}</span>
               {link.label}
             </a>
           ))}
