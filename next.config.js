@@ -10,7 +10,6 @@ const nextConfig = {
   i18n: {
     locales: ["en", "es", "cat"],
     defaultLocale: "en",
-    localeDetection: false,
   },
   webpack(config, { isServer }) {
     if (!isServer) {
