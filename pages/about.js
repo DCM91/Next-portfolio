@@ -47,10 +47,7 @@ export default function About() {
 
       <section className="max-w-6xl mx-auto px-6 pt-12 md:pt-16 pb-4 md:pb-6">
         <div className="max-w-3xl animate-fade-in">
-          <h1 className="font-heading text-3xl md:text-5xl font-extrabold tracking-tight">
-            Daniel Castro<span className="text-accent"> Martín</span>
-          </h1>
-          <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium mt-3">
+          <span className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest uppercase font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             {t.about.sectionTitle}
           </span>
