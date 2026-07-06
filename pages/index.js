@@ -53,7 +53,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-12 flex flex-wrap items-center gap-4 animate-slide-up animate-delay-200">
+              <p className="mt-6 text-base text-text-secondary animate-slide-up animate-delay-100">
+                {t.home.ctaPrompt}
+              </p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-4 animate-slide-up animate-delay-200">
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.href}

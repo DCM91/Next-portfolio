@@ -22,11 +22,11 @@ const projects = [
     links: [{ label: "Website", url: "https://www.sinigual.com", icon: <FiLink /> }],
   },
   {
-    id: "aroacarmona",
-    title: "Aroa Photography",
+    id: "framematch",
+    title: "FrameMatch",
     category: "experience",
-    image: "/projects/aroaweb.png",
-    links: [{ label: "Website", url: "https://byphnix.vercel.app", icon: <FiLink /> }],
+    image: "/projects/FrameMatch.png",
+    links: [{ label: "Website", url: "https://framematch.vercel.app", icon: <FiLink /> }],
   },
   {
     id: "endansa",
@@ -36,18 +36,18 @@ const projects = [
     links: [{ label: "Website", url: "https://endansa.com", icon: <FiLink /> }],
   },
   {
+    id: "aroacarmona",
+    title: "Aroa Photography",
+    category: "experience",
+    image: "/projects/aroaweb.png",
+    links: [{ label: "Website", url: "https://byphnix.vercel.app", icon: <FiLink /> }],
+  },
+  {
     id: "payf",
     title: "Payf",
     category: "experience",
     image: "/projects/payf.png",
     links: [{ label: "Website", url: "https://payf.es", icon: <FiLink /> }],
-  },
-  {
-    id: "framematch",
-    title: "FrameMatch",
-    category: "experience",
-    image: "/projects/FrameMatch.png",
-    links: [{ label: "Website", url: "https://framematch.vercel.app", icon: <FiLink /> }],
   },
   {
     id: "skuadlack",
